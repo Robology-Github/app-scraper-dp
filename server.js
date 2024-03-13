@@ -32,8 +32,8 @@
   });
   
   const SCOPE = ['https://www.googleapis.com/auth/drive'];
-  const pkey = require('./app-scraper-dp-bef48f129063.json');
-  const folderId = '16tCDFToRCpnwBLzwneOvX7iu8RH0Bn6n'
+  const pkey = JSON.parse(process.env.SERVICE_ACCOUNT_KEY);
+  const folderId = process.env.FOLDER_ID;
   async function authorize() {
       const auth = new google.auth.JWT(
           pkey.client_email,
