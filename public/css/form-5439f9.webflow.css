@@ -1956,7 +1956,7 @@ p {
   width: 100%;
   color: #fefefe;
   margin-bottom: 1rem;
-  line-height: 1.3em;
+  line-height: 1em;
 }
 
 .button {
@@ -2299,7 +2299,7 @@ p {
   }
 
   .is--second, .width-60percent {
-    font-size: .8em;
+    font-size: .6em;
   }
 
   .display-1 {
