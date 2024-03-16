@@ -258,6 +258,152 @@ p {
   display: flex;
 }
 
+
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  padding: 0;
+  list-style: none;
+  /* Ensure the tabs container does not move */
+  position: relative;
+  z-index: 2;
+}
+
+.tab {
+  background-color: white; /* Light grey background */
+  color: #333; /* Dark text for contrast */
+  border: 2px solid transparent; /* Transparent border, visible on hover/focus */
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tabDefault{
+  background-color: #DDEA90; /* Light grey background */
+  color: #333; /* Dark text for contrast */
+  border: 2px solid transparent; /* Transparent border, visible on hov er/focus */
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* Added auto margin for top and bottom to help center */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 450px; /* Maximum width */
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  /* Center the modal content inside the modal */
+  position: relative; /* Relative positioning */
+  top: 50%; /* Push down by half the window height */
+  transform: translateY(-50%); /* Pull back up by half its own height */
+  border-radius: 5px; /* Optional: just for aesthetics */
+}
+
+/* Dimmed background */
+.loading-backdrop {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  border: 4px solid rgba(0,0,0,.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-left-color: #ddea90;
+  animation: spin 1s ease infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.close-button {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.success {
+  background-color: #4CAF50; /* Green */
+}
+
+.error {
+  background-color: #f44336; /* Red */
+}
+
+.tab:hover {
+  background-color: #e0e0e0; /* Darker grey on hover */
+  border-color: #333; /* Dark border for contrast on hover */
+}
+
+.tab:active {
+  background-color: #007bff; /* Different color for the active tab */
+  color: #ffffff; /* White text color for better contrast on the active tab */
+  border-color: #007bff; /* Match border color with background */
+}
+
+.right_panel {
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1a22;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  display: flex;
+}
+
+
+
+
+
 .row {
   display: flex;
 }
@@ -1948,8 +2094,6 @@ p {
   border: 1px solid rgba(255, 255, 255, .08);
   border-radius: 8px;
   margin-bottom: 37px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .width-60percent {
@@ -2037,7 +2181,7 @@ p {
 }
 
 .form_block {
-  width: 400px;
+  width: 50%;
 }
 
 .form_error-message {
@@ -2347,6 +2491,10 @@ p {
   .lines {
     margin-top: -14px;
     position: relative;
+  }
+
+  .placeholderOption{
+    color:#999;
   }
 
   .line-top {
@@ -2695,9 +2843,7 @@ p {
     width: 82%;
   }
 
-  .form_block {
-    width: 540px;
-  }
+
 
   .form_section {
     height: auto;
@@ -3252,9 +3398,7 @@ p {
     line-height: 38px;
   }
 
-  .form_block {
-    width: 100%;
-  }
+
 
   .form_section {
     padding: 56px 40px;
