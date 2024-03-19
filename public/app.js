@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         } catch (error) {
             showModal('Error during data fetching: ' + error.message);
         }finally {
-            backdrop.style.display = 'block'; // Show the backdrop and spinner
+            backdrop.style.display = 'none'; // Show the backdrop and spinner
         }
     });
     
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
 
-    const modal = document.getElementById('modal');
+const modal = document.getElementById('modal');
 const span = document.getElementsByClassName('close-button')[0];
 const modalText = document.getElementById('modal-text');
 

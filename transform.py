@@ -4,9 +4,11 @@ from ast import literal_eval
 import re
 from datetime import datetime, timezone
 import json
+import argparse
+
 
 # Example transformation function
-def transform_AppleStoreData(input_file, output_file):
+def transform_AppStoreData(input_file, output_file):
 
 # Loading and Preprocessing the Dataset
     df = pd.read_csv('./AppStoreOutput.csv', delimiter=';', encoding='utf-8')
@@ -17,9 +19,6 @@ def transform_AppleStoreData(input_file, output_file):
     df['supports_iPhone'] = 0
     df['supports_iPad'] = 0
     df['supports_Mac'] = 0
-
-
-
 
 
     # Data Cleaning and Transformation
@@ -152,6 +151,8 @@ def transform_AppleStoreData(input_file, output_file):
 
     # Preview the DataFrame
     print(df.head())
+
+    pass
 
 def transform_GooglePlayData(input_file, output_file):
 
@@ -312,3 +313,19 @@ def transform_GooglePlayData(input_file, output_file):
 
     print(df.head())  # This will print the first 5 rows of the DataFrame after cleanup
 
+    pass
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Transform files based on the specified function.')
+    parser.add_argument('function_name', help='The name of the function to execute')
+    parser.add_argument('input_file', help='The path to the input file')
+    parser.add_argument('output_file', help='The path to the output file')
+
+    args = parser.parse_args()
+
+    # Call the appropriate function based on the argument
+    if args.function_name == 'transform_GooglePlayData':
+        transform_GooglePlayData(args.input_file, args.output_file)
+    elif args.function_name == 'transform_AppStoreData':
+        transform_AppStoreData(args.input_file, args.output_file)
+    # Add more elif statements for additional functions
