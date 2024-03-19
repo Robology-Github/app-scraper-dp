@@ -11,7 +11,7 @@ import argparse
 def transform_AppStoreData(input_file, output_file):
 
 # Loading and Preprocessing the Dataset
-    df = pd.read_csv('./AppStoreOutput.csv', delimiter=';', encoding='utf-8')
+    df = pd.read_csv('./AppStoreOutput.csv', delimiter=',', encoding='utf-8')
     df['released'] = pd.to_datetime(df['released'])
     df['updated'] = pd.to_datetime(df['updated'])
     df['score'] = pd.to_numeric(df['score'], errors='coerce')
@@ -147,7 +147,7 @@ def transform_AppStoreData(input_file, output_file):
     df.drop(columns_to_remove, axis=1, inplace=True, errors='ignore')
 
     # Save the modified DataFrame to a new CSV file
-    df.to_csv('AppStoreOutput_cleaned.csv', index=False, sep=';', encoding='utf-8')
+    df.to_csv('AppStoreOutput_cleaned.csv', index=False, sep=',', encoding='utf-8')
 
     # Preview the DataFrame
     print(df.head())
@@ -157,7 +157,7 @@ def transform_AppStoreData(input_file, output_file):
 def transform_GooglePlayData(input_file, output_file):
 
     # Load and transform data
-    df = pd.read_csv('./GooglePlayOutput.csv', delimiter=';', encoding='utf-8')
+    df = pd.read_csv('./GooglePlayOutput.csv', delimiter=',', encoding='utf-8')
     df['released'] = pd.to_datetime(df['released']).dt.tz_localize('UTC')
     df['updated'] = pd.to_datetime(df['updated'], unit='ms', utc=True)
 
@@ -309,7 +309,7 @@ def transform_GooglePlayData(input_file, output_file):
     df.drop(columns_to_remove, axis=1, inplace=True, errors='ignore')
     df['updated'] = df['updated'].dt.strftime('%Y-%m-%d')
     df['released'] = df['released'].dt.strftime('%Y-%m-%d')
-    df.to_csv('GooglePlayOutput_cleaned.csv', index=False, sep=';', encoding='utf-8')
+    df.to_csv('GooglePlayOutput_cleaned.csv', index=False, sep=',', encoding='utf-8')
 
     print(df.head())  # This will print the first 5 rows of the DataFrame after cleanup
 

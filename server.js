@@ -25,7 +25,7 @@ const bucketName = process.env.GCS_BUCKET_NAME;
 const folderPath = process.env.GCS_FOLDER_PATH;
 
 const parser = new Parser({
-  delimiter: ";",
+  delimiter: ",",
   quote: '"',
   escape: '"',
 });
