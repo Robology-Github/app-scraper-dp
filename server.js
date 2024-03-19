@@ -22,7 +22,7 @@ const bucketName = process.env.GCS_BUCKET_NAME;
 const folderPath = process.env.GCS_FOLDER_PATH;
 
 const parser = new Parser({
-  delimiter: ',',
+  delimiter: ';',
   quote: '"',
   escape: '"',
 });
@@ -30,6 +30,7 @@ const parser = new Parser({
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
+
 
 app.get('/search', async (req, res) => {
   const { term, num } = req.query;
@@ -82,9 +83,38 @@ async function collectionFetchAppDetails(collectionList, countryList, collection
       fullDetail: true,
     });
 
+
+  // Fetch reviews for each app in the App Store collection
+  const appStoreReviewsPromises = collectionResultsAppStore.map(app =>
+    fetchAppStoreReviews(app.appId).then(reviews => {
+      app.reviews = reviews; // Append reviews to the app object
+      return app;
+    }).catch(error => {
+      console.error(`Failed to fetch App Store reviews for ${app.appId}: ${error}`);
+      app.reviews = 'Failed to fetch reviews';
+      return app;
+    })
+  );
+
+  // Fetch reviews for each app in the Google Play collection
+  const googlePlayReviewsPromises = collectionResultsGooglePlay.map(app =>
+    fetchGooglePlayReviews(app.appId).then(reviews => {
+      app.reviews = reviews; // Append reviews to the app object
+      return app;
+    }).catch(error => {
+      console.error(`Failed to fetch Google Play reviews for ${app.appId}: ${error}`);
+      app.reviews = 'Failed to fetch reviews';
+      return app;
+    })
+  );
+
+  // Wait for all reviews to be fetched
+    const updatedCollectionResultsAppStore = await Promise.all(appStoreReviewsPromises);
+    const updatedCollectionResultsGooglePlay = await Promise.all(googlePlayReviewsPromises);
+
     
-    const csvAppStore = parser.parse(collectionResultsAppStore);
-    const csvGooglePlay = parser.parse(collectionResultsGooglePlay);
+    const csvAppStore = parser.parse(updatedCollectionResultsAppStore);
+    const csvGooglePlay = parser.parse(updatedCollectionResultsGooglePlay);
     
     
     const detailedAppsAppStoreJSON = collectionResultsAppStore.map(JSON.stringify).join('\n')
@@ -104,8 +134,8 @@ async function collectionFetchAppDetails(collectionList, countryList, collection
     console.log('Successfully wrote to CSV Appstore file');
     
     // Upload files to Google Cloud Storage
-   // await uploadFileToGCS('GooglePlayOutput.csv', bucketName, folderPath);
-    //await uploadFileToGCS('AppStoreOutput.csv', bucketName, folderPath);
+    await uploadFileToGCS('GooglePlayOutput.csv', bucketName, folderPath);
+    await uploadFileToGCS('AppStoreOutput.csv', bucketName, folderPath);
     
     return { collectionResultsAppStore, collectionResultsGooglePlay };
   } catch (error) {
@@ -113,6 +143,7 @@ async function collectionFetchAppDetails(collectionList, countryList, collection
     throw error;
   }
 }
+
 
 
 async function searchAndFetchAppDetails(searchTerm, numResults) {
@@ -126,16 +157,21 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
       term: searchTerm,
       num: numResults,
     });
-    const detailedAppsPromisesGooglePlay = searchResultsGooglePlay.map(app =>
-      googlePlay.app({ appId: app.appId })
-    );
-    
-    const detailedAppsPromisesAppStore = searchResultsAppStore.map(app =>
-      appStore.app({ appId: app.appId })
-    );
-    
-    const detailedAppsGooglePlay = await Promise.all(detailedAppsPromisesGooglePlay);
-    const detailedAppsAppStore = await Promise.all(detailedAppsPromisesAppStore);
+
+    // Fetch detailed app info and reviews for Google Play apps
+    const detailedAppsGooglePlay = await Promise.all(searchResultsGooglePlay.map(async app => {
+      const details = await googlePlay.app({ appId: app.appId });
+      const reviews = await fetchGooglePlayReviews(app.appId);
+      return { ...details, reviews }; // Include reviews in the app details
+    }));
+
+      // Fetch detailed app info and reviews for App Store apps
+      const detailedAppsAppStore = await Promise.all(searchResultsAppStore.map(async app => {
+        const details = await appStore.app({ appId: app.appId });
+        const reviews = await fetchAppStoreReviews(app.appId);
+        return { ...details, reviews }; // Include reviews in the app details
+      }));
+  
     
     const csvGooglePlay = parser.parse(detailedAppsGooglePlay);
     const csvAppStore = parser.parse(detailedAppsAppStore);
@@ -158,8 +194,8 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
     console.log('Successfully wrote to CSV Appstore file');
     
     // Upload files to Google Cloud Storage
-   // await uploadFileToGCS('GooglePlayOutput.csv', bucketName, folderPath);
-    //await uploadFileToGCS('AppStoreOutput.csv', bucketName, folderPath);
+    await uploadFileToGCS('GooglePlayOutput.csv', bucketName, folderPath);
+    await uploadFileToGCS('AppStoreOutput.csv', bucketName, folderPath);
     
     return { detailedAppsGooglePlay, detailedAppsAppStore };
   } catch (error) {
@@ -167,6 +203,29 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
     throw error;
   }
 }
+
+
+// Function to fetch Google Play app reviews
+async function fetchGooglePlayReviews(appId, numOfReviews = 200) {
+  const reviews = await googlePlay.reviews({
+    appId: appId,
+    num: numOfReviews,
+  });
+  // Concatenate review texts into a single string
+  return reviews.data.map(review => review.text).join(' | ');
+}
+
+// Function to fetch App Store reviews
+async function fetchAppStoreReviews(appId, numOfReviews = 200) {
+  const reviews = await appStore.reviews({
+    appId: appId,
+    num: numOfReviews,
+  });
+  // Concatenate review texts into a single string
+  return reviews.map(review => review.text).join(' | ');
+}
+
+
 
 
 // Function to upload files to GCS
