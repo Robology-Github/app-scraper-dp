@@ -20,6 +20,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN npm install
 
 
+
+
 # Run app.py when the container launches
 # Note: Replace "npm start" with your start command if different
 CMD ["npm", "start"]
