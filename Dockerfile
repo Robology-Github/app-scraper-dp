@@ -12,10 +12,6 @@ COPY . .
 RUN apt-get update && \
     apt-get install -y python3 python3-pip
 
-RUN wget https://www.openssl.org/source/openssl-3.2.1.tar.gz -O - | tar -xz
-WORKDIR /openssl-3.2.1
-RUN ./config --prefix=/usr/local/openssl --openssldir=/usr/local/openssl && make && make install
-
 
 
 # Install Python dependencies from requirements.txt
