@@ -7,24 +7,35 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . .
 
-# Install any needed packages specified in requirements.txt for Python
-# First, ensure python3 and pip are installed
+# Install dependencies required to compile OpenSSL
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip
+    apt-get install -y build-essential checkinstall zlib1g-dev wget
 
+# Download and compile OpenSSL from source
+RUN wget https://www.openssl.org/source/openssl-3.2.1.tar.gz \
+    && tar -xzvf openssl-3.2.1.tar.gz \
+    && cd openssl-3.2.1 \
+    && ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib \
+    && make \
+    && make test \
+    && make install
 
+# Configure the shared libraries and ensure the new OpenSSL binaries are in the PATH
+RUN echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl-3.2.1.conf \
+    && ldconfig -v \
+    && mv /usr/bin/openssl /usr/bin/openssl.backup \
+    && ln -s /usr/local/ssl/bin/openssl /usr/bin/openssl
+
+# Clean up the apt cache and temporary files
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /openssl-3.2.1.tar.gz /openssl-3.2.1
 
 # Install Python dependencies from requirements.txt
-# Note: Ensure you have a requirements.txt file in your project directory
+# Ensure you have a requirements.txt file in your project directory
 COPY requirements.txt /app/
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Install any needed packages specified in package.json for Node.js
 RUN npm install
 
-
-
-
-# Run app.py when the container launches
-# Note: Replace "npm start" with your start command if different
-CMD ["node", "--openssl-legacy-provider", "server.js"]
+# Run your application
+CMD ["npm", "start"]
