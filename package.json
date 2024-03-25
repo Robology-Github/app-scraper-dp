@@ -10,6 +10,10 @@
   "type": "module",
   "author": "",
   "license": "ISC",
+
+  "engines": {
+    "node": "21.7.1"
+   },
   "dependencies": {
     "@google-cloud/storage": "^7.8.0",
     "app-store-scraper": "^0.18.0",
