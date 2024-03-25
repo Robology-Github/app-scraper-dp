@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:21.7.1
+FROM node:latest
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -10,8 +10,12 @@ COPY . .
 # Install any needed packages specified in requirements.txt for Python
 # First, ensure python3 and pip are installed
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip && \
-    apt-get upgrade -y openssl 
+    apt-get install -y python3 python3-pip
+
+RUN wget https://www.openssl.org/source/openssl-3.2.1.tar.gz -O - | tar -xz
+WORKDIR /openssl-3.2.1
+RUN ./config --prefix=/usr/local/openssl --openssldir=/usr/local/openssl && make && make install
+
 
 
 # Install Python dependencies from requirements.txt
