@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14
+FROM node:21.7.1-alpine 
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -10,6 +10,9 @@ COPY . .
 # Install any needed packages specified in requirements.txt for Python
 # First, ensure python3 and pip are installed
 RUN apt-get update && apt-get install -y python3 python3-pip
+RUN apt-get upgrade -y openssl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies from requirements.txt
 # Note: Ensure you have a requirements.txt file in your project directory
