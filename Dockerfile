@@ -9,10 +9,10 @@ COPY . .
 
 # Install any needed packages specified in requirements.txt for Python
 # First, ensure python3 and pip are installed
-RUN apt-get update && apt-get install -y python3 python3-pip
-RUN apt-get upgrade -y openssl && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    apt-get upgrade -y openssl 
+
 
 # Install Python dependencies from requirements.txt
 # Note: Ensure you have a requirements.txt file in your project directory
