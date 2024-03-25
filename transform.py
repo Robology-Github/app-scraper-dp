@@ -19,7 +19,8 @@ def transform_AppStoreData(input_file, output_file):
     df['supports_iPhone'] = 0
     df['supports_iPad'] = 0
     df['supports_Mac'] = 0
-
+    df['days_since_last_update'] = (datetime.now(timezone.utc) - df['updated']).dt.days
+    df['app_age'] = (df['updated'] - df['released']).dt.days
 
     # Data Cleaning and Transformation
     def clean_review_text(text):
@@ -107,24 +108,22 @@ def transform_AppStoreData(input_file, output_file):
 
     ## Update frequency categorization
     def categorize_update_frequency(days_since_last_update):
-        categories = {
-            (days_since_last_update <= 30): 'Very Recent Updates',
-            (days_since_last_update <= 90): 'Recently Updated',
-            (days_since_last_update <= 180): 'Moderately Updated',
-            (days_since_last_update <= 365): 'Rarely Updated',
-            (days_since_last_update > 365): 'Stale'
-        }
-        return next(value for key, value in categories.items() if key)
+        if days_since_last_update <= 30:
+            return 'Very Recent Updates'
+        elif days_since_last_update <= 90:
+            return 'Recently Updated'
+        elif days_since_last_update <= 180:
+            return 'Moderately Updated'
+        elif days_since_last_update <= 365:
+            return 'Rarely Updated'
+        else:
+            return 'Stale'
 
 
-    #Calculations 
-    df['days_since_last_update'] = (datetime.now(timezone.utc) - df['updated']).dt.days
+
+
+
     df['update_frequency'] = df['days_since_last_update'].apply(categorize_update_frequency)
-    df['app_age'] = (df['updated'] - df['released']).dt.days
-
-
-
-
 
     ## Apply the categorization function to the 'price' column
     df['price_category'] = df['price'].apply(lambda price: categorize_price(price))
@@ -139,7 +138,7 @@ def transform_AppStoreData(input_file, output_file):
 
     # Final DataFrame Cleanup and Saving the Cleaned Data
     columns_to_remove = [
-        'id', 'appId', 'url', 'description', 'icon', 'genreIds', 'primaryGenreId',
+        'id', 'appId', 'description', 'icon', 'genreIds', 'primaryGenreId',
         'requiredOsVersion', 'releaseNotes', 'version', 'developerid', 'developerUrl',
         'developerWebsite', 'screenshots', 'ipadScreenshots', 'appletvScreenshots',
         'languages', 'genres', 'supportedDevices', 'currency', 'developerId', 'reviews', 'score', 
@@ -160,14 +159,14 @@ def transform_GooglePlayData(input_file, output_file):
     df = pd.read_csv('./GooglePlayOutput.csv', delimiter=',', encoding='utf-8')
     df['released'] = pd.to_datetime(df['released']).dt.tz_localize('UTC')
     df['updated'] = pd.to_datetime(df['updated'], unit='ms', utc=True)
+    df['days_since_last_update'] = (datetime.now(timezone.utc) - df['updated']).dt.days
 
     # Clean data
     df['contentRating'] = df['contentRating'].str.replace('Rated for', '', regex=False).str.strip()
     df['score'] = pd.to_numeric(df['score'], errors='coerce')
     df['free'] = df['free'].astype(int)
 
-    # Feature Engineering
-    ## Calculate Days Since Last Update
+    
 
     ## Install to rating ratio categorization
     def categorize_install_to_rating_ratio(ratio):
@@ -248,14 +247,18 @@ def transform_GooglePlayData(input_file, output_file):
 
     ## Update frequency categorization
     def categorize_update_frequency(days_since_last_update):
-        categories = {
-            (days_since_last_update <= 30): 'Very Recent Updates',
-            (days_since_last_update <= 90): 'Recently Updated',
-            (days_since_last_update <= 180): 'Moderately Updated',
-            (days_since_last_update <= 365): 'Rarely Updated',
-            (days_since_last_update > 365): 'Stale'
-        }
-        return next(value for key, value in categories.items() if key)
+        if days_since_last_update <= 30:
+            return 'Very Recent Updates'
+        elif days_since_last_update <= 90:
+            return 'Recently Updated'
+        elif days_since_last_update <= 180:
+            return 'Moderately Updated'
+        elif days_since_last_update <= 365:
+            return 'Rarely Updated'
+        else:
+            return 'Stale'
+
+
 
 
     ## Category parsing
@@ -282,16 +285,16 @@ def transform_GooglePlayData(input_file, output_file):
     histogram_columns.columns = ['1*', '2*', '3*', '4*', '5*']
     df = pd.concat([df, histogram_columns], axis=1)
 
-    ## Additional Calculations
-    df['install_to_rating'] = df['minInstalls'] / (df['ratings'] + 1e-10)
-    df['engagement_score'] = (df['score'] * df['ratings']) / df['minInstalls']
-    df['rating_ratio'] = (df['4*'] + df['5*']) / (df['1*'] + df['2*'])
-    df['days_since_last_update'] = (datetime.now(timezone.utc) - df['updated']).dt.days
-    df['app_age'] = (df['updated'] - df['released']).dt.days
-    df['update_frequency'] = df['days_since_last_update'].apply(categorize_update_frequency)
 
+
+    #Calculations 
+    df['app_age'] = (df['updated'] - df['released']).dt.days
+    df['rating_ratio'] = (df['4*'] + df['5*']) / (df['1*'] + df['2*'])
+    df['engagement_score'] = (df['score'] * df['ratings']) / df['minInstalls']
+    df['install_to_rating'] = df['minInstalls'] / (df['ratings'] + 1e-10)
 
     ## Categorizations
+    df['update_frequency'] = df['days_since_last_update'].apply(categorize_update_frequency)
     df['app_age_category'] = df['app_age'].apply(lambda days: categorize_app_age(days))
     df['rating_ratio_category'] = df['rating_ratio'].apply(lambda ratio: categorize_rating_ratio(ratio))
     percentiles = df['engagement_score'].quantile([0.25, 0.5, 0.75, 0.9]).to_dict()
@@ -303,7 +306,7 @@ def transform_GooglePlayData(input_file, output_file):
     columns_to_remove = [
         'description', 'descriptionHTML', 'summary', 'installs', 'maxInstalls', 'scoreText', 'reviews', 'histogram', 'currency', 'androidVersion', 'androidVersionText',
         'androidMaxVersion', 'previewVideo', 'developerId', 'developerEmail', 'developerWebsite', 'developerAddress', 'privacyPolicy', 'developerInternalID', 'genreId', 'icon', 'headerImage',
-        'screenshots', 'video', 'videoImage','contentRatingDescription','version', 'recentChanges', 'comments', 'appId', 'url', 'originalPrice', 'discountEndDate', 'categories',  'priceText',
+        'screenshots', 'video', 'videoImage','contentRatingDescription','version', 'recentChanges', 'comments', 'appId', 'originalPrice', 'discountEndDate', 'categories',  'priceText',
         '1*', '2*', '3*', '4*', '5*', 
     ]
     df.drop(columns_to_remove, axis=1, inplace=True, errors='ignore')
