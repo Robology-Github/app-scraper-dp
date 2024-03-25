@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // Google Cloud Storage configuration
 const storage = new Storage({
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+  credentials: JSON.parse(process.env.SERVICE_ACCOUNT_KEY)
 });
 const bucketName = process.env.GCS_BUCKET_NAME;
 const folderPath = process.env.GCS_FOLDER_PATH;
@@ -77,6 +77,7 @@ async function collectionFetchAppDetails(
   const collectionIOS = collectionList + "_IOS";
   try {
     const collectionResultsAppStore = await appStore.list({
+      
       collection: appStore.collection.collectionIOS,
       country: countryList,
       num: collectionNumResults,
@@ -361,7 +362,7 @@ async function uploadFileToGCS(fileName, bucketName, folderPath) {
 // Function that returns a promise which resolves when the Python script is done
 function executePythonScript(functionName, inputFilePath, outputFilePath) {
   return new Promise((resolve, reject) => {
-    const pythonProcess = spawn("/opt/anaconda3/bin/python", [
+    const pythonProcess = spawn(process.env.PYTHON_PATH, [
       "transform.py",
       functionName,
       inputFilePath,
