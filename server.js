@@ -11,8 +11,7 @@ import { spawn } from "child_process";
 
 dotenv.config();
 
-const base64EncodedServiceAccount = process.env.BASE64_ENCODED_SERVICE_ACCOUNT;
-const decodedServiceAccount = Buffer.from(base64EncodedServiceAccount, 'base64').toString('utf-8');
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,7 +21,7 @@ app.use(bodyParser.json());
 
 // Google Cloud Storage configuration
 const storage = new Storage({
-  credentials: JSON.parse(SERVICE_ACCOUNT_KEY)
+  credentials: JSON.parse(process.env.SERVICE_ACCOUNT_KEY)
 });
 const bucketName = process.env.GCS_BUCKET_NAME;
 const folderPath = process.env.GCS_FOLDER_PATH;
