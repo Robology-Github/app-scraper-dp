@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // Google Cloud Storage configuration
 const storage = new Storage({
-  credentials: JSON.parse(process.env.SERVICE_ACCOUNT_KEY)
+  credentials: JSON.parse(process.env.SERVICE_ACCOUNT_KEY.replace(/\\n/gm, "\n"))
 });
 const bucketName = process.env.GCS_BUCKET_NAME;
 const folderPath = process.env.GCS_FOLDER_PATH;
