@@ -362,7 +362,7 @@ async function uploadFileToGCS(fileName, bucketName, folderPath) {
 // Function that returns a promise which resolves when the Python script is done
 function executePythonScript(functionName, inputFilePath, outputFilePath) {
   return new Promise((resolve, reject) => {
-    const pythonProcess = spawn(process.env.PYTHON_PATH, [
+    const pythonProcess = spawn(process.env.PYTHON_PATH || 'python3', [
       "transform.py",
       functionName,
       inputFilePath,
