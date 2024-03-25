@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:latest
+FROM node:21.7.1
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -27,4 +27,4 @@ RUN npm install
 
 # Run app.py when the container launches
 # Note: Replace "npm start" with your start command if different
-CMD ["npm", "start"]
+CMD ["node", "--openssl-legacy-provider", "server.js"]
