@@ -1,19 +1,25 @@
-# Start from a base image that includes Node.js
+# Use an official Node.js runtime as a parent image
 FROM node:14
 
-# Install Python 3
+# Set the working directory in the container to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . .
+
+# Install any needed packages specified in requirements.txt for Python
+# First, ensure python3 and pip are installed
 RUN apt-get update && apt-get install -y python3 python3-pip
 
-# Install Python libraries
-RUN pip3 install pandas textblob re json argparse
+# Install Python dependencies from requirements.txt
+# Note: Ensure you have a requirements.txt file in your project directory
+COPY requirements.txt /app/
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-# Copy your application code (both Node.js and Python scripts)
-WORKDIR /app
-COPY . /app
-
-# Install your Node.js dependencies
+# Install any needed packages specified in package.json for Node.js
 RUN npm install
 
-# Your app's start command
-CMD ["npm", "start"]
 
+# Run app.py when the container launches
+# Note: Replace "npm start" with your start command if different
+CMD ["npm", "start"]
