@@ -45,6 +45,7 @@
         <div class="divider"></div>
         <div class="information_footer-links">
           <a href="https://github.com/Robology-Github/app-scraper-dp" target="_blank" class="link-2">Github link</a>
+          <a href="https://lookerstudio.google.com/reporting/7f569003-3a74-419c-b2f2-ec0ff39f5761" target="_blank" class="link-2">Dashboard link</a>
         </div>
       </div>
     </div>
@@ -52,7 +53,7 @@
    
     <div class="right_panel">
       <div class="nav-tabs">
-        <button class="tab" onclick="switchForm(1)">Scrape by keyword</button>
+        <button class="tab" id="tab-keyword" onclick="switchForm(1)">Scrape by keyword</button>
         <button class="tab" onclick="switchForm(2)">Scrape by collection</button>
       </div>
       <div id="notification-placeholder"></div>
@@ -236,11 +237,12 @@
     $('.slider-item').matchHeight();
   });
 </script>
-<script src="app.js"></script>
+
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>
     <p id="modal-text"></p>
+    <a href="https://lookerstudio.google.com/reporting/7f569003-3a74-419c-b2f2-ec0ff39f5761" id="dashboard-link" class="button mg-top-36px w-button">Go to Dashboard →</a>
   </div>
 </div>
 <div id="loading-backdrop" class="loading-backdrop">
@@ -248,7 +250,7 @@
 </div>
 
 
-
+<script src="app.js"></script>
 
 </body>
 

@@ -280,11 +280,12 @@ p {
   font-size: 16px;
   margin: 0 5px;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 6px;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-.tabDefault{
+
+#tab-keyword{
   background-color: #DDEA90; /* Light grey background */
   color: #333; /* Dark text for contrast */
   border: 2px solid transparent; /* Transparent border, visible on hov er/focus */
@@ -293,36 +294,43 @@ p {
   font-size: 16px;
   margin: 0 5px;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 6px;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 99; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  border: 1px solid rgba(255, 255, 255, .08);
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #212129; /* Dark background */
   margin: auto; /* Added auto margin for top and bottom to help center */
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  max-width: 450px; /* Maximum width */
+  width: 50%; /* Could be more or less, depending on screen size */
   box-shadow: 0 4px 6px rgba(0,0,0,.1);
   /* Center the modal content inside the modal */
   position: relative; /* Relative positioning */
   top: 50%; /* Push down by half the window height */
   transform: translateY(-50%); /* Pull back up by half its own height */
   border-radius: 5px; /* Optional: just for aesthetics */
+  text-align: center; /* Center text */
+  color:#fefefe;
+}
+
+.modal-text {
+  color: #fefefe;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
 /* Dimmed background */
@@ -357,7 +365,7 @@ p {
 }
 
 .close-button {
-  color: black;
+  color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -1696,6 +1704,8 @@ p {
   display: grid;
 }
 
+
+
 .gallery-sticky {
   flex-direction: column;
   justify-content: flex-start;
@@ -2222,6 +2232,7 @@ p {
 .link-2 {
   color: #fff;
   text-decoration: underline;
+  margin-right: 8px;
 }
 
 .logo-span {

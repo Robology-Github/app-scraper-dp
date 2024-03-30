@@ -1,3 +1,4 @@
+// Description: This file contains the server-side code for the app. It uses the Express.js framework to create a server that listens for requests on port 3000. The server has two routes: /search and /collection. The /search route fetches app details for a search term from the App Store and Google Play, while the /collection route fetches app details for a collection of apps from the App Store and Google Play. The app details include app metadata and reviews. The server also uploads the app details to Google Cloud Storage and runs Python scripts to transform the data before uploading it.
 import express from "express";
 import bodyParser from "body-parser";
 import googlePlay from "google-play-scraper";
@@ -11,6 +12,7 @@ import { spawn } from "child_process";
 
 dotenv.config();
 
+// Google Cloud Storage credentials
 const credentials = {
   type: process.env.TYPE,
   project_id: process.env.PROJECT_ID,
@@ -24,7 +26,7 @@ const credentials = {
   client_x509_cert_url: process.env.CLIENT_X509_CERT_URL,
 };
 
-
+// Create an Express app
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.static("public"));
@@ -33,21 +35,24 @@ app.use(bodyParser.json());
 
 // Google Cloud Storage configuration
 const storage = new Storage({
-  credentials,
+  credentials
 });
 const bucketName = process.env.GCS_BUCKET_NAME;
 const folderPath = process.env.GCS_FOLDER_PATH;
 
+// CSV parser configuration
 const parser = new Parser({
   delimiter: ",",
   quote: '"',
   escape: '"',
 });
 
+// Start the server
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
+// Routes
 app.get("/search", async (req, res) => {
   const { term, num } = req.query;
 
@@ -83,6 +88,7 @@ app.get("/collection", async (req, res) => {
   }
 });
 
+// Function to fetch app details for a collection of apps
 async function collectionFetchAppDetails(
   collectionList,
   countryList,
@@ -182,6 +188,7 @@ async function collectionFetchAppDetails(
             console.log(
               "GooglePlayOutput_cleaned.csv successfully uploaded to GCS"
             )
+          
           )
           .catch((error) =>
             console.error(
@@ -317,6 +324,7 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
             console.log(
               "AppStoreOutput_cleaned.csv successfully uploaded to GCS"
             )
+           
           )
           .catch((error) =>
             console.error("Failed to upload AppStoreOutput_cleaned.csv:", error)
