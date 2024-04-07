@@ -342,6 +342,8 @@ def transform_AppStoreData(input_file, output_file):
 
 def transform_GooglePlayData(input_file, output_file):
 
+
+
     # Load and transform data
     df = pd.read_csv('./GooglePlayOutput.csv', delimiter=',', encoding='utf-8')
     df['released'] = pd.to_datetime(df['released']).dt.tz_localize('UTC')
