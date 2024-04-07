@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 import { Storage } from "@google-cloud/storage";
 import path from "path";
 import { spawn } from "child_process";
+import { count } from "console";
 
 dotenv.config();
 
@@ -54,14 +55,14 @@ app.listen(port, () => {
 
 // Routes
 app.get("/search", async (req, res) => {
-  const { term, num } = req.query;
+  const { term, country, num } = req.query;
 
-  if (!term || !num) {
+  if (!term || !country || !num) {
     return res.status(400).send("Missing term or num parameter");
   }
 
   try {
-    const results = await searchAndFetchAppDetails(term, num);
+    const results = await searchAndFetchAppDetails(term, country, num);
     res.json(results);
   } catch (error) {
     console.error(error);
@@ -112,7 +113,7 @@ async function collectionFetchAppDetails(
 
     // Fetch reviews for each app in the App Store collection
     const appStoreReviewsPromises = collectionResultsAppStore.map((app) =>
-      fetchAppStoreReviews(app.appId)
+      fetchAppStoreReviews(app.appId,countryList)
         .then((reviews) => {
           app.reviews = reviews; // Append reviews to the app object
           return app;
@@ -128,7 +129,7 @@ async function collectionFetchAppDetails(
 
     // Fetch reviews for each app in the Google Play collection
     const googlePlayReviewsPromises = collectionResultsGooglePlay.map((app) =>
-      fetchGooglePlayReviews(app.appId)
+      fetchGooglePlayReviews(app.appId,countryList)
         .then((reviews) => {
           app.reviews = reviews; // Append reviews to the app object
           return app;
@@ -153,24 +154,8 @@ async function collectionFetchAppDetails(
     const csvAppStore = parser.parse(updatedCollectionResultsAppStore);
     const csvGooglePlay = parser.parse(updatedCollectionResultsGooglePlay);
 
-    const detailedAppsAppStoreJSON = collectionResultsAppStore
-      .map(JSON.stringify)
-      .join("\n");
-    const detailedAppsGooglePlayJSON = collectionResultsGooglePlay
-      .map(JSON.stringify)
-      .join("\n");
-
-    await fsPromises.writeFile(
-      "GooglePlayOutput.json",
-      detailedAppsGooglePlayJSON
-    );
-    console.log("Successfully wrote to JSON Google Play file");
-
     await fsPromises.writeFile("GooglePlayOutput.csv", csvGooglePlay);
     console.log("Successfully wrote to CSV Google Play file");
-
-    await fsPromises.writeFile("AppStoreOutput.json", detailedAppsAppStoreJSON);
-    console.log("Successfully wrote to JSON Appstore file");
 
     await fsPromises.writeFile("AppStoreOutput.csv", csvAppStore);
     console.log("Successfully wrote to CSV Appstore file");
@@ -196,6 +181,19 @@ async function collectionFetchAppDetails(
               error
             )
           );
+          uploadFileToGCS("GooglePlay_Categories.csv", bucketName, folderPath)
+          .then(() =>
+            console.log(
+              "GooglePlay_Categories successfully uploaded to GCS"
+            )
+          )
+          .catch((error) =>
+            console.error(
+              "Failed to upload GooglePlay_Categories:",
+              error
+            )
+            
+          );
       })
       .catch((error) => {
         console.error("Failed to execute Python script:", error);
@@ -218,6 +216,26 @@ async function collectionFetchAppDetails(
           .catch((error) =>
             console.error("Failed to upload AppStoreOutput_cleaned.csv:", error)
           );
+
+          uploadFileToGCS("AppStore_Genres.csv", bucketName, folderPath)
+          .then(() =>
+            console.log(
+              "AppStore_Genres.csv successfully uploaded to GCS"
+            )
+          )
+          .catch((error) =>
+            console.error("Failed to upload AppStore_Genres.csv:", error)
+          );
+
+          uploadFileToGCS("AppStore_Languages.csv", bucketName, folderPath)
+          .then(() =>
+            console.log(
+              "AppStore_Languages.csv successfully uploaded to GCS"
+            )
+          )
+          .catch((error) =>
+            console.error("Failed to upload AppStore_Languages.csv:", error)
+          );
       })
       .catch((error) => {
         console.error("Failed to execute Python script:", error);
@@ -230,23 +248,25 @@ async function collectionFetchAppDetails(
   }
 }
 
-async function searchAndFetchAppDetails(searchTerm, numResults) {
+async function searchAndFetchAppDetails(searchTerm, countryList, numResults) {
   try {
     const searchResultsGooglePlay = await googlePlay.search({
       term: searchTerm,
+      country: countryList,
       num: numResults,
     });
 
     const searchResultsAppStore = await appStore.search({
       term: searchTerm,
+      country: countryList,
       num: numResults,
     });
 
     // Fetch detailed app info and reviews for Google Play apps
     const detailedAppsGooglePlay = await Promise.all(
       searchResultsGooglePlay.map(async (app) => {
-        const details = await googlePlay.app({ appId: app.appId });
-        const reviews = await fetchGooglePlayReviews(app.appId);
+        const details = await googlePlay.app({ appId: app.appId, country: countryList});
+        const reviews = await fetchGooglePlayReviews(app.appId, countryList);
         return { ...details, reviews }; // Include reviews in the app details
       })
     );
@@ -254,8 +274,8 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
     // Fetch detailed app info and reviews for App Store apps
     const detailedAppsAppStore = await Promise.all(
       searchResultsAppStore.map(async (app) => {
-        const details = await appStore.app({ appId: app.appId });
-        const reviews = await fetchAppStoreReviews(app.appId);
+        const details = await appStore.app({ appId: app.appId, country: countryList});
+        const reviews = await fetchAppStoreReviews(app.appId, countryList);
         return { ...details, reviews }; // Include reviews in the app details
       })
     );
@@ -263,25 +283,10 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
     const csvGooglePlay = parser.parse(detailedAppsGooglePlay);
     const csvAppStore = parser.parse(detailedAppsAppStore);
 
-    const detailedAppsGooglePlayJSON = detailedAppsGooglePlay
-      .map(JSON.stringify)
-      .join("\n");
-    const detailedAppsAppStoreJSON = detailedAppsAppStore
-      .map(JSON.stringify)
-      .join("\n");
-
-    await fsPromises.writeFile(
-      "GooglePlayOutput.json",
-      detailedAppsGooglePlayJSON
-    );
-
-    console.log("Successfully wrote to JSON Google Play file");
 
     await fsPromises.writeFile("AppStoreOutput.csv", csvAppStore);
     console.log("Successfully wrote to CSV Appstore file");
 
-    await fsPromises.writeFile("AppStoreOutput.json", detailedAppsAppStoreJSON);
-    console.log("Successfully wrote to JSON Appstore file");
 
     await fsPromises.writeFile("GooglePlayOutput.csv", csvGooglePlay);
     console.log("Successfully wrote to CSV Google Play file");
@@ -305,7 +310,23 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
               "Failed to upload GooglePlayOutput_cleaned.csv:",
               error
             )
+            
           );
+          uploadFileToGCS("GooglePlay_Categories.csv", bucketName, folderPath)
+          .then(() =>
+            console.log(
+              "GooglePlay_Categories successfully uploaded to GCS"
+            )
+          )
+          .catch((error) =>
+            console.error(
+              "Failed to upload GooglePlay_Categories:",
+              error
+            )
+            
+          );
+
+          
       })
       .catch((error) => {
         console.error("Failed to execute Python script:", error);
@@ -329,6 +350,27 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
           .catch((error) =>
             console.error("Failed to upload AppStoreOutput_cleaned.csv:", error)
           );
+
+
+          uploadFileToGCS("AppStore_Genres.csv", bucketName, folderPath)
+          .then(() =>
+            console.log(
+              "AppStore_Genres.csv successfully uploaded to GCS"
+            )
+          )
+          .catch((error) =>
+            console.error("Failed to upload AppStore_Genres.csv:", error)
+          );
+
+          uploadFileToGCS("AppStore_Languages.csv", bucketName, folderPath)
+          .then(() =>
+            console.log(
+              "AppStore_Languages.csv successfully uploaded to GCS"
+            )
+          )
+          .catch((error) =>
+            console.error("Failed to upload AppStore_Languages.csv:", error)
+          );
       })
       .catch((error) => {
         console.error("Failed to execute Python script:", error);
@@ -342,20 +384,22 @@ async function searchAndFetchAppDetails(searchTerm, numResults) {
 }
 
 // Function to fetch Google Play app reviews
-async function fetchGooglePlayReviews(appId, numOfReviews = 200) {
+async function fetchGooglePlayReviews(appId, countryList, numOfReviews = 200) {
   const reviews = await googlePlay.reviews({
     appId: appId,
     num: numOfReviews,
+    country: countryList,
   });
   // Concatenate review texts into a single string
   return reviews.data.map((review) => review.text).join(" | ");
 }
 
 // Function to fetch App Store reviews
-async function fetchAppStoreReviews(appId, numOfReviews = 200) {
+async function fetchAppStoreReviews(appId, countryList, numOfReviews = 200 ) {
   const reviews = await appStore.reviews({
     appId: appId,
     num: numOfReviews,
+    country: countryList,
   });
   // Concatenate review texts into a single string
   return reviews.map((review) => review.text).join(" | ");

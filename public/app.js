@@ -39,11 +39,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
       backdrop.style.display = "block"; // Show the backdrop and spinner
       const searchTerm = document.getElementById("searchTerm").value;
       const numResults = document.getElementById("numResults").value;
+      const country = document.getElementById("searchCountryList").value;
       try {
         const response = await fetch(
           `/search?term=${encodeURIComponent(
             searchTerm
-          )}&num=${encodeURIComponent(numResults)}`
+          )}&num=${encodeURIComponent(numResults)}
+          &country=${encodeURIComponent(country)}`
         );
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();

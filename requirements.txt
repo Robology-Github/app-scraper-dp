@@ -1,3 +1,4 @@
 pandas
 textblob
+iso639
 # Any other libraries you need
