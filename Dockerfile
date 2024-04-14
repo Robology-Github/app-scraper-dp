@@ -36,7 +36,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Run TextBlob's download script
 RUN python -m textblob.download_corpora lite
-RUN sudo apt-get install python-numpy libicu-dev
+RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
 # Install any needed packages specified in package.json for Node.js
 RUN npm install
 
