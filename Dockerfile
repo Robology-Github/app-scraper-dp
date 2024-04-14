@@ -34,6 +34,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /openssl-3.2.1.tar.gz /openssl-
 COPY requirements.txt /app/
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+# Run TextBlob's download script
+RUN python -m textblob.download_corpora lite
+RUN sudo apt-get install python-numpy libicu-dev
 # Install any needed packages specified in package.json for Node.js
 RUN npm install
 

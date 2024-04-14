@@ -1,201 +1,101 @@
 appId,categories
-com.zzkko,Shopping
+cz.burda.eventmobile.dnymarianne,Shopping
 com.einnovation.temu,Shopping
-com.instagram.android,Social
-org.telegram.messenger,Communication
+pl.allegro,Shopping
+cz.o2.tv,Entertainment
+cz.gov.edoklady,Tools
 com.whatsapp,Communication
-com.zhiliaoapp.musically,Social
-com.lidl.eci.lidlplus,Shopping
-com.alibaba.aliexpresshd,Shopping
-com.instagram.barcelona,Social
-com.google.android.apps.walletnfcrel,Finance
-com.lemon.lvoverseas,Video Players & Editors
-com.paypal.android.p2pmobile,Finance
-com.gamma.scan,Tools
-com.snapchat.android,Communication
-com.starfinanz.mobile.android.pushtan,Finance
-com.openai.chatgpt,Productivity
-com.starfinanz.smob.android.sfinanzstatus,Finance
-com.duolingo,Education
-com.sec.android.easyMover,Tools
-de.dhl.paket,Productivity
-com.point4more.ios.tak.user.prod,Lifestyle
-de.hafas.android.db,Travel & Local
-com.ebay.kleinanzeigen,Shopping
-com.facebook.orca,Communication
-de.rewe.app.mobile,Food & Drink
-com.whatsapp.w4b,Communication
-com.facebook.katana,Social
-vpn.dolphin.free,Tools
-com.canva.editor,Art & Design
-fr.doctolib.www,Medical
-de.check24.check24,Finance
-io.gonative.android.pmqloj,Finance
-app.phantom,Finance
-com.kaufland.Kaufland,Shopping
-com.google.android.apps.translate,Tools
-com.myklarnamobile,Shopping
-de.prosiebensat1digital.seventv,Entertainment
-com.pinterest,Lifestyle
-com.disney.disneyplus,Entertainment
-com.action.consumerapp,Shopping
-com.teacapps.barcodescanner,Productivity
-de.rossmann.app.android,Lifestyle
-com.governikus.ausweisapp2,Libraries & Demo
-com.app.tgtg,Food & Drink
-com.amazon.mShop.android.shopping,Shopping
-de.komoot.android,Health & Fitness
-com.apple.movetoios,Tools
-com.google.android.apps.authenticator2,Tools
-com.discord,Communication
-com.amazon.avod.thirdpartyclient,Entertainment
-com.bonial.kaufda,Shopping
-com.booking,Travel & Local
-com.azure.authenticator,Business
-de.dm.meindm.android,Shopping
-com.facebook.lite,Social
-de.edeka.genuss,Food & Drink
-de.cellular.ottohybrid,Shopping
-de.traderepublic.app,Finance
-com.netflix.mediaclient,Entertainment
-com.ezt.pdfreader.pdfviewer,Productivity
-de.payback.client.android,Shopping
-com.ebay.mobile,Shopping
-de.penny.app,Food & Drink
-com.entersekt.authapp.sparkasse,Finance
-net.easypark.android,Travel & Local
-de.zalando.mobile,Shopping
-de.exaring.waipu,Entertainment
-com.ingka.ikea.app,Shopping
-com.twitter.android,Social
-com.spotify.music,Music & Audio
-com.valuephone.vpnetto,Shopping
-trendyol.com,Shopping
-de.mcdonalds.mcdonaldsinfoapp,Lifestyle
-com.adobe.reader,Productivity
-musicplayer.playmusic.audioplayer,Music & Audio
-videoplayer.videodownloader.downloader,Tools
-de.sky.online,Entertainment
-com.alibaba.intl.android.apps.poseidon,Shopping
-com.hm.goe,Lifestyle
-com.microsoft.teams,Business
-de.telekom.android.customercenter,Communication
-de.aoksystems.amg,Health & Fitness
-com.airbnb.android,Travel & Local
-com.google.android.apps.youtube.kids,Entertainment
-de.deutschepost.postident,Finance
-com.wetter.androidclient,Weather
-org.thoughtcrime.securesms,Communication
-de.congstar.meincongstar,Tools
-com.autoscout24,Auto & Vehicles
-files.transferany,Tools
-com.ubercab,Maps & Navigation
-com.appsky.android.bloodpressure,Health & Fitness
-com.plantparentai.app,Lifestyle
-com.joom,Shopping
-com.codespaceapps.aichat,Productivity
-cn.danatech.xingseus,Education
-de.rtli.tvnow,Entertainment
-de.aboutyou.mobile.app,Shopping
-de.mobile.android.app,Auto & Vehicles
-org.mozilla.firefox,Communication
-tv.twitch.android.app,Entertainment
-com.shazam.android,Music & Audio
-com.appswing.qr.barcodescanner.barcodereader,Productivity
-fr.vinted,Shopping
-de.deutschlandcard.app,Lifestyle
-com.yopeso.lieferando,Food & Drink
-com.lenovo.anyshare.gps,Tools
-us.zoom.videomeetings,Business
-com.opera.browser,Communication
-com.plusmusic.downloader22.musicdownloader,Music & Audio
-com.zhiliao.musically.livewallpaper,Tools
-com.s_payment.mobiles_bezahlen,Finance
-sg.bigo.live,Social
-de.fiduciagad.banking.vr,Finance
-com.getyourguide.android,Travel & Local
-com.airhorn.funny.prank.sounds,Entertainment
-com.google.ar.lens,Tools
-com.camerasideas.instashot,Photography
-de.fiduciagad.securego.vr,Finance
-de.zasta.app,Finance
-com.trustedapp.qrcodebarcode,Productivity
-com.deepl.mobiletranslator,Books & Reference
-pdf.pdfreader.viewer.editor.free,Productivity
-de.blitzer,Maps & Navigation
-tv.pluto.android,Entertainment
-com.amazon.mp3,Music & Audio
-com.appseleration.android.selfcare,Tools
-com.bpfit.bloodpressure.health,Health & Fitness
-com.babbel.mobile.android.en,Education
-de.idealo.android,Shopping
-de.obi.app,Shopping
-de.taxfix,Finance
-de.rewards.app,Finance
-com.nect.app.prod,Productivity
-com.audible.application,Books & Reference
-com.scannerreader.qrcode.creatorfree,Tools
-de.poco.shopping,Shopping
-com.lppsa.app.reserved,Shopping
-com.indeed.android.jobsearch,Business
-com.picsart.studio,Photography
-com.bitburger.mobile,Lifestyle
-com.google.earth,Travel & Local
-com.picnic.android,Shopping
-com.lutech.phonefinder,Personalization
-de.is24.android,Travel & Local
-com.wolt.android,Food & Drink
-com.floraincognita.app.floraincognita,Education
-de.toggo,Entertainment
-canvasm.myo2,Productivity
-com.revolut.revolut,Finance
-com.cbs.ca,Entertainment
-com.sodexo.cwc.ro,Food & Drink
-com.fast.free.unblock.secure.vpn,Tools
-com.bumble.app,Dating
-com.microsoft.emmx,Communication
+cz.zasilkovna.app,Business
+cz.kb.ndb,Finance
+com.mearsure.heartratepro.manage,Health & Fitness
+cz.sazka.retail,Entertainment
+com.zzkko,Shopping
+com.instagram.android,Social
 ee.mtakso.client,Maps & Navigation
-de.meinprospekt.android,Shopping
-de.momox,Shopping
-com.zdf.android.mediathek,Entertainment
-com.daily.forecast.weather.radar,Weather
-com.soundcloud.android,Music & Audio
-de.manvpn.app,Tools
-de.swr.avp.ard,Entertainment
-com.hp.printercontrol,Productivity
-de.empfohlen,Finance
-com.yc.gloryfit,Health & Fitness
-com.google.android.apps.adm,Tools
-com.yazio.android,Health & Fitness
-de.eplus.mappecc.client.android.alditalk,Communication
-com.reddit.frontpage,Social
-com.fressnapf.mobileapp,Shopping
-com.amazon.dee.app,Lifestyle
-jbl.stc.com,Music & Audio
-shop.shop_apotheke.com.shopapotheke,Medical
-com.aigc.ushow.ichat,Social
-com.bigwinepot.nwdn.international,Photography
-com.antivirus,Tools
-video.like,Social
-com.google.android.apps.chromecast.app,Lifestyle
-de.tchibo.app,Shopping
-com.feraset.dub,Video Players & Editors
-de.wetteronline.wetterapp,Weather
-de.nebenan.app,Social
-com.v2ray.ang,Communication
-de.elster.elstersecure.app,Finance
-com.mistplay.mistplay,Entertainment
-com.marsvard.stickermakerforwhatsapp,Tools
-de.telekom.magentatv.mobile,Entertainment
-com.adobe.lrmobile,Photography
-com.nordvpn.android,Tools
-com.instabridge.android,Productivity
-de.zalando.lounge,Shopping
-com.ooono.app,Tools
-com.lightricks.facetune.free,Photography
-com.tinder,Dating
-screen.mirroring.smart.tv,Tools
-com.bosch.ebike.onebikeapp,Health & Fitness
-de.deutschlandticket.app,Travel & Local
-com.media.markt,Shopping
-com.bonifynative,Finance
+com.lidl.eci.lidlplus,Shopping
+de.dm.meindm.android,Shopping
+cz.albert.app,Shopping
+com.facebook.orca,Communication
+cz.seznam.mapy,Maps & Navigation
+com.zhiliaoapp.musically,Social
+cz.penny.app,Shopping
+cz.tesco.clubcard,Shopping
+com.gamma.scan,Tools
+com.instagram.barcelona,Social
+cz.o2.moje,Productivity
+cz.ppl.mojeppl,Business
+trendyol.com,Shopping
+com.facebook.katana,Social
+com.lemon.lvoverseas,Video Players & Editors
+com.lppsa.app.reserved,Shopping
+com.google.android.apps.walletnfcrel,Finance
+cz.csas.georgego,Finance
+com.duolingo,Education
+com.kaufland.Kaufland,Shopping
+com.sec.android.easyMover,Tools
+at.billa.international.czech,Shopping
+com.spotify.music,Music & Audio
+com.openai.chatgpt,Productivity
+cz.tmobile.oneapp,Tools
+com.snapchat.android,Communication
+com.wetter.androidclient,Weather
+com.plantparentai.app,Lifestyle
+de.aboutyou.mobile.app,Shopping
+com.waze,Maps & Navigation
+com.google.android.apps.translate,Tools
+cz.csob.smart,Finance
+com.wolt.android,Food & Drink
+com.azure.authenticator,Business
+com.lppsa.app.sinsay,Shopping
+org.telegram.messenger,Communication
+com.tools.remotetv2.airemote,Tools
+com.revolut.revolut,Finance
+de.nextbike,Travel & Local
+eu.livesport.FlashScore_com,Sports
+com.pinterest,Lifestyle
+cz.rb.app.smartphonebanking,Finance
+com.lunadio.nesnezeno,Food & Drink
+de.zalando.mobile,Shopping
+com.teacapps.barcodescanner,Productivity
+cz.airbank.android,Finance
+net.cme.voyo.cz,Entertainment
+cz.csob.smartklic,Finance
+cz.alza.eshop,Shopping
+cz.mafra.jizdnirady,Maps & Navigation
+cz.ceskaposta.balikovna,Shopping
+cz.seznam.sbrowser,Communication
+org.plantnet,Education
+cz.molcesko.move,Shopping
+cz.pbktechnology.partners.client,Finance
+cz.cez.cpr.mc,Tools
+musicplayer.playmusic.audioplayer,Music & Audio
+com.apple.movetoios,Tools
+com.facebook.lite,Social
+to.prehraj.app,Tools
+cz.ulikeit.damejidlo,Food & Drink
+com.shazam.android,Music & Audio
+com.action.consumerapp,Shopping
+com.tenten.app,Social
+com.fitifyworkouts.bodyweight.workoutapp,Health & Fitness
+com.mcdonalds.mobileapp,Food & Drink
+cz.psc.android.kaloricketabulky,Health & Fitness
+com.xiaomi.wearable,Health & Fitness
+com.netflix.mediaclient,Entertainment
+com.owlab.speakly,Education
+com.amazon.avod.thirdpartyclient,Entertainment
+com.vzpcr.cdeskmobile,Medical
+bloodpressure.bloodpressureapp.bloodpressuretracker,Health & Fitness
+cz.investown,Finance
+com.disney.disneyplus,Entertainment
+com.cocacola.app.cee,Lifestyle
+com.pragonauts.notino,Shopping
+com.discord,Communication
+cz.rb.app.mtoken,Finance
+cz.etnetera.mobile.rossmann,Shopping
+de.stocard.stocard,Shopping
+pedometer.steptracker.calorieburner.stepcounter,Health & Fitness
+cz.seznam.email,Communication
+cz.cd.mujvlak.an,Maps & Navigation
+cz.mojedatovaschranka.mobilniklic,Productivity
+cz.wedo.receiverapp,Events
+com.booking,Travel & Local

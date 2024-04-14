@@ -1,4 +1,10 @@
 pandas
 textblob
 iso-639
+langdetect
+transformers
+torch
+torchvision
+nltk
+tf-keras
 # Any other libraries you need

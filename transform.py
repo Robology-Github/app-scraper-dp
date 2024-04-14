@@ -6,10 +6,18 @@ from datetime import datetime, timezone
 import json
 import argparse
 from iso639 import languages
+import nltk
+from nltk.corpus import stopwords
+from collections import Counter
+from transformers import pipeline
+from transformers import AutoTokenizer
+from langdetect import detect
+import os
+
+print("Hello World")
 
 # Example transformation function
 def transform_AppStoreData(input_file, output_file):
-
     df = pd.read_csv('./AppStoreOutput.csv', delimiter=',', encoding='utf-8')
     df['released'] = pd.to_datetime(df['released'])
     df['updated'] = pd.to_datetime(df['updated'])
@@ -20,15 +28,114 @@ def transform_AppStoreData(input_file, output_file):
     df['supports_Mac'] = 0
     df['days_since_last_update'] = (datetime.now(timezone.utc) - df['updated']).dt.days
     df['app_age'] = (df['updated'] - df['released']).dt.days
+    df['reviews'] = df['reviews'].astype(str)
 
-    # Data Cleaning and Transformation
-    def clean_review_text(text):
-        if not isinstance(text, str):
-            return ""
-        cleaned_text = re.sub(r'[^\u0000-\u007F]+', '', text)
-        return cleaned_text
+    # Load the sentiment analysis pipeline with the multilingual BERT model
+    sentiment_analyzer = pipeline("sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment")
+    tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
 
-    df['reviews'] = df['reviews'].apply(clean_review_text)
+
+    # Function to ensure stopwords are available
+    def ensure_stopwords():
+    # Define the default path (adjust as needed for your system)
+        default_path = os.path.join(nltk.data.path[0], 'corpora', 'stopwords')
+        if not os.path.exists(default_path):
+            print("Downloading NLTK stopwords...")
+            nltk.download('stopwords')
+        else:
+            print("Stopwords already installed.")
+
+    ensure_stopwords()
+
+
+    # Mapping from language names to NLTK compatible language codes
+    nltk_lang_map = {
+        'ar': 'arabic',
+        'az': 'azerbaijani',
+        'eu': 'basque',
+        'bn': 'bengali',
+        'ca': 'catalan',
+        'zh': 'chinese',
+        'da': 'danish',
+        'nl': 'dutch',
+        'en': 'english',
+        'fi': 'finnish',
+        'fr': 'french',
+        'de': 'german',
+        'el': 'greek',
+        'he': 'hebrew',
+        'hu': 'hungarian',
+        'id': 'indonesian',
+        'it': 'italian',
+        'kk': None,  # No support in NLTK
+        'ne': None,  # No support in NLTK
+        'no': 'norwegian',
+        'pt': 'portuguese',
+        'ro': 'romanian',
+        'ru': 'russian',
+        'sl': 'slovene',
+        'es': 'spanish',
+        'sv': 'swedish',
+        'tg': None,  # No support in NLTK
+        'tr': 'turkish'
+    }
+
+    def get_stopwords(text):
+        try:
+            # Detect the language of the text
+            lang = detect(text)
+            # Get the stopwords for the detected language
+            stopwords_lang = nltk_lang_map.get(lang, 'english')
+            if stopwords_lang:
+                return set(stopwords.words(stopwords_lang))
+            else:
+                return set(stopwords.words('english'))
+        except Exception as e:
+            print("Error in detecting language or loading stopwords:", e)
+            return set(stopwords.words('english'))
+
+    def preprocess_and_split_reviews(reviews):
+        # Convert reviews to string to avoid TypeError with non-string inputs
+        if pd.isna(reviews):
+            return ""  # Return an empty string if the review is NaN
+        reviews = str(reviews)
+        try:
+            # Use language-specific stopwords
+            stop_words = get_stopwords(reviews)
+        except Exception as e:
+            print("Error using language-specific stopwords:", e)
+            stop_words = set(stopwords.words('english'))  # Default to English if error occurs
+
+        # Remove all non-alpha characters and extra spaces, convert to lower case
+        reviews = re.sub('[^\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
+        reviews = re.sub('\s+', ' ', reviews).strip().lower()
+        # Remove stopwords
+        words = [word for word in reviews.split() if word not in stop_words and len(word) > 1]
+        return ' '.join(words)
+
+    # Apply the modified function to your DataFrame
+    df['processed_reviews'] = df['reviews'].apply(preprocess_and_split_reviews)
+
+    def get_and_flatten_bigrams(text):
+        if len(text.split()) < 2:
+            return []
+        blob = TextBlob(text)
+        return [' '.join(bigram) for bigram in blob.ngrams(2)]
+
+    df['bigrams'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
+    bigrams_df = df.explode('bigrams')[['appId', 'bigrams']].dropna()
+
+    def flatten_word_frequencies(text):
+        freqs = Counter(text.split())
+        return list(freqs.items())
+
+    df['word_freq'] = df['processed_reviews'].apply(flatten_word_frequencies)
+    word_freq_rows = df.explode('word_freq')
+    word_freq_df = pd.DataFrame({
+        'appId': word_freq_rows['appId'],
+        'word': word_freq_rows['word_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'frequency': word_freq_rows['word_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
+    }).dropna()
 
     for index, row in df.iterrows():
         if 'iPhone' in row['supportedDevices']:
@@ -38,24 +145,32 @@ def transform_AppStoreData(input_file, output_file):
         if 'Mac' in row['supportedDevices']:
             df.at[index, 'supports_Mac'] = 1
 
-    # Sentiment Analysis
-    def compute_sentiment_category(text):
-        try:
-            sentiment = TextBlob(str(text)).sentiment.polarity
-            if sentiment < -0.2:
-                return 'Negative'
-            elif sentiment < 0:
-                return 'Slightly negative'
-            elif sentiment == 0:
-                return 'Neutral'
-            elif sentiment <= 0.2:
-                return 'Slightly positive'
-            else:
-                return 'Positive'
-        except:
-            return 'Missing'
 
-    df['Sentiment_Category'] = df['reviews'].apply(compute_sentiment_category)
+
+    def compute_sentiment_category_mbert(text):
+        try:
+            # Directly pass the text to the pipeline
+            # The pipeline handles tokenization and truncation internally
+            result = sentiment_analyzer(text, truncation=True, max_length=512)[0]
+            label = result['label']
+            
+            # Mapping the model output to custom categories
+            if label == '1 star':
+                return 'Negative'
+            elif label == '2 stars':
+                return 'Slightly negative'
+            elif label == '3 stars':
+                return 'Neutral'
+            elif label == '4 stars':
+                return 'Slightly positive'
+            else:  # '5 stars'
+                return 'Positive'
+        except Exception as e:
+            print(f"Error processing text: {e}")
+            return 'Missing'  # Default to 'Missing' in case of an error
+
+    df['Sentiment_Category'] = df['reviews'].apply(compute_sentiment_category_mbert)
+
 
     # Parsing and One-hot Encoding for List Columns
     def parse_list_column(column):
@@ -257,6 +372,10 @@ def transform_AppStoreData(input_file, output_file):
 
 
 
+    # Process reviews
+    df['Sentiment_Category'] = df['reviews'].apply(compute_sentiment_category_mbert)
+
+
 
 
     df['update_frequency'] = df['days_since_last_update'].apply(categorize_update_frequency)
@@ -338,10 +457,17 @@ def transform_AppStoreData(input_file, output_file):
     languages_exploded.to_csv('AppStore_Languages.csv', index=False)
     genres_exploded.to_csv('AppStore_Genres.csv', index=False)
 
+    # Save the results to separate CSV files
+    bigrams_df.to_csv('AppStore_Bigrams.csv', index=False)
+    word_freq_df.to_csv('AppStore_Word_Frequencies.csv', index=False)
+    print("Bigrams and word frequencies have been saved to CSV files.")
+
+    # Preview the DataFrame
+    print(df.head())
+
     pass
 
 def transform_GooglePlayData(input_file, output_file):
-
 
 
     # Load and transform data
@@ -356,6 +482,119 @@ def transform_GooglePlayData(input_file, output_file):
     df['free'] = df['free'].astype(int)
 
 
+    # Ensure the 'IAPRange' column exists and is of string type
+    if 'IAPRange' in df.columns and df['IAPRange'].dtype != object:
+        df['IAPRange'] = df['IAPRange'].astype(str)
+
+    # Load the sentiment analysis pipeline with the multilingual BERT model
+    sentiment_analyzer = pipeline("sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment")
+    tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
+
+    # Function to ensure stopwords are available
+    def ensure_stopwords():
+    # Define the default path (adjust as needed for your system)
+        default_path = os.path.join(nltk.data.path[0], 'corpora', 'stopwords')
+        if not os.path.exists(default_path):
+            print("Downloading NLTK stopwords...")
+            nltk.download('stopwords')
+        else:
+            print("Stopwords already installed.")
+
+    ensure_stopwords()
+
+
+
+    # Mapping from language names to NLTK compatible language codes
+    nltk_lang_map = {
+        'ar': 'arabic',
+        'az': 'azerbaijani',
+        'eu': 'basque',
+        'bn': 'bengali',
+        'ca': 'catalan',
+        'zh': 'chinese',
+        'da': 'danish',
+        'nl': 'dutch',
+        'en': 'english',
+        'fi': 'finnish',
+        'fr': 'french',
+        'de': 'german',
+        'el': 'greek',
+        'he': 'hebrew',
+        'hu': 'hungarian',
+        'id': 'indonesian',
+        'it': 'italian',
+        'kk': None,  # No support in NLTK
+        'ne': None,  # No support in NLTK
+        'no': 'norwegian',
+        'pt': 'portuguese',
+        'ro': 'romanian',
+        'ru': 'russian',
+        'sl': 'slovene',
+        'es': 'spanish',
+        'sv': 'swedish',
+        'tg': None,  # No support in NLTK
+        'tr': 'turkish'
+    }
+
+    def get_stopwords(text):
+        try:
+            # Detect the language of the text
+            lang = detect(text)
+            # Get the stopwords for the detected language
+            stopwords_lang = nltk_lang_map.get(lang, 'english')
+            if stopwords_lang:
+                return set(stopwords.words(stopwords_lang))
+            else:
+                return set(stopwords.words('english'))
+        except Exception as e:
+            print("Error in detecting language or loading stopwords:", e)
+            return set(stopwords.words('english'))
+
+    def preprocess_and_split_reviews(reviews):
+        # Convert reviews to string to avoid TypeError with non-string inputs
+        if pd.isna(reviews):
+            return ""  # Return an empty string if the review is NaN
+        reviews = str(reviews)
+        try:
+            # Use language-specific stopwords
+            stop_words = get_stopwords(reviews)
+        except Exception as e:
+            print("Error using language-specific stopwords:", e)
+            stop_words = set(stopwords.words('english'))  # Default to English if error occurs
+
+        # Remove all non-alpha characters and extra spaces, convert to lower case
+        reviews = re.sub('[^\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
+        reviews = re.sub('\s+', ' ', reviews).strip().lower()
+        # Remove stopwords
+        words = [word for word in reviews.split() if word not in stop_words and len(word) > 1]
+        return ' '.join(words)
+
+    # Apply the modified function to your DataFrame
+    df['processed_reviews'] = df['reviews'].apply(preprocess_and_split_reviews)
+    # Apply the modified function to your DataFrame
+    df['processed_reviews'] = df['reviews'].apply(preprocess_and_split_reviews)
+
+    def get_and_flatten_bigrams(text):
+        if len(text.split()) < 2:
+            return []
+        blob = TextBlob(text)
+        return [' '.join(bigram) for bigram in blob.ngrams(2)]
+
+    df['bigrams'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
+    bigrams_df = df.explode('bigrams')[['appId', 'bigrams']].dropna()
+
+    def flatten_word_frequencies(text):
+        freqs = Counter(text.split())
+        return list(freqs.items())
+
+    df['word_freq'] = df['processed_reviews'].apply(flatten_word_frequencies)
+    word_freq_rows = df.explode('word_freq')
+    word_freq_df = pd.DataFrame({
+        'appId': word_freq_rows['appId'],
+        'word': word_freq_rows['word_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'frequency': word_freq_rows['word_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
+    }).dropna()
+
 
     ## Install to rating ratio categorization
     def categorize_install_to_rating_ratio(ratio):
@@ -366,22 +605,29 @@ def transform_GooglePlayData(input_file, output_file):
         else:  # More than 500 installs per rating is considered low feedback
             return 'Low Review Ratio'
         
-    #Sentiment Analysis and Categorization
-    def compute_sentiment_category(text):
+    def compute_sentiment_category_mbert(text):
         try:
-            sentiment = TextBlob(str(text)).sentiment.polarity
-            if sentiment < -0.2:
+            # Directly pass the text to the pipeline
+            # The pipeline handles tokenization and truncation internally
+            result = sentiment_analyzer(text, truncation=True, max_length=512)[0]
+            label = result['label']
+            
+            # Mapping the model output to custom categories
+            if label == '1 star':
                 return 'Negative'
-            elif sentiment < 0:
+            elif label == '2 stars':
                 return 'Slightly negative'
-            elif sentiment == 0:
+            elif label == '3 stars':
                 return 'Neutral'
-            elif sentiment <= 0.2:
+            elif label == '4 stars':
                 return 'Slightly positive'
-            else:
+            else:  # '5 stars'
                 return 'Positive'
-        except:
-            return 'Missing'  # Assuming neutral for non-text entries or errors    
+        except Exception as e:
+            print(f"Error processing text: {e}")
+            return 'Missing'  # Default to 'Missing' in case of an error
+
+    df['sentiment_category'] = df['reviews'].apply(compute_sentiment_category_mbert)
 
     ## Rating ratio categorization
     def categorize_rating_ratio(ratio):
@@ -476,8 +722,6 @@ def transform_GooglePlayData(input_file, output_file):
 
 
 
-    ## Sentiment analysis
-    df['sentiment_category'] = df['reviews'].apply(lambda text: compute_sentiment_category(text))
 
     ## Histogram parsing
     def parse_histogram(row):
@@ -498,19 +742,23 @@ def transform_GooglePlayData(input_file, output_file):
     df['engagement_score'] = (df['score'] * df['ratings']) / df['minInstalls']
     df['install_to_rating'] = df['minInstalls'] / (df['ratings'] + 1e-10)
 
-    # Assuming IAPRange is a string like "$1.99 - $99.99"
-    df[['CurrencySymbol', 'IAPMin', 'CurrencySymbol2', 'IAPMax']] = df['IAPRange'].str.extract(r'([^\d]+)(\d+\.?\d*) - ([^\d]+)(\d+\.?\d*)')
-
-    # Optionally, verify that CurrencySymbol and CurrencySymbol2 match if necessary
-
-    # Convert the extracted strings for min and max prices to numeric values
-    df['IAPMin'] = pd.to_numeric(df['IAPMin'], errors='coerce')
-    df['IAPMax'] = pd.to_numeric(df['IAPMax'], errors='coerce')
-
-    # You can drop the currency symbol columns if they're not needed, or keep one if you plan to use it
-    df.drop(['CurrencySymbol', 'CurrencySymbol2'], axis=1, inplace=True)
 
 
+    # Load your DataFrame (assuming you've already loaded it into 'df')
+    df['IAPRange'] = df['IAPRange'].astype(str)  # Ensure the column is treated as string
+
+    # Extract using the updated regex
+    df[['CurrencySymbolMin', 'IAPMin', 'CurrencySymbolMax', 'IAPMax']] = df['IAPRange'].str.extract(r'([^\d]+)(\d+[\.,]?\d*) - ([^\d]+)(\d+[\.,]?\d*)')
+
+    # Normalize decimal points and convert to float
+    df['IAPMin'] = df['IAPMin'].str.replace(',', '.').astype(float)
+    df['IAPMax'] = df['IAPMax'].str.replace(',', '.').astype(float)
+
+    # Optionally clean up currency symbols by stripping spaces or other characters
+    df['CurrencySymbolMin'] = df['CurrencySymbolMin'].str.strip()
+    df['CurrencySymbolMax'] = df['CurrencySymbolMax'].str.strip()
+
+    # Preview the results
 
     ## Categorizations
     df['update_frequency'] = df['days_since_last_update'].apply(categorize_update_frequency)
@@ -527,16 +775,17 @@ def transform_GooglePlayData(input_file, output_file):
         'description', 'descriptionHTML', 'summary', 'installs', 'maxInstalls', 'scoreText', 'reviews', 'histogram', 'currency', 'androidVersion', 'androidVersionText',
         'androidMaxVersion', 'previewVideo', 'developerId', 'developerEmail', 'developerAddress', 'privacyPolicy', 'developerInternalID', 'genreId', 'icon', 'headerImage',
         'screenshots', 'video', 'videoImage','contentRatingDescription','version', 'recentChanges', 'comments', 'originalPrice', 'discountEndDate', 'categories',  'priceText',
-        '1*', '2*', '3*', '4*', '5*', 
+        '1*', '2*', '3*', '4*', '5*', 'processed_reviews', 'bigrams_df', 'word_freq_df'
     ]
     df.drop(columns_to_remove, axis=1, inplace=True, errors='ignore')
     df['updated'] = df['updated'].dt.strftime('%Y-%m-%d')
     df['released'] = df['released'].dt.strftime('%Y-%m-%d')
     df.to_csv('GooglePlayOutput_cleaned.csv', index=False, sep=',', encoding='utf-8')
     categories_exploded.to_csv('GooglePlay_Categories.csv', index=False)
+    bigrams_df.to_csv('GooglePlay_Bigrams.csv', index=False)
+    word_freq_df.to_csv('GooglePlay_Word_Frequencies.csv', index=False)
 
-
-
+    print(df.head())  # This will print the first 5 rows of the DataFrame after cleanup
     pass
 
 if __name__ == "__main__":
