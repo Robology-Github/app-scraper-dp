@@ -1,101 +1,41 @@
 appId,categories
-cz.burda.eventmobile.dnymarianne,Shopping
-com.einnovation.temu,Shopping
-pl.allegro,Shopping
-cz.o2.tv,Entertainment
-cz.gov.edoklady,Tools
-com.whatsapp,Communication
-cz.zasilkovna.app,Business
-cz.kb.ndb,Finance
-com.mearsure.heartratepro.manage,Health & Fitness
-cz.sazka.retail,Entertainment
-com.zzkko,Shopping
-com.instagram.android,Social
-ee.mtakso.client,Maps & Navigation
-com.lidl.eci.lidlplus,Shopping
-de.dm.meindm.android,Shopping
-cz.albert.app,Shopping
-com.facebook.orca,Communication
-cz.seznam.mapy,Maps & Navigation
-com.zhiliaoapp.musically,Social
-cz.penny.app,Shopping
-cz.tesco.clubcard,Shopping
-com.gamma.scan,Tools
-com.instagram.barcelona,Social
-cz.o2.moje,Productivity
-cz.ppl.mojeppl,Business
-trendyol.com,Shopping
-com.facebook.katana,Social
-com.lemon.lvoverseas,Video Players & Editors
-com.lppsa.app.reserved,Shopping
-com.google.android.apps.walletnfcrel,Finance
-cz.csas.georgego,Finance
-com.duolingo,Education
-com.kaufland.Kaufland,Shopping
-com.sec.android.easyMover,Tools
-at.billa.international.czech,Shopping
-com.spotify.music,Music & Audio
-com.openai.chatgpt,Productivity
-cz.tmobile.oneapp,Tools
-com.snapchat.android,Communication
-com.wetter.androidclient,Weather
-com.plantparentai.app,Lifestyle
-de.aboutyou.mobile.app,Shopping
-com.waze,Maps & Navigation
-com.google.android.apps.translate,Tools
-cz.csob.smart,Finance
-com.wolt.android,Food & Drink
-com.azure.authenticator,Business
-com.lppsa.app.sinsay,Shopping
-org.telegram.messenger,Communication
-com.tools.remotetv2.airemote,Tools
-com.revolut.revolut,Finance
-de.nextbike,Travel & Local
-eu.livesport.FlashScore_com,Sports
-com.pinterest,Lifestyle
-cz.rb.app.smartphonebanking,Finance
-com.lunadio.nesnezeno,Food & Drink
-de.zalando.mobile,Shopping
-com.teacapps.barcodescanner,Productivity
-cz.airbank.android,Finance
-net.cme.voyo.cz,Entertainment
-cz.csob.smartklic,Finance
-cz.alza.eshop,Shopping
-cz.mafra.jizdnirady,Maps & Navigation
-cz.ceskaposta.balikovna,Shopping
-cz.seznam.sbrowser,Communication
-org.plantnet,Education
-cz.molcesko.move,Shopping
-cz.pbktechnology.partners.client,Finance
-cz.cez.cpr.mc,Tools
-musicplayer.playmusic.audioplayer,Music & Audio
-com.apple.movetoios,Tools
-com.facebook.lite,Social
-to.prehraj.app,Tools
-cz.ulikeit.damejidlo,Food & Drink
-com.shazam.android,Music & Audio
-com.action.consumerapp,Shopping
-com.tenten.app,Social
-com.fitifyworkouts.bodyweight.workoutapp,Health & Fitness
-com.mcdonalds.mobileapp,Food & Drink
-cz.psc.android.kaloricketabulky,Health & Fitness
-com.xiaomi.wearable,Health & Fitness
-com.netflix.mediaclient,Entertainment
-com.owlab.speakly,Education
-com.amazon.avod.thirdpartyclient,Entertainment
-com.vzpcr.cdeskmobile,Medical
-bloodpressure.bloodpressureapp.bloodpressuretracker,Health & Fitness
-cz.investown,Finance
-com.disney.disneyplus,Entertainment
-com.cocacola.app.cee,Lifestyle
-com.pragonauts.notino,Shopping
-com.discord,Communication
-cz.rb.app.mtoken,Finance
-cz.etnetera.mobile.rossmann,Shopping
-de.stocard.stocard,Shopping
-pedometer.steptracker.calorieburner.stepcounter,Health & Fitness
-cz.seznam.email,Communication
-cz.cd.mujvlak.an,Maps & Navigation
-cz.mojedatovaschranka.mobilniklic,Productivity
-cz.wedo.receiverapp,Events
+io.randomco.travel,Puzzle
+io.randomco.travel,Merge
+io.randomco.travel,Casual
+io.randomco.travel,Single player
+io.randomco.travel,Stylized
 com.booking,Travel & Local
+com.tripadvisor.tripadvisor,Travel & Local
+com.airbnb.android,Travel & Local
+net.skyscanner.android.main,Travel & Local
+com.getyourguide.android,Travel & Local
+com.citymapper.app.release,Maps & Navigation
+com.kayak.android,Travel & Local
+com.tripit,Travel & Local
+com.hostelworld.app,Travel & Local
+com.polarsteps,Travel & Local
+com.wanderlog.android,Travel & Local
+com.flightradar24free,Travel & Local
+cz.worldeecom.worldee,Travel & Local
+com.worldpackers.travelers,Travel & Local
+ai.iplan.app,Travel & Local
+com.expedia.bookings,Travel & Local
+com.ryanair.cheapflights,Travel & Local
+com.traveloka.android,Travel & Local
+com.agoda.mobile.consumer,Travel & Local
+com.klook,Travel & Local
+com.subara.stories.travels,Simulation
+com.subara.stories.travels,Lifestyle
+com.subara.stories.travels,Casual
+com.subara.stories.travels,Single player
+com.subara.stories.travels,Stylized
+com.subara.stories.travels,Cartoon
+com.subara.stories.travels,Offline
+com.trivago,Travel & Local
+com.hopper.mountainview.play,Travel & Local
+com.oyo.consumer,Travel & Local
+com.hcom.android,Travel & Local
+com.makemytrip,Travel & Local
+ctrip.english,Travel & Local
+com.goeuro.rosie,Travel & Local
+com.YRH.PackPoint,Travel & Local

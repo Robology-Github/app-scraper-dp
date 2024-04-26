@@ -64,7 +64,7 @@ app.get("/search", async (req, res) => {
   }
 
   try {
-    const results = await searchAndFetchAppDetails(term, country, num);
+    const results = await searchFetchAppDetails(term, country, num);
     res.json(results);
   } catch (error) {
     console.error(error);
@@ -100,7 +100,7 @@ app.get("/similar", async (req, res) => {
   }
 
   try {
-    const results = await fetchSimilarApps(appName, country);
+    const results = await similarFetchAppDetails(appName, country);
     res.json(results);
   } catch (error) {
     console.error("Failed to fetch similar apps:", error);
@@ -239,7 +239,7 @@ async function collectionFetchAppDetails(
       "transform_AppStoreData",
       "./AppStoreOutput.csv",
       "./AppStoreOutput_cleaned.csv"
-    )
+    ) 
       .then(() => {
         // Upload file to GCS after Python script completes
         console.log("Now uploading to GCS...");
@@ -301,7 +301,7 @@ async function collectionFetchAppDetails(
   }
 }
 
-async function searchAndFetchAppDetails(searchTerm, countryList, numResults) {
+async function searchFetchAppDetails(searchTerm, countryList, numResults) {
   try {
     const searchResultsGooglePlay = await googlePlay.search({
       term: searchTerm,
@@ -471,7 +471,7 @@ async function searchAndFetchAppDetails(searchTerm, countryList, numResults) {
   }
 }
 
-async function fetchSimilarApps(appName, country) {
+async function similarFetchAppDetails(appName, country) {
   try {
     // Initial search to find the app ID from the app name
     const searchResultsGooglePlay = await googlePlay.search({

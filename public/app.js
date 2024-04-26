@@ -1,10 +1,9 @@
 function showModal(message) {
-    const modal = document.getElementById("modal");
-    const modalText = document.getElementById("modal-text");
-    modalText.textContent = message;
-    modal.style.display = "block";
+  const modal = document.getElementById("modal");
+  const modalText = document.getElementById("modal-text");
+  modalText.textContent = message;
+  modal.style.display = "block";
 }
-
 
 function switchForm(formNumber) {
   const form1 = document.getElementById("form1");
@@ -40,11 +39,10 @@ function switchForm(formNumber) {
     tabs[2].style.backgroundColor = "#DDEA90";
     tabs[0].style.backgroundColor = "white";
     tabs[1].style.backgroundColor = "white";
+  }
 }
-}
 
-
-
+// searchForm logic
 document.addEventListener("DOMContentLoaded", (event) => {
   document
     .getElementById("searchForm")
@@ -57,6 +55,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const country = document.getElementById("searchCountryList").value;
       try {
         const response = await fetch(
+          // Fetch the data
           `/search?term=${encodeURIComponent(
             searchTerm
           )}&num=${encodeURIComponent(numResults)}
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         );
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
-        showModal("Data successfully scraped and transformed.");
+        showModal("Data successfully scraped.  It may take up to 3 minutes to transform and upload the data.");
       } catch (error) {
         showModal("Error during data fetching: " + error.message);
       } finally {
@@ -96,17 +95,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         );
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
-        showModal("Data successfully scraped and transformed.");
+        showModal("Data successfully scraped.  It may take up to 3 minutes to transform and upload the data.");
       } catch (error) {
         showModal("Error during data fetching: " + error.message);
       } finally {
         backdrop.style.display = "none"; // Hide the backdrop and spinner
       }
     });
-  
-
 });
-
 
 document.addEventListener("DOMContentLoaded", (event) => {
   document
@@ -121,12 +117,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
       try {
         const response = await fetch(
-          `/similar?appName=${encodeURIComponent(appName)}&country=${encodeURIComponent(country)}`
+          `/similar?appName=${encodeURIComponent(
+            appName
+          )}&country=${encodeURIComponent(country)}`
         );
         if (!response.ok) throw new Error("Failed to fetch similar apps");
 
         const data = await response.json();
-        showModal("Similar apps data successfully retrieved.");
+        showModal("Data successfully scraped.  It may take up to 3 minutes to transform and upload the data.");
         console.log(data); // Log the data or update the UI as needed
       } catch (error) {
         showModal("Error during data fetching: " + error.message);
@@ -136,11 +134,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-
-
 // Close modal logic
 const span = document.getElementsByClassName("close-button")[0];
 span.onclick = function () {
-    const modal = document.getElementById("modal");
-    modal.style.display = "none";
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
 };

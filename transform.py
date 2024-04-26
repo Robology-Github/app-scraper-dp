@@ -16,8 +16,10 @@ import os
 
 print("Hello World")
 
+
 # Example transformation function
 def transform_AppStoreData(input_file, output_file):
+
     df = pd.read_csv('./AppStoreOutput.csv', delimiter=',', encoding='utf-8')
     df['released'] = pd.to_datetime(df['released'])
     df['updated'] = pd.to_datetime(df['updated'])
@@ -345,16 +347,24 @@ def transform_AppStoreData(input_file, output_file):
         else:
             return 'Very Mature'
         
-    ## Price categorization
-    def categorize_price(price):
+
+
+
+
+
+
+    # Define categories based on percentiles
+    def price_category(price):
         if price == 0:
             return 'Free'
-        elif price < 1:
-            return 'Low price'
-        elif price <= 10:
-            return 'Medium price'
+        elif price <= percentilesPrice[0.25]:
+            return 'Low'
+        elif price <= percentilesPrice[0.50]:
+            return 'Medium'
+        elif price <= percentilesPrice[0.75]:
+            return 'High'
         else:
-            return 'High price'
+            return 'Very High'    
             
 
     ## Update frequency categorization
@@ -375,13 +385,12 @@ def transform_AppStoreData(input_file, output_file):
     # Process reviews
     df['Sentiment_Category'] = df['reviews'].apply(compute_sentiment_category_mbert)
 
-
-
-
+    # Update frequency calculation
     df['update_frequency'] = df['days_since_last_update'].apply(categorize_update_frequency)
 
     ## Apply the categorization function to the 'price' column
-    df['price_category'] = df['price'].apply(lambda price: categorize_price(price))
+    percentilesPrice = df['price'].quantile([0.25, 0.50, 0.75])
+    df['price_category'] = df['price'].apply(price_category)
 
     ## Apply the categorization function to the 'app_age' column
     df['app_age_category'] = df['app_age'].apply(lambda days: categorize_app_age(days))
@@ -467,73 +476,76 @@ def transform_AppStoreData(input_file, output_file):
 
     pass
 
+
 def transform_GooglePlayData(input_file, output_file):
 
-
     # Load and transform data
-    df = pd.read_csv('./GooglePlayOutput.csv', delimiter=',', encoding='utf-8')
-    df['released'] = pd.to_datetime(df['released']).dt.tz_localize('UTC')
-    df['updated'] = pd.to_datetime(df['updated'], unit='ms', utc=True)
-    df['days_since_last_update'] = (datetime.now(timezone.utc) - df['updated']).dt.days
+    df = pd.read_csv("./GooglePlayOutput.csv", delimiter=",", encoding="utf-8")
+    df["released"] = pd.to_datetime(df["released"]).dt.tz_localize("UTC")
+    df["updated"] = pd.to_datetime(df["updated"], unit="ms", utc=True)
+    df["days_since_last_update"] = (datetime.now(timezone.utc) - df["updated"]).dt.days
 
     # Clean data
-    df['contentRating'] = df['contentRating'].str.replace('Rated for', '', regex=False).str.strip()
-    df['score'] = pd.to_numeric(df['score'], errors='coerce')
-    df['free'] = df['free'].astype(int)
-
+    df["contentRating"] = (
+        df["contentRating"].str.replace("Rated for", "", regex=False).str.strip()
+    )
+    df["score"] = pd.to_numeric(df["score"], errors="coerce")
+    df["free"] = df["free"].astype(int)
 
     # Ensure the 'IAPRange' column exists and is of string type
-    if 'IAPRange' in df.columns and df['IAPRange'].dtype != object:
-        df['IAPRange'] = df['IAPRange'].astype(str)
+    if "IAPRange" in df.columns and df["IAPRange"].dtype != object:
+        df["IAPRange"] = df["IAPRange"].astype(str)
 
     # Load the sentiment analysis pipeline with the multilingual BERT model
-    sentiment_analyzer = pipeline("sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment")
-    tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
+    sentiment_analyzer = pipeline(
+        "sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment"
+    )
+    tokenizer = AutoTokenizer.from_pretrained(
+        "nlptown/bert-base-multilingual-uncased-sentiment"
+    )
 
     # Function to ensure stopwords are available
     def ensure_stopwords():
-    # Define the default path (adjust as needed for your system)
-        default_path = os.path.join(nltk.data.path[0], 'corpora', 'stopwords')
+        # Define the default path (adjust as needed for your system)
+        default_path = os.path.join(nltk.data.path[0], "corpora", "stopwords")
         if not os.path.exists(default_path):
             print("Downloading NLTK stopwords...")
-            nltk.download('stopwords')
+            nltk.download("stopwords")
         else:
             print("Stopwords already installed.")
 
     ensure_stopwords()
 
-
-
     # Mapping from language names to NLTK compatible language codes
     nltk_lang_map = {
-        'ar': 'arabic',
-        'az': 'azerbaijani',
-        'eu': 'basque',
-        'bn': 'bengali',
-        'ca': 'catalan',
-        'zh': 'chinese',
-        'da': 'danish',
-        'nl': 'dutch',
-        'en': 'english',
-        'fi': 'finnish',
-        'fr': 'french',
-        'de': 'german',
-        'el': 'greek',
-        'he': 'hebrew',
-        'hu': 'hungarian',
-        'id': 'indonesian',
-        'it': 'italian',
-        'kk': None,  # No support in NLTK
-        'ne': None,  # No support in NLTK
-        'no': 'norwegian',
-        'pt': 'portuguese',
-        'ro': 'romanian',
-        'ru': 'russian',
-        'sl': 'slovene',
-        'es': 'spanish',
-        'sv': 'swedish',
-        'tg': None,  # No support in NLTK
-        'tr': 'turkish'
+        "ar": "arabic",
+        "az": "azerbaijani",
+        "eu": "basque",
+        "bn": "bengali",
+        "ca": "catalan",
+        "zh": "chinese",
+        "da": "danish",
+        "nl": "dutch",
+        "en": "english",
+        "fi": "finnish",
+        "fr": "french",
+        "de": "german",
+        "el": "greek",
+        "he": "hebrew",
+        "hu": "hungarian",
+        "id": "indonesian",
+        "it": "italian",
+        "kk": None,  # No support in NLTK
+        "ne": None,  # No support in NLTK
+        "no": "norwegian",
+        "pt": "portuguese",
+        "ro": "romanian",
+        "ru": "russian",
+        "sl": "slovene",
+        "es": "spanish",
+        "sv": "swedish",
+        "tg": None,  # No support in NLTK
+        "tr": "turkish",
     }
 
     def get_stopwords(text):
@@ -541,14 +553,14 @@ def transform_GooglePlayData(input_file, output_file):
             # Detect the language of the text
             lang = detect(text)
             # Get the stopwords for the detected language
-            stopwords_lang = nltk_lang_map.get(lang, 'english')
+            stopwords_lang = nltk_lang_map.get(lang, "english")
             if stopwords_lang:
                 return set(stopwords.words(stopwords_lang))
             else:
-                return set(stopwords.words('english'))
+                return set(stopwords.words("english"))
         except Exception as e:
             print("Error in detecting language or loading stopwords:", e)
-            return set(stopwords.words('english'))
+            return set(stopwords.words("english"))
 
     def preprocess_and_split_reviews(reviews):
         # Convert reviews to string to avoid TypeError with non-string inputs
@@ -560,245 +572,312 @@ def transform_GooglePlayData(input_file, output_file):
             stop_words = get_stopwords(reviews)
         except Exception as e:
             print("Error using language-specific stopwords:", e)
-            stop_words = set(stopwords.words('english'))  # Default to English if error occurs
+            stop_words = set(
+                stopwords.words("english")
+            )  # Default to English if error occurs
 
         # Remove all non-alpha characters and extra spaces, convert to lower case
-        reviews = re.sub('[^\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
-        reviews = re.sub('\s+', ' ', reviews).strip().lower()
+        reviews = re.sub(
+            "[^\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]", " ", reviews, flags=re.UNICODE
+        )
+        reviews = re.sub("\s+", " ", reviews).strip().lower()
         # Remove stopwords
-        words = [word for word in reviews.split() if word not in stop_words and len(word) > 1]
-        return ' '.join(words)
+        words = [
+            word for word in reviews.split() if word not in stop_words and len(word) > 1
+        ]
+        return " ".join(words)
 
     # Apply the modified function to your DataFrame
-    df['processed_reviews'] = df['reviews'].apply(preprocess_and_split_reviews)
+    df["processed_reviews"] = df["reviews"].apply(preprocess_and_split_reviews)
     # Apply the modified function to your DataFrame
-    df['processed_reviews'] = df['reviews'].apply(preprocess_and_split_reviews)
+    df["processed_reviews"] = df["reviews"].apply(preprocess_and_split_reviews)
 
     def get_and_flatten_bigrams(text):
         if len(text.split()) < 2:
             return []
         blob = TextBlob(text)
-        return [' '.join(bigram) for bigram in blob.ngrams(2)]
+        return [" ".join(bigram) for bigram in blob.ngrams(2)]
 
-    df['bigrams'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
-    bigrams_df = df.explode('bigrams')[['appId', 'bigrams']].dropna()
+    df["bigrams"] = df["processed_reviews"].apply(get_and_flatten_bigrams)
+    bigrams_df = df.explode("bigrams")[["appId", "bigrams"]].dropna()
 
     def flatten_word_frequencies(text):
         freqs = Counter(text.split())
         return list(freqs.items())
 
-    df['word_freq'] = df['processed_reviews'].apply(flatten_word_frequencies)
-    word_freq_rows = df.explode('word_freq')
-    word_freq_df = pd.DataFrame({
-        'appId': word_freq_rows['appId'],
-        'word': word_freq_rows['word_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
-        'frequency': word_freq_rows['word_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
-    }).dropna()
-
+    df["word_freq"] = df["processed_reviews"].apply(flatten_word_frequencies)
+    word_freq_rows = df.explode("word_freq")
+    word_freq_df = pd.DataFrame(
+        {
+            "appId": word_freq_rows["appId"],
+            "word": word_freq_rows["word_freq"].apply(
+                lambda x: x[0] if pd.notna(x) else ""
+            ),
+            "frequency": word_freq_rows["word_freq"].apply(
+                lambda x: x[1] if pd.notna(x) else 0
+            ),
+        }
+    ).dropna()
 
     ## Install to rating ratio categorization
     def categorize_install_to_rating_ratio(ratio):
         if ratio <= 100:  # Assuming 1 rating per 100 installs or less is high feedback
-            return 'High Review Ratio'
-        elif ratio <= 500:  # Assuming between 100 and 500 installs per rating is moderate feedback
-            return 'Moderate Review Ratio'
+            return "High Review Ratio"
+        elif (
+            ratio <= 500
+        ):  # Assuming between 100 and 500 installs per rating is moderate feedback
+            return "Moderate Review Ratio"
         else:  # More than 500 installs per rating is considered low feedback
-            return 'Low Review Ratio'
-        
+            return "Low Review Ratio"
+
     def compute_sentiment_category_mbert(text):
         try:
             # Directly pass the text to the pipeline
             # The pipeline handles tokenization and truncation internally
             result = sentiment_analyzer(text, truncation=True, max_length=512)[0]
-            label = result['label']
-            
+            label = result["label"]
+
             # Mapping the model output to custom categories
-            if label == '1 star':
-                return 'Negative'
-            elif label == '2 stars':
-                return 'Slightly negative'
-            elif label == '3 stars':
-                return 'Neutral'
-            elif label == '4 stars':
-                return 'Slightly positive'
+            if label == "1 star":
+                return "Negative"
+            elif label == "2 stars":
+                return "Slightly negative"
+            elif label == "3 stars":
+                return "Neutral"
+            elif label == "4 stars":
+                return "Slightly positive"
             else:  # '5 stars'
-                return 'Positive'
+                return "Positive"
         except Exception as e:
             print(f"Error processing text: {e}")
-            return 'Missing'  # Default to 'Missing' in case of an error
+            return "Missing"  # Default to 'Missing' in case of an error
 
-    df['sentiment_category'] = df['reviews'].apply(compute_sentiment_category_mbert)
+    df["sentiment_category"] = df["reviews"].apply(compute_sentiment_category_mbert)
 
     ## Rating ratio categorization
     def categorize_rating_ratio(ratio):
         if ratio > 10:
-            return 'Exceptional'
+            return "Exceptional"
         elif ratio > 5:
-            return 'Great'
+            return "Great"
         elif ratio > 2:
-            return 'Good'
+            return "Good"
         elif ratio > 1:
-            return 'Mixed'
+            return "Mixed"
         else:
-            return 'Poor'
+            return "Poor"
 
     ## App age categorization
     def categorize_app_age(days):
         if days <= 30:
-            return 'Brand New'
+            return "Brand New"
         elif days <= 90:
-            return 'Recently Launched'
+            return "Recently Launched"
         elif days <= 365:
-            return 'Established'
+            return "Established"
         elif days <= 1095:
-            return 'Mature'
+            return "Mature"
         else:
-            return 'Very Mature'
+            return "Very Mature"
 
     ## Price categorization
     def categorize_price(price):
         if price == 0:
-            return 'Free'
+            return "Free"
         elif price < 1:
-            return 'Low price'
+            return "Low price"
         elif price <= 10:
-            return 'Medium price'
+            return "Medium price"
         else:
-            return 'High price'
-        
+            return "High price"
+
+    # Define categories based on percentiles
+    def price_category(price):
+        if price == 0:
+            return "Free"
+        elif price <= percentilesPrice[0.25]:
+            return "Low"
+        elif price <= percentilesPrice[0.50]:
+            return "Medium"
+        elif price <= percentilesPrice[0.75]:
+            return "High"
+        else:
+            return "Very High"
 
     ## Engagement score categorization
     def categorize_engagement_score(score, percentiles):
         if score >= percentiles[0.9]:
-            return 'Very High Engagement'
+            return "Very High Engagement"
         elif score >= percentiles[0.75]:
-            return 'High Engagement'
+            return "High Engagement"
         elif score >= percentiles[0.5]:
-            return 'Moderate Engagement'
+            return "Moderate Engagement"
         elif score >= percentiles[0.25]:
-            return 'Low Engagement'
+            return "Low Engagement"
         else:
-            return 'Very Low Engagement'
+            return "Very Low Engagement"
 
     ## Update frequency categorization
     def categorize_update_frequency(days_since_last_update):
         if days_since_last_update <= 30:
-            return 'Very Recent Updates'
+            return "Very Recent Updates"
         elif days_since_last_update <= 90:
-            return 'Recently Updated'
+            return "Recently Updated"
         elif days_since_last_update <= 180:
-            return 'Moderately Updated'
+            return "Moderately Updated"
         elif days_since_last_update <= 365:
-            return 'Rarely Updated'
+            return "Rarely Updated"
         else:
-            return 'Stale'
-
-
-
+            return "Stale"
 
     ## Category parsing
     def parse_json_categories(row):
         try:
             categories_list = json.loads(row)
             # Extract just the names from each category
-            return [category['name'] for category in categories_list]
+            return [category["name"] for category in categories_list]
         except:
             return []  # Return an empty list if parsing fails or if row is empty
 
-    df['categories'] = df['categories'].apply(parse_json_categories)
+    df["categories"] = df["categories"].apply(parse_json_categories)
 
-
-    categories_exploded = df[['appId', 'categories']].explode('categories')
-
-
-
+    categories_exploded = df[["appId", "categories"]].explode("categories")
 
     # Function to convert binary values to 'free' or 'paid'
     def free_convert_to_category(value):
         if value == 1:
-            return 'free'
+            return "free"
         else:
-            return 'paid'
-
-
-
+            return "paid"
 
     ## Histogram parsing
     def parse_histogram(row):
         try:
             histogram_dict = json.loads(row)
         except json.JSONDecodeError:
-            return pd.Series([float('nan')] * 5)
+            return pd.Series([float("nan")] * 5)
         return pd.Series(histogram_dict)
-    histogram_columns = df['histogram'].apply(parse_histogram)
-    histogram_columns.columns = ['1*', '2*', '3*', '4*', '5*']
+
+    histogram_columns = df["histogram"].apply(parse_histogram)
+    histogram_columns.columns = ["1*", "2*", "3*", "4*", "5*"]
     df = pd.concat([df, histogram_columns], axis=1)
 
-
-
-    #Calculations 
-    df['app_age'] = (df['updated'] - df['released']).dt.days
-    df['rating_ratio'] = (df['4*'] + df['5*']) / (df['1*'] + df['2*'])
-    df['engagement_score'] = (df['score'] * df['ratings']) / df['minInstalls']
-    df['install_to_rating'] = df['minInstalls'] / (df['ratings'] + 1e-10)
-
-
+    # Calculations
+    df["app_age"] = (df["updated"] - df["released"]).dt.days
+    df["rating_ratio"] = (df["4*"] + df["5*"]) / (df["1*"] + df["2*"])
+    df["engagement_score"] = (df["score"] * df["ratings"]) / df["minInstalls"]
+    df["install_to_rating"] = df["minInstalls"] / (df["ratings"] + 1e-10)
 
     # Load your DataFrame (assuming you've already loaded it into 'df')
-    df['IAPRange'] = df['IAPRange'].astype(str)  # Ensure the column is treated as string
+    df["IAPRange"] = df["IAPRange"].astype(
+        str
+    )  # Ensure the column is treated as string
 
     # Extract using the updated regex
-    df[['CurrencySymbolMin', 'IAPMin', 'CurrencySymbolMax', 'IAPMax']] = df['IAPRange'].str.extract(r'([^\d]+)(\d+[\.,]?\d*) - ([^\d]+)(\d+[\.,]?\d*)')
+    df[["CurrencySymbolMin", "IAPMin", "CurrencySymbolMax", "IAPMax"]] = df[
+        "IAPRange"
+    ].str.extract(r"([^\d]+)(\d+[\.,]?\d*) - ([^\d]+)(\d+[\.,]?\d*)")
 
     # Normalize decimal points and convert to float
-    df['IAPMin'] = df['IAPMin'].str.replace(',', '.').astype(float)
-    df['IAPMax'] = df['IAPMax'].str.replace(',', '.').astype(float)
+    df["IAPMin"] = df["IAPMin"].str.replace(",", ".").astype(float)
+    df["IAPMax"] = df["IAPMax"].str.replace(",", ".").astype(float)
 
     # Optionally clean up currency symbols by stripping spaces or other characters
-    df['CurrencySymbolMin'] = df['CurrencySymbolMin'].str.strip()
-    df['CurrencySymbolMax'] = df['CurrencySymbolMax'].str.strip()
+    df["CurrencySymbolMin"] = df["CurrencySymbolMin"].str.strip()
+    df["CurrencySymbolMax"] = df["CurrencySymbolMax"].str.strip()
 
     # Preview the results
 
     ## Categorizations
-    df['update_frequency'] = df['days_since_last_update'].apply(categorize_update_frequency)
-    df['app_age_category'] = df['app_age'].apply(lambda days: categorize_app_age(days))
-    df['rating_ratio_category'] = df['rating_ratio'].apply(lambda ratio: categorize_rating_ratio(ratio))
-    percentiles = df['engagement_score'].quantile([0.25, 0.5, 0.75, 0.9]).to_dict()
-    df['engagement_score_category'] = df['engagement_score'].apply(lambda x: categorize_engagement_score(x, percentiles))
-    df['price_category'] = df['price'].apply(lambda price: categorize_price(price))
-    df['install_to_rating_category'] = df['install_to_rating'].apply(categorize_install_to_rating_ratio)
-    df['free'] = df['free'].apply(free_convert_to_category)
+    df["update_frequency"] = df["days_since_last_update"].apply(
+        categorize_update_frequency
+    )
+    df["app_age_category"] = df["app_age"].apply(lambda days: categorize_app_age(days))
+    df["rating_ratio_category"] = df["rating_ratio"].apply(
+        lambda ratio: categorize_rating_ratio(ratio)
+    )
+    percentiles = df["engagement_score"].quantile([0.25, 0.5, 0.75, 0.9]).to_dict()
+    df["engagement_score_category"] = df["engagement_score"].apply(
+        lambda x: categorize_engagement_score(x, percentiles)
+    )
+    df["price_category"] = df["price"].apply(price_category)
+    df["install_to_rating_category"] = df["install_to_rating"].apply(
+        categorize_install_to_rating_ratio
+    )
+    df["free"] = df["free"].apply(free_convert_to_category)
+
+    ## Apply the categorization function to the 'price' column
+    percentilesPrice = df["price"].quantile([0.25, 0.50, 0.75])
+    df["price_category"] = df["price"].apply(lambda price: categorize_price(price))
 
     # Clean-up and Output
     columns_to_remove = [
-        'description', 'descriptionHTML', 'summary', 'installs', 'maxInstalls', 'scoreText', 'reviews', 'histogram', 'currency', 'androidVersion', 'androidVersionText',
-        'androidMaxVersion', 'previewVideo', 'developerId', 'developerEmail', 'developerAddress', 'privacyPolicy', 'developerInternalID', 'genreId', 'icon', 'headerImage',
-        'screenshots', 'video', 'videoImage','contentRatingDescription','version', 'recentChanges', 'comments', 'originalPrice', 'discountEndDate', 'categories',  'priceText',
-        '1*', '2*', '3*', '4*', '5*', 'processed_reviews', 'bigrams_df', 'word_freq_df'
+        "description",
+        "descriptionHTML",
+        "summary",
+        "installs",
+        "maxInstalls",
+        "scoreText",
+        "reviews",
+        "histogram",
+        "currency",
+        "androidVersion",
+        "androidVersionText",
+        "androidMaxVersion",
+        "previewVideo",
+        "developerId",
+        "developerEmail",
+        "developerAddress",
+        "privacyPolicy",
+        "developerInternalID",
+        "genreId",
+        "icon",
+        "headerImage",
+        "screenshots",
+        "video",
+        "videoImage",
+        "contentRatingDescription",
+        "version",
+        "recentChanges",
+        "comments",
+        "originalPrice",
+        "discountEndDate",
+        "categories",
+        "priceText",
+        "1*",
+        "2*",
+        "3*",
+        "4*",
+        "5*",
+        "processed_reviews",
+        "bigrams_df",
+        "word_freq_df",
     ]
-    df.drop(columns_to_remove, axis=1, inplace=True, errors='ignore')
-    df['updated'] = df['updated'].dt.strftime('%Y-%m-%d')
-    df['released'] = df['released'].dt.strftime('%Y-%m-%d')
-    df.to_csv('GooglePlayOutput_cleaned.csv', index=False, sep=',', encoding='utf-8')
-    categories_exploded.to_csv('GooglePlay_Categories.csv', index=False)
-    bigrams_df.to_csv('GooglePlay_Bigrams.csv', index=False)
-    word_freq_df.to_csv('GooglePlay_Word_Frequencies.csv', index=False)
+    df.drop(columns_to_remove, axis=1, inplace=True, errors="ignore")
+    df["updated"] = df["updated"].dt.strftime("%Y-%m-%d")
+    df["released"] = df["released"].dt.strftime("%Y-%m-%d")
+    df.to_csv("GooglePlayOutput_cleaned.csv", index=False, sep=",", encoding="utf-8")
+    categories_exploded.to_csv("GooglePlay_Categories.csv", index=False)
+    bigrams_df.to_csv("GooglePlay_Bigrams.csv", index=False)
+    word_freq_df.to_csv("GooglePlay_Word_Frequencies.csv", index=False)
 
     print(df.head())  # This will print the first 5 rows of the DataFrame after cleanup
     pass
 
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Transform files based on the specified function.')
-    parser.add_argument('function_name', help='The name of the function to execute')
-    parser.add_argument('input_file', help='The path to the input file')
-    parser.add_argument('output_file', help='The path to the output file')
+    parser = argparse.ArgumentParser(
+        description="Transform files based on the specified function."
+    )
+    parser.add_argument("function_name", help="The name of the function to execute")
+    parser.add_argument("input_file", help="The path to the input file")
+    parser.add_argument("output_file", help="The path to the output file")
 
     args = parser.parse_args()
 
     # Call the appropriate function based on the argument
-    if args.function_name == 'transform_GooglePlayData':
+    if args.function_name == "transform_GooglePlayData":
         transform_GooglePlayData(args.input_file, args.output_file)
-    elif args.function_name == 'transform_AppStoreData':
+    elif args.function_name == "transform_AppStoreData":
         transform_AppStoreData(args.input_file, args.output_file)
     # Add more elif statements for additional functions
