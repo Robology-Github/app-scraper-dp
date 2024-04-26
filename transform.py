@@ -109,8 +109,9 @@ def transform_AppStoreData(input_file, output_file):
             stop_words = set(stopwords.words('english'))  # Default to English if error occurs
 
         # Remove all non-alpha characters and extra spaces, convert to lower case
-        reviews = re.sub('[^\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
-        reviews = re.sub('\s+', ' ', reviews).strip().lower()
+        reviews = re.sub('[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
+        reviews = re.sub('\\s+', ' ', reviews).strip().lower()
+
         # Remove stopwords
         words = [word for word in reviews.split() if word not in stop_words and len(word) > 1]
         return ' '.join(words)
@@ -299,6 +300,10 @@ def transform_AppStoreData(input_file, output_file):
     languages_exploded = languages_exploded.explode('Countries')
 
     def get_language_name(lang_code):
+        # Check if lang_code is not a string or if it's NaN
+        if not isinstance(lang_code, str) or pd.isna(lang_code):
+            return "en"  # Return 'Unknown' or some other placeholder
+
         # Convert the language code to lowercase to match the iso639 library's expected format
         lang_code_lower = lang_code.lower()
         try:
@@ -577,10 +582,9 @@ def transform_GooglePlayData(input_file, output_file):
             )  # Default to English if error occurs
 
         # Remove all non-alpha characters and extra spaces, convert to lower case
-        reviews = re.sub(
-            "[^\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]", " ", reviews, flags=re.UNICODE
-        )
-        reviews = re.sub("\s+", " ", reviews).strip().lower()
+        reviews = re.sub('[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
+        reviews = re.sub('\\s+', ' ', reviews).strip().lower()
+
         # Remove stopwords
         words = [
             word for word in reviews.split() if word not in stop_words and len(word) > 1

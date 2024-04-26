@@ -1,41 +1,17 @@
 appId,categories
-io.randomco.travel,Puzzle
-io.randomco.travel,Merge
-io.randomco.travel,Casual
-io.randomco.travel,Single player
-io.randomco.travel,Stylized
-com.booking,Travel & Local
-com.tripadvisor.tripadvisor,Travel & Local
-com.airbnb.android,Travel & Local
-net.skyscanner.android.main,Travel & Local
-com.getyourguide.android,Travel & Local
-com.citymapper.app.release,Maps & Navigation
-com.kayak.android,Travel & Local
-com.tripit,Travel & Local
-com.hostelworld.app,Travel & Local
-com.polarsteps,Travel & Local
 com.wanderlog.android,Travel & Local
-com.flightradar24free,Travel & Local
-cz.worldeecom.worldee,Travel & Local
-com.worldpackers.travelers,Travel & Local
+com.tripit,Travel & Local
+com.tripadvisor.tripadvisor,Travel & Local
+com.getyourguide.android,Travel & Local
+com.polarsteps,Travel & Local
 ai.iplan.app,Travel & Local
-com.expedia.bookings,Travel & Local
-com.ryanair.cheapflights,Travel & Local
-com.traveloka.android,Travel & Local
-com.agoda.mobile.consumer,Travel & Local
-com.klook,Travel & Local
-com.subara.stories.travels,Simulation
-com.subara.stories.travels,Lifestyle
-com.subara.stories.travels,Casual
-com.subara.stories.travels,Single player
-com.subara.stories.travels,Stylized
-com.subara.stories.travels,Cartoon
-com.subara.stories.travels,Offline
-com.trivago,Travel & Local
-com.hopper.mountainview.play,Travel & Local
-com.oyo.consumer,Travel & Local
-com.hcom.android,Travel & Local
-com.makemytrip,Travel & Local
-ctrip.english,Travel & Local
-com.goeuro.rosie,Travel & Local
+com.kayak.android,Travel & Local
+cz.worldeecom.worldee,Travel & Local
+com.roadtrippers,Travel & Local
+com.visitacity.visitacityapp,Travel & Local
+com.rome2rio.www.rome2rio,Travel & Local
 com.YRH.PackPoint,Travel & Local
+io.lambus.app,Travel & Local
+com.viator.mobile.android,Travel & Local
+com.expedia.bookings,Travel & Local
+com.travefy.tripplans,Travel & Local
