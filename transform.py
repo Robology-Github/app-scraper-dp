@@ -115,7 +115,7 @@ def transform_AppStoreData(input_file, output_file):
             stop_words = set(stopwords.words('english'))  # Default to English if error occurs
 
         # Remove all non-alpha characters and extra spaces, convert to lower case
-        reviews = re.sub('[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
+        reviews = re.sub(r'[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
         reviews = re.sub('\\s+', ' ', reviews).strip().lower()
 
         # Remove stopwords
@@ -598,7 +598,7 @@ def transform_GooglePlayData(input_file, output_file):
             )  # Default to English if error occurs
 
         # Remove all non-alpha characters and extra spaces, convert to lower case
-        reviews = re.sub('[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
+        reviews = re.sub(r'[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
         reviews = re.sub('\\s+', ' ', reviews).strip().lower()
 
         # Remove stopwords

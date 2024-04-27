@@ -170,7 +170,6 @@ com.tripadvisor.LocalPicks,AR,Qatar,Arabic
 com.tripadvisor.LocalPicks,AR,Bahrain,Arabic
 com.tripadvisor.LocalPicks,AR,United Arab Emirates,Arabic
 com.tripadvisor.LocalPicks,CS,Czech Republic,Czech
-com.tripadvisor.LocalPicks,CS,Slovakia,Czech
 com.tripadvisor.LocalPicks,DA,Denmark,Danish
 com.tripadvisor.LocalPicks,DA,Greenland,Danish
 com.tripadvisor.LocalPicks,DA,Faroe Islands,Danish
@@ -300,7 +299,6 @@ com.jeremieleroy.packr,AR,United Arab Emirates,Arabic
 com.jeremieleroy.packr,CA,Spain,Catalan
 com.jeremieleroy.packr,CA,Andorra,Catalan
 com.jeremieleroy.packr,CS,Czech Republic,Czech
-com.jeremieleroy.packr,CS,Slovakia,Czech
 com.jeremieleroy.packr,DA,Denmark,Danish
 com.jeremieleroy.packr,DA,Greenland,Danish
 com.jeremieleroy.packr,DA,Faroe Islands,Danish
@@ -681,7 +679,6 @@ com.booking.BookingApp,CA,Andorra,Catalan
 com.booking.BookingApp,HR,Croatia,Croatian
 com.booking.BookingApp,HR,Bosnia and Herzegovina,Croatian
 com.booking.BookingApp,CS,Czech Republic,Czech
-com.booking.BookingApp,CS,Slovakia,Czech
 com.booking.BookingApp,DA,Denmark,Danish
 com.booking.BookingApp,DA,Greenland,Danish
 com.booking.BookingApp,DA,Faroe Islands,Danish
@@ -825,7 +822,6 @@ com.airbnb.app,CA,Andorra,Catalan
 com.airbnb.app,HR,Croatia,Croatian
 com.airbnb.app,HR,Bosnia and Herzegovina,Croatian
 com.airbnb.app,CS,Czech Republic,Czech
-com.airbnb.app,CS,Slovakia,Czech
 com.airbnb.app,DA,Denmark,Danish
 com.airbnb.app,DA,Greenland,Danish
 com.airbnb.app,DA,Faroe Islands,Danish
