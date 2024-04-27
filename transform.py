@@ -628,7 +628,7 @@ def transform_GooglePlayData(input_file, output_file):
     # Create a new DataFrame that splits the bigram and frequency into separate columns
     bigram_freq_df = pd.DataFrame({
         'appId': bigram_freq_rows['appId'],
-        'bigram': bigram_freq_rows['bigram_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'bigrams': bigram_freq_rows['bigram_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
         'frequency': bigram_freq_rows['bigram_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
     }).dropna()
 

@@ -3,10 +3,10 @@ com.wanderlog.ios,Travel
 com.wanderlog.ios,Navigation
 com.tripit.tripitmobile,Travel
 com.tripit.tripitmobile,Navigation
-app.tripsy.ios,Travel
-app.tripsy.ios,Navigation
 com.roadtrippers.roadtrippersinc,Travel
 com.roadtrippers.roadtrippersinc,Navigation
+app.tripsy.ios,Travel
+app.tripsy.ios,Navigation
 com.tripadvisor.LocalPicks,Travel
 com.tripadvisor.LocalPicks,Lifestyle
 com.visitacity.visitacityapp,Travel
@@ -16,10 +16,10 @@ flamingo.com.uk.Flamingo,Travel
 flamingo.com.uk.Flamingo,Productivity
 co.tripscout.tripscout,Travel
 co.tripscout.tripscout,Magazines & Newspapers
-com.rmitech.nowy,Travel
-com.rmitech.nowy,Social Networking
 com.CarobApps.inRoute,Navigation
 com.CarobApps.inRoute,Travel
+com.rmitech.nowy,Travel
+com.rmitech.nowy,Social Networking
 com.pluto.travel,Travel
 com.pluto.travel,Lifestyle
 com.expedia.booking,Travel
@@ -28,10 +28,10 @@ digital.monos.tour,Travel
 digital.monos.tour,Navigation
 app.getroadie.ios,Travel
 app.getroadie.ios,Navigation
-com.booking.BookingApp,Travel
-com.booking.BookingApp,Lifestyle
 com.hopper.flights,Travel
 com.hopper.flights,Reference
+com.booking.BookingApp,Travel
+com.booking.BookingApp,Lifestyle
 com.airbnb.app,Travel
 com.airbnb.app,Lifestyle
 com.viator,Travel

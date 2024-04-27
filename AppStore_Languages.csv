@@ -56,6 +56,13 @@ com.tripit.tripitmobile,ES,Costa Rica,Spanish
 com.tripit.tripitmobile,ES,Puerto Rico,Spanish
 com.tripit.tripitmobile,ES,Panama,Spanish
 com.tripit.tripitmobile,ES,Uruguay,Spanish
+com.roadtrippers.roadtrippersinc,EN,United States,English
+com.roadtrippers.roadtrippersinc,EN,United Kingdom,English
+com.roadtrippers.roadtrippersinc,EN,Canada,English
+com.roadtrippers.roadtrippersinc,EN,Australia,English
+com.roadtrippers.roadtrippersinc,EN,Ireland,English
+com.roadtrippers.roadtrippersinc,EN,New Zealand,English
+com.roadtrippers.roadtrippersinc,EN,South Africa,English
 app.tripsy.ios,AR,Saudi Arabia,Arabic
 app.tripsy.ios,AR,Iraq,Arabic
 app.tripsy.ios,AR,Egypt,Arabic
@@ -144,13 +151,6 @@ app.tripsy.ios,ES,Costa Rica,Spanish
 app.tripsy.ios,ES,Puerto Rico,Spanish
 app.tripsy.ios,ES,Panama,Spanish
 app.tripsy.ios,ES,Uruguay,Spanish
-com.roadtrippers.roadtrippersinc,EN,United States,English
-com.roadtrippers.roadtrippersinc,EN,United Kingdom,English
-com.roadtrippers.roadtrippersinc,EN,Canada,English
-com.roadtrippers.roadtrippersinc,EN,Australia,English
-com.roadtrippers.roadtrippersinc,EN,Ireland,English
-com.roadtrippers.roadtrippersinc,EN,New Zealand,English
-com.roadtrippers.roadtrippersinc,EN,South Africa,English
 com.tripadvisor.LocalPicks,AR,Saudi Arabia,Arabic
 com.tripadvisor.LocalPicks,AR,Iraq,Arabic
 com.tripadvisor.LocalPicks,AR,Egypt,Arabic
@@ -170,6 +170,7 @@ com.tripadvisor.LocalPicks,AR,Qatar,Arabic
 com.tripadvisor.LocalPicks,AR,Bahrain,Arabic
 com.tripadvisor.LocalPicks,AR,United Arab Emirates,Arabic
 com.tripadvisor.LocalPicks,CS,Czech Republic,Czech
+com.tripadvisor.LocalPicks,CS,Slovakia,Czech
 com.tripadvisor.LocalPicks,DA,Denmark,Danish
 com.tripadvisor.LocalPicks,DA,Greenland,Danish
 com.tripadvisor.LocalPicks,DA,Faroe Islands,Danish
@@ -299,6 +300,7 @@ com.jeremieleroy.packr,AR,United Arab Emirates,Arabic
 com.jeremieleroy.packr,CA,Spain,Catalan
 com.jeremieleroy.packr,CA,Andorra,Catalan
 com.jeremieleroy.packr,CS,Czech Republic,Czech
+com.jeremieleroy.packr,CS,Slovakia,Czech
 com.jeremieleroy.packr,DA,Denmark,Danish
 com.jeremieleroy.packr,DA,Greenland,Danish
 com.jeremieleroy.packr,DA,Faroe Islands,Danish
@@ -419,13 +421,6 @@ co.tripscout.tripscout,EN,Australia,English
 co.tripscout.tripscout,EN,Ireland,English
 co.tripscout.tripscout,EN,New Zealand,English
 co.tripscout.tripscout,EN,South Africa,English
-com.rmitech.nowy,EN,United States,English
-com.rmitech.nowy,EN,United Kingdom,English
-com.rmitech.nowy,EN,Canada,English
-com.rmitech.nowy,EN,Australia,English
-com.rmitech.nowy,EN,Ireland,English
-com.rmitech.nowy,EN,New Zealand,English
-com.rmitech.nowy,EN,South Africa,English
 com.CarobApps.inRoute,EN,United States,English
 com.CarobApps.inRoute,EN,United Kingdom,English
 com.CarobApps.inRoute,EN,Canada,English
@@ -475,6 +470,13 @@ com.CarobApps.inRoute,ES,Costa Rica,Spanish
 com.CarobApps.inRoute,ES,Puerto Rico,Spanish
 com.CarobApps.inRoute,ES,Panama,Spanish
 com.CarobApps.inRoute,ES,Uruguay,Spanish
+com.rmitech.nowy,EN,United States,English
+com.rmitech.nowy,EN,United Kingdom,English
+com.rmitech.nowy,EN,Canada,English
+com.rmitech.nowy,EN,Australia,English
+com.rmitech.nowy,EN,Ireland,English
+com.rmitech.nowy,EN,New Zealand,English
+com.rmitech.nowy,EN,South Africa,English
 com.pluto.travel,EN,United States,English
 com.pluto.travel,EN,United Kingdom,English
 com.pluto.travel,EN,Canada,English
@@ -586,6 +588,75 @@ app.getroadie.ios,DE,Austria,German
 app.getroadie.ios,DE,Switzerland,German
 app.getroadie.ios,DE,Luxembourg,German
 app.getroadie.ios,DE,Liechtenstein,German
+com.hopper.flights,NL,Netherlands,Dutch
+com.hopper.flights,NL,Belgium,Dutch
+com.hopper.flights,NL,Suriname,Dutch
+com.hopper.flights,EN,United States,English
+com.hopper.flights,EN,United Kingdom,English
+com.hopper.flights,EN,Canada,English
+com.hopper.flights,EN,Australia,English
+com.hopper.flights,EN,Ireland,English
+com.hopper.flights,EN,New Zealand,English
+com.hopper.flights,EN,South Africa,English
+com.hopper.flights,FR,France,French
+com.hopper.flights,FR,Canada,French
+com.hopper.flights,FR,Belgium,French
+com.hopper.flights,FR,Switzerland,French
+com.hopper.flights,FR,Luxembourg,French
+com.hopper.flights,FR,Monaco,French
+com.hopper.flights,FR,Congo,French
+com.hopper.flights,FR,Ivory Coast,French
+com.hopper.flights,FR,Madagascar,French
+com.hopper.flights,FR,Cameroon,French
+com.hopper.flights,FR,Burkina Faso,French
+com.hopper.flights,FR,Niger,French
+com.hopper.flights,FR,Senegal,French
+com.hopper.flights,FR,Mali,French
+com.hopper.flights,FR,Rwanda,French
+com.hopper.flights,FR,Belgium,French
+com.hopper.flights,FR,Guinea,French
+com.hopper.flights,DE,Germany,German
+com.hopper.flights,DE,Austria,German
+com.hopper.flights,DE,Switzerland,German
+com.hopper.flights,DE,Luxembourg,German
+com.hopper.flights,DE,Liechtenstein,German
+com.hopper.flights,IT,Italy,Italian
+com.hopper.flights,IT,Switzerland,Italian
+com.hopper.flights,IT,San Marino,Italian
+com.hopper.flights,IT,Vatican City,Italian
+com.hopper.flights,PT,Portugal,Portuguese
+com.hopper.flights,PT,Brazil,Portuguese
+com.hopper.flights,PT,Angola,Portuguese
+com.hopper.flights,PT,Mozambique,Portuguese
+com.hopper.flights,PT,Cape Verde,Portuguese
+com.hopper.flights,PT,Guinea-Bissau,Portuguese
+com.hopper.flights,PT,São Tomé and Príncipe,Portuguese
+com.hopper.flights,PT,East Timor,Portuguese
+com.hopper.flights,ZH,China,Chinese
+com.hopper.flights,ZH,Taiwan,Chinese
+com.hopper.flights,ZH,Singapore,Chinese
+com.hopper.flights,ZH,Malaysia,Chinese
+com.hopper.flights,ES,Spain,Spanish
+com.hopper.flights,ES,Mexico,Spanish
+com.hopper.flights,ES,Colombia,Spanish
+com.hopper.flights,ES,Argentina,Spanish
+com.hopper.flights,ES,Peru,Spanish
+com.hopper.flights,ES,Venezuela,Spanish
+com.hopper.flights,ES,Chile,Spanish
+com.hopper.flights,ES,Ecuador,Spanish
+com.hopper.flights,ES,Guatemala,Spanish
+com.hopper.flights,ES,Cuba,Spanish
+com.hopper.flights,ES,Bolivia,Spanish
+com.hopper.flights,ES,Dominican Republic,Spanish
+com.hopper.flights,ES,Honduras,Spanish
+com.hopper.flights,ES,Paraguay,Spanish
+com.hopper.flights,ES,El Salvador,Spanish
+com.hopper.flights,ES,Nicaragua,Spanish
+com.hopper.flights,ES,Costa Rica,Spanish
+com.hopper.flights,ES,Puerto Rico,Spanish
+com.hopper.flights,ES,Panama,Spanish
+com.hopper.flights,ES,Uruguay,Spanish
+com.hopper.flights,TH,Thailand,Thai
 com.booking.BookingApp,AR,Saudi Arabia,Arabic
 com.booking.BookingApp,AR,Iraq,Arabic
 com.booking.BookingApp,AR,Egypt,Arabic
@@ -610,6 +681,7 @@ com.booking.BookingApp,CA,Andorra,Catalan
 com.booking.BookingApp,HR,Croatia,Croatian
 com.booking.BookingApp,HR,Bosnia and Herzegovina,Croatian
 com.booking.BookingApp,CS,Czech Republic,Czech
+com.booking.BookingApp,CS,Slovakia,Czech
 com.booking.BookingApp,DA,Denmark,Danish
 com.booking.BookingApp,DA,Greenland,Danish
 com.booking.BookingApp,DA,Faroe Islands,Danish
@@ -723,75 +795,6 @@ com.booking.BookingApp,TR,Turkey,Turkish
 com.booking.BookingApp,TR,Cyprus,Turkish
 com.booking.BookingApp,UK,Ukraine,Ukrainian
 com.booking.BookingApp,VI,Vietnam,Vietnamese
-com.hopper.flights,NL,Netherlands,Dutch
-com.hopper.flights,NL,Belgium,Dutch
-com.hopper.flights,NL,Suriname,Dutch
-com.hopper.flights,EN,United States,English
-com.hopper.flights,EN,United Kingdom,English
-com.hopper.flights,EN,Canada,English
-com.hopper.flights,EN,Australia,English
-com.hopper.flights,EN,Ireland,English
-com.hopper.flights,EN,New Zealand,English
-com.hopper.flights,EN,South Africa,English
-com.hopper.flights,FR,France,French
-com.hopper.flights,FR,Canada,French
-com.hopper.flights,FR,Belgium,French
-com.hopper.flights,FR,Switzerland,French
-com.hopper.flights,FR,Luxembourg,French
-com.hopper.flights,FR,Monaco,French
-com.hopper.flights,FR,Congo,French
-com.hopper.flights,FR,Ivory Coast,French
-com.hopper.flights,FR,Madagascar,French
-com.hopper.flights,FR,Cameroon,French
-com.hopper.flights,FR,Burkina Faso,French
-com.hopper.flights,FR,Niger,French
-com.hopper.flights,FR,Senegal,French
-com.hopper.flights,FR,Mali,French
-com.hopper.flights,FR,Rwanda,French
-com.hopper.flights,FR,Belgium,French
-com.hopper.flights,FR,Guinea,French
-com.hopper.flights,DE,Germany,German
-com.hopper.flights,DE,Austria,German
-com.hopper.flights,DE,Switzerland,German
-com.hopper.flights,DE,Luxembourg,German
-com.hopper.flights,DE,Liechtenstein,German
-com.hopper.flights,IT,Italy,Italian
-com.hopper.flights,IT,Switzerland,Italian
-com.hopper.flights,IT,San Marino,Italian
-com.hopper.flights,IT,Vatican City,Italian
-com.hopper.flights,PT,Portugal,Portuguese
-com.hopper.flights,PT,Brazil,Portuguese
-com.hopper.flights,PT,Angola,Portuguese
-com.hopper.flights,PT,Mozambique,Portuguese
-com.hopper.flights,PT,Cape Verde,Portuguese
-com.hopper.flights,PT,Guinea-Bissau,Portuguese
-com.hopper.flights,PT,São Tomé and Príncipe,Portuguese
-com.hopper.flights,PT,East Timor,Portuguese
-com.hopper.flights,ZH,China,Chinese
-com.hopper.flights,ZH,Taiwan,Chinese
-com.hopper.flights,ZH,Singapore,Chinese
-com.hopper.flights,ZH,Malaysia,Chinese
-com.hopper.flights,ES,Spain,Spanish
-com.hopper.flights,ES,Mexico,Spanish
-com.hopper.flights,ES,Colombia,Spanish
-com.hopper.flights,ES,Argentina,Spanish
-com.hopper.flights,ES,Peru,Spanish
-com.hopper.flights,ES,Venezuela,Spanish
-com.hopper.flights,ES,Chile,Spanish
-com.hopper.flights,ES,Ecuador,Spanish
-com.hopper.flights,ES,Guatemala,Spanish
-com.hopper.flights,ES,Cuba,Spanish
-com.hopper.flights,ES,Bolivia,Spanish
-com.hopper.flights,ES,Dominican Republic,Spanish
-com.hopper.flights,ES,Honduras,Spanish
-com.hopper.flights,ES,Paraguay,Spanish
-com.hopper.flights,ES,El Salvador,Spanish
-com.hopper.flights,ES,Nicaragua,Spanish
-com.hopper.flights,ES,Costa Rica,Spanish
-com.hopper.flights,ES,Puerto Rico,Spanish
-com.hopper.flights,ES,Panama,Spanish
-com.hopper.flights,ES,Uruguay,Spanish
-com.hopper.flights,TH,Thailand,Thai
 com.airbnb.app,SQ,Albania,Albanian
 com.airbnb.app,SQ,Kosovo,Albanian
 com.airbnb.app,AR,Saudi Arabia,Arabic
@@ -822,6 +825,7 @@ com.airbnb.app,CA,Andorra,Catalan
 com.airbnb.app,HR,Croatia,Croatian
 com.airbnb.app,HR,Bosnia and Herzegovina,Croatian
 com.airbnb.app,CS,Czech Republic,Czech
+com.airbnb.app,CS,Slovakia,Czech
 com.airbnb.app,DA,Denmark,Danish
 com.airbnb.app,DA,Greenland,Danish
 com.airbnb.app,DA,Faroe Islands,Danish
