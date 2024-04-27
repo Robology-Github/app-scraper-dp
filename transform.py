@@ -15,12 +15,6 @@ from langdetect import detect
 import os
 import warnings
 
-# Ignore specific warnings that are not critical
-warnings.filterwarnings("ignore", category=SyntaxWarning, module='iso639')
-warnings.filterwarnings("ignore", category=SyntaxWarning, module='iso-639')
-warnings.filterwarnings("ignore", message="Could not find cuda drivers on your machine, GPU will not be used.")
-warnings.filterwarnings("ignore", message="TF-TRT Warning: Could not find TensorRT")
-
 
 
 # Example transformation function
