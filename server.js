@@ -1,4 +1,3 @@
-// Description: This file contains the server-side code for the app. It uses the Express.js framework to create a server that listens for requests on port 3000. The server has two routes: /search and /collection. The /search route fetches app details for a search term from the App Store and Google Play, while the /collection route fetches app details for a collection of apps from the App Store and Google Play. The app details include app metadata and reviews. The server also uploads the app details to Google Cloud Storage and runs Python scripts to transform the data before uploading it.
 import express from "express";
 import bodyParser from "body-parser";
 import googlePlay from "google-play-scraper";
@@ -656,7 +655,7 @@ async function similarFetchAppDetails(appName, country) {
 }
 
 // Function to fetch Google Play app reviews
-async function fetchGooglePlayReviews(appId, countryList, numOfReviews = 200) {
+async function fetchGooglePlayReviews(appId, countryList, numOfReviews = 100) {
   const reviews = await googlePlay.reviews({
     appId: appId,
     num: numOfReviews,
@@ -667,7 +666,7 @@ async function fetchGooglePlayReviews(appId, countryList, numOfReviews = 200) {
 }
 
 // Function to fetch App Store reviews
-async function fetchAppStoreReviews(appId, countryList, numOfReviews = 200) {
+async function fetchAppStoreReviews(appId, countryList, numOfReviews = 100) {
   const reviews = await appStore.reviews({
     appId: appId,
     num: numOfReviews,

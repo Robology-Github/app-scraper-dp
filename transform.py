@@ -17,6 +17,7 @@ import warnings
 
 # Ignore specific warnings that are not critical
 warnings.filterwarnings("ignore", category=SyntaxWarning, module='iso639')
+warnings.filterwarnings("ignore", category=SyntaxWarning, module='iso-639')
 warnings.filterwarnings("ignore", message="Could not find cuda drivers on your machine, GPU will not be used.")
 warnings.filterwarnings("ignore", message="TF-TRT Warning: Could not find TensorRT")
 
@@ -128,15 +129,30 @@ def transform_AppStoreData(input_file, output_file):
         if len(text.split()) < 2:
             return []
         blob = TextBlob(text)
-        return [' '.join(bigram) for bigram in blob.ngrams(2)]
+        bigrams = [' '.join(bigram) for bigram in blob.ngrams(2)]
+        # Count bigrams
+        bigram_counts = Counter(bigrams)
+        # Return bigrams with their frequencies
+        return list(bigram_counts.items())
 
-    df['bigrams'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
-    bigrams_df = df.explode('bigrams')[['appId', 'bigrams']].dropna()
+    # Apply the function
+    df['bigram_freq'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
+    bigram_freq_rows = df.explode('bigram_freq')
+
+    # Create a new DataFrame that splits the bigram and frequency into separate columns
+    bigram_freq_df = pd.DataFrame({
+        'appId': bigram_freq_rows['appId'],
+        'bigram': bigram_freq_rows['bigram_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'frequency': bigram_freq_rows['bigram_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
+    }).dropna()
 
     def flatten_word_frequencies(text):
-        freqs = Counter(text.split())
+        words = text.split()
+        freqs = Counter(words)
+        # Get all word frequencies, without limiting to top 20
         return list(freqs.items())
 
+    # Apply the  function
     df['word_freq'] = df['processed_reviews'].apply(flatten_word_frequencies)
     word_freq_rows = df.explode('word_freq')
     word_freq_df = pd.DataFrame({
@@ -177,7 +193,7 @@ def transform_AppStoreData(input_file, output_file):
             print(f"Error processing text: {e}")
             return 'Missing'  # Default to 'Missing' in case of an error
 
-    df['Sentiment_Category'] = df['reviews'].apply(compute_sentiment_category_mbert)
+    df['Sentiment_Category'] = df['processed_reviews'].apply(compute_sentiment_category_mbert)
 
 
     # Parsing and One-hot Encoding for List Columns
@@ -358,11 +374,6 @@ def transform_AppStoreData(input_file, output_file):
             return 'Very Mature'
         
 
-
-
-
-
-
     # Define categories based on percentiles
     def price_category(price):
         if price == 0:
@@ -477,7 +488,7 @@ def transform_AppStoreData(input_file, output_file):
     genres_exploded.to_csv('AppStore_Genres.csv', index=False)
 
     # Save the results to separate CSV files
-    bigrams_df.to_csv('AppStore_Bigrams.csv', index=False)
+    bigram_freq_df.to_csv('AppStore_Bigrams.csv', index=False)
     word_freq_df.to_csv('AppStore_Word_Frequencies.csv', index=False)
     print("Bigrams and word frequencies have been saved to CSV files.")
 
@@ -598,35 +609,44 @@ def transform_GooglePlayData(input_file, output_file):
 
     # Apply the modified function to your DataFrame
     df["processed_reviews"] = df["reviews"].apply(preprocess_and_split_reviews)
-    # Apply the modified function to your DataFrame
-    df["processed_reviews"] = df["reviews"].apply(preprocess_and_split_reviews)
+
 
     def get_and_flatten_bigrams(text):
         if len(text.split()) < 2:
             return []
         blob = TextBlob(text)
-        return [" ".join(bigram) for bigram in blob.ngrams(2)]
+        bigrams = [' '.join(bigram) for bigram in blob.ngrams(2)]
+        # Count bigrams
+        bigram_counts = Counter(bigrams)
+        # Return bigrams with their frequencies
+        return list(bigram_counts.items())
 
-    df["bigrams"] = df["processed_reviews"].apply(get_and_flatten_bigrams)
-    bigrams_df = df.explode("bigrams")[["appId", "bigrams"]].dropna()
+    # Apply the function
+    df['bigram_freq'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
+    bigram_freq_rows = df.explode('bigram_freq')
+
+    # Create a new DataFrame that splits the bigram and frequency into separate columns
+    bigram_freq_df = pd.DataFrame({
+        'appId': bigram_freq_rows['appId'],
+        'bigram': bigram_freq_rows['bigram_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'frequency': bigram_freq_rows['bigram_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
+    }).dropna()
 
     def flatten_word_frequencies(text):
-        freqs = Counter(text.split())
+        words = text.split()
+        freqs = Counter(words)
+        # Get all word frequencies, without limiting to top 20
         return list(freqs.items())
 
-    df["word_freq"] = df["processed_reviews"].apply(flatten_word_frequencies)
-    word_freq_rows = df.explode("word_freq")
-    word_freq_df = pd.DataFrame(
-        {
-            "appId": word_freq_rows["appId"],
-            "word": word_freq_rows["word_freq"].apply(
-                lambda x: x[0] if pd.notna(x) else ""
-            ),
-            "frequency": word_freq_rows["word_freq"].apply(
-                lambda x: x[1] if pd.notna(x) else 0
-            ),
-        }
-    ).dropna()
+    # Apply the  function
+    df['word_freq'] = df['processed_reviews'].apply(flatten_word_frequencies)
+    word_freq_rows = df.explode('word_freq')
+    word_freq_df = pd.DataFrame({
+        'appId': word_freq_rows['appId'],
+        'word': word_freq_rows['word_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'frequency': word_freq_rows['word_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
+    }).dropna()
+
 
     ## Install to rating ratio categorization
     def categorize_install_to_rating_ratio(ratio):
@@ -867,7 +887,7 @@ def transform_GooglePlayData(input_file, output_file):
     df["released"] = df["released"].dt.strftime("%Y-%m-%d")
     df.to_csv("GooglePlayOutput_cleaned.csv", index=False, sep=",", encoding="utf-8")
     categories_exploded.to_csv("GooglePlay_Categories.csv", index=False)
-    bigrams_df.to_csv("GooglePlay_Bigrams.csv", index=False)
+    bigram_freq_df.to_csv("GooglePlay_Bigrams.csv", index=False)
     word_freq_df.to_csv("GooglePlay_Word_Frequencies.csv", index=False)
 
     print(df.head())  # This will print the first 5 rows of the DataFrame after cleanup
