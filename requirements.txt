@@ -5,4 +5,5 @@ langdetect
 transformers
 nltk
 tf-keras
-
+flax
+tensorflow

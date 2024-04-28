@@ -1,38 +1,183 @@
 appId,genres
-com.wanderlog.ios,Travel
-com.wanderlog.ios,Navigation
-com.tripit.tripitmobile,Travel
-com.tripit.tripitmobile,Navigation
-app.tripsy.ios,Travel
-app.tripsy.ios,Navigation
-com.roadtrippers.roadtrippersinc,Travel
-com.roadtrippers.roadtrippersinc,Navigation
-co.tripscout.tripscout,Travel
-co.tripscout.tripscout,Magazines & Newspapers
-com.visitacity.visitacityapp,Travel
-com.tripadvisor.LocalPicks,Travel
-com.tripadvisor.LocalPicks,Lifestyle
-com.travefy.travelplannersapp.tripplans,Travel
-com.travefy.travelplannersapp.tripplans,Lifestyle
-com.viator,Travel
-com.viator,Shopping
-com.rmitech.nowy,Travel
-com.rmitech.nowy,Social Networking
-flamingo.com.uk.Flamingo,Travel
-flamingo.com.uk.Flamingo,Productivity
-com.jeremieleroy.packr,Travel
-com.jeremieleroy.packr,Utilities
-com.pluto.travel,Travel
-com.pluto.travel,Lifestyle
-com.hopper.flights,Travel
-com.hopper.flights,Reference
-net.skyscanner.iphone,Travel
-com.HighHeels.Travelist,Travel
-com.kayak.travel,Travel
-com.kayak.travel,Business
-com.booking.BookingApp,Travel
-com.booking.BookingApp,Lifestyle
+com.rileytestut.Delta,Entertainment
+com.einnovation.temu,Shopping
+com.google.GoogleMobile,Utilities
+com.google.GoogleMobile,Reference
+com.burbn.barcelona,Social Networking
+com.burbn.barcelona,Entertainment
+com.google.Maps,Navigation
+com.google.Maps,Food & Drink
+com.zhiliaoapp.musically,Entertainment
+com.zhiliaoapp.musically,Photo & Video
+com.lemon.lvoverseas,Photo & Video
+zzkko.com.ZZKKO,Shopping
+com.burbn.instagram,Photo & Video
+com.burbn.instagram,Social Networking
+com.google.ios.youtube,Photo & Video
+com.google.ios.youtube,Entertainment
+net.whatsapp.WhatsApp,Social Networking
+net.whatsapp.WhatsApp,Utilities
+doordash.DoorDashConsumer,Food & Drink
+doordash.DoorDashConsumer,Lifestyle
+com.facebook.Facebook,Social Networking
+com.wbd.stream,Entertainment
+com.wbd.stream,Lifestyle
+com.google.Gmail,Productivity
+com.google.Gmail,Social Networking
+com.squareup.cash,Finance
+com.squareup.cash,Business
+com.openai.chat,Productivity
+com.openai.chat,Utilities
+com.ubercab.UberClient,Travel
+com.ubercab.UberClient,Lifestyle
+ph.telegra.Telegraph,Social Networking
+ph.telegra.Telegraph,Productivity
+com.toyopagroup.picaboo,Photo & Video
+com.toyopagroup.picaboo,Social Networking
+com.spotify.client,Music
+com.spotify.client,Entertainment
+com.mcdonalds.gma,Food & Drink
+com.mcdonalds.gma,Shopping
+com.life360.safetymap,Social Networking
+com.life360.safetymap,Lifestyle
+com.amazon.Amazon,Shopping
+com.amazon.Amazon,Lifestyle
+com.netflix.Netflix,Entertainment
+com.netflix.Netflix,Lifestyle
+com.roku.ios.roku,Entertainment
+com.roku.ios.roku,Utilities
+com.amazon.aiv.AIVApp,Entertainment
+com.amazon.aiv.AIVApp,Lifestyle
+com.storymatrix.drama,Entertainment
+com.reddit.Reddit,News
+com.reddit.Reddit,Social Networking
+pinterest,Lifestyle
+pinterest,Photo & Video
+com.bd.nproject,Lifestyle
+com.facebook.Messenger,Social Networking
+com.facebook.Messenger,Productivity
+com.walmart.electronics,Shopping
+com.walmart.electronics,Lifestyle
+com.google.chrome.ios,Utilities
+com.google.chrome.ios,Productivity
+com.ubercab.UberEats,Food & Drink
+com.ubercab.UberEats,Lifestyle
+com.hammerandchisel.discord,Social Networking
+com.hammerandchisel.discord,Games
+com.zimride.instant,Travel
+com.zimride.instant,Navigation
+com.ticketmaster.ios.TicketmasterApp,Entertainment
+com.ticketmaster.ios.TicketmasterApp,Music
+com.dominos.iphone,Food & Drink
+com.dominos.iphone,Lifestyle
+com.duolingo.DuolingoMobile,Education
+com.duolingo.DuolingoMobile,Social Networking
+com.atebits.Tweetie2,News
+com.atebits.Tweetie2,Social Networking
+com.yourcompany.PPClient,Finance
+com.yourcompany.PPClient,Utilities
+net.kortina.labs.Venmo,Finance
+net.kortina.labs.Venmo,Utilities
+com.google.photos,Photo & Video
+com.indeed.JobSearch,Business
+com.indeed.JobSearch,Utilities
+com.google.Tachyon,Social Networking
+com.jadedlabs.arrive,Shopping
+com.jadedlabs.arrive,Utilities
+com.hulu.plus,Entertainment
+com.hulu.plus,Lifestyle
+com.engauge.Chick-fil-A,Food & Drink
+com.engauge.Chick-fil-A,Lifestyle
+com.zellepay.zelle,Finance
+com.disney.disneyplus,Entertainment
+com.alibaba.iAliexpress,Shopping
+com.alibaba.iAliexpress,Lifestyle
+com.target.Target,Shopping
+com.target.Target,Lifestyle
+com.espn.ScoreCenter,Sports
+com.espn.ScoreCenter,Entertainment
+com.google.Drive,Productivity
+com.airbnb.app,Travel
+com.airbnb.app,Lifestyle
+com.tacobell.ARgame,Food & Drink
+com.tacobell.ARgame,Lifestyle
+com.waze.iphone,Navigation
+com.waze.iphone,Travel
+com.shazam.Shazam,Music
+com.shazam.Shazam,Entertainment
+com.nike.omega,Shopping
+com.nike.omega,Sports
+com.canva.canvaeditor,Photo & Video
+com.canva.canvaeditor,Productivity
+com.cbsvideo.app,Entertainment
+com.particlenews.newsbreak,News
+com.particlenews.newsbreak,Weather
+com.linkedin.LinkedIn,Business
+com.google.ios.youtubemusic,Music
+com.google.ios.youtubemusic,Entertainment
+com.eventbrite.attendee,Entertainment
+com.eventbrite.attendee,Lifestyle
 com.expedia.booking,Travel
 com.expedia.booking,Lifestyle
-com.outofoffice.ooomobile,Travel
-com.outofoffice.ooomobile,Social Networking
+com.wikibuy.prod.main,Shopping
+com.wikibuy.prod.main,Lifestyle
+com.locket.Locket,Social Networking
+com.locket.Locket,Photo & Video
+com.samsclub.samsapp,Shopping
+com.samsclub.samsapp,Lifestyle
+com.capitalone.enterprisemobilebanking,Finance
+com.etsy.etsyforios,Shopping
+com.etsy.etsyforios,Lifestyle
+com.ebay.iphone,Shopping
+com.ebay.iphone,Lifestyle
+com.mobilaurus.wingstopongroup2,Food & Drink
+com.mobilaurus.wingstopongroup2,Lifestyle
+com.ring,Lifestyle
+com.adrise.tubitv,Entertainment
+com.adrise.tubitv,Lifestyle
+com.thehomedepot.homedepot,Shopping
+com.thehomedepot.homedepot,Lifestyle
+com.chipotle.Chipotle,Food & Drink
+com.chipotle.Chipotle,Lifestyle
+com.google.Translate,Reference
+com.google.Translate,Travel
+yuca.scanner,Health & Fitness
+yuca.scanner,Food & Drink
+com.doordash.dasher,Business
+com.FetchRewards.HopBeta,Shopping
+com.FetchRewards.HopBeta,Lifestyle
+com.vrbo.traveler,Travel
+com.vrbo.traveler,Lifestyle
+tv.twitch,Photo & Video
+tv.twitch,Social Networking
+com.tinginteractive.usms,Social Networking
+com.tinginteractive.usms,Utilities
+com.axs.AXSMobile,Entertainment
+com.axs.AXSMobile,Music
+com.costco.costco,Shopping
+com.costco.costco,Lifestyle
+com.cardify.tinder,Lifestyle
+com.cardify.tinder,Social Networking
+com.creditkarma.mobile,Finance
+com.creditkarma.mobile,Productivity
+evolly.app.rokuremote,Utilities
+evolly.app.rokuremote,Productivity
+com.yelp.yelpiphone,Food & Drink
+com.yelp.yelpiphone,Travel
+com.qianfan.aihomework,Education
+com.qianfan.aihomework,Utilities
+com.zillow.ZillowMap,Lifestyle
+com.zillow.ZillowMap,Reference
+com.peacocktv.peacock,Entertainment
+com.google.b612,Travel
+com.google.b612,Navigation
+com.gc.teammanager,Sports
+com.gc.teammanager,Health & Fitness
+com.mlb.AtTheBallpark,Sports
+com.mlb.AtTheBallpark,Entertainment
+com.starbucks.mystarbucks,Food & Drink
+com.starbucks.mystarbucks,Lifestyle
+com.microsoft.azureauthenticator,Productivity
+com.microsoft.azureauthenticator,Utilities
+us.parkmobile.ParkMobile,Navigation
+us.parkmobile.ParkMobile,Travel

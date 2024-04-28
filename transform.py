@@ -108,6 +108,7 @@ def transform_AppStoreData(input_file, output_file):
 
         # Remove all non-alpha characters and extra spaces, convert to lower case
         reviews = re.sub('\\s+', ' ', reviews).strip().lower()
+        reviews = re.sub(r'[^\u0000-\u007F]+', '', reviews)
 
         # Remove stopwords
         words = [word for word in reviews.split() if word not in stop_words and len(word) > 1]
@@ -460,10 +461,10 @@ def transform_AppStoreData(input_file, output_file):
 
     # Final DataFrame Cleanup and Saving the Cleaned Data
     columns_to_remove = [
-        'id', '', 'description', 'icon', 'genreIds', 'primaryGenreId',
+        'id', 'icon', 'genreIds', 'primaryGenreId',
         'requiredOsVersion', 'version', 'developerid', 'developerUrl',
         'screenshots', 'ipadScreenshots', 'appletvScreenshots',
-        'languages', 'genres', 'supportedDevices', 'currency', 'developerId', 'reviews', 
+        'languages', 'genres', 'supportedDevices', 'currency', 'developerId', 'reviews', 'processed_reviews', 'bigrams', 'word_freq'
     ]
     df.drop(columns_to_remove, axis=1, inplace=True, errors='ignore')
 
@@ -565,6 +566,7 @@ def transform_GooglePlayData(input_file, output_file):
             )  # Default to English if error occurs
 
         reviews = re.sub('\\s+', ' ', reviews).strip().lower()
+        reviews = re.sub(r'[^\u0000-\u007F]+', '', reviews)
 
         # Remove stopwords
         words = [
@@ -807,7 +809,7 @@ def transform_GooglePlayData(input_file, output_file):
 
     # Clean-up and Output
     columns_to_remove = [
-        "description",
+        
         "descriptionHTML",
         "summary",
         "installs",
@@ -846,6 +848,8 @@ def transform_GooglePlayData(input_file, output_file):
         "processed_reviews",
         "bigrams_df",
         "word_freq_df",
+        "bigrams",
+        "word_freq",
     ]
     df.drop(columns_to_remove, axis=1, inplace=True, errors="ignore")
     df["updated"] = df["updated"].dt.strftime("%Y-%m-%d")
