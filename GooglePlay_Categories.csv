@@ -1,201 +1,31 @@
 appId,categories
-com.einnovation.temu,Shopping
-com.whatsapp,Communication
-com.zhiliaoapp.musically,Social
-com.instagram.android,Social
-com.zzkko,Shopping
-com.facebook.orca,Communication
-com.squareup.cash,Finance
-org.telegram.messenger,Communication
-com.facebook.katana,Social
-com.snapchat.android,Communication
-com.particlenews.newsbreak,News & Magazines
-com.lemon.lvoverseas,Video Players & Editors
-com.instagram.barcelona,Social
-com.americasbestpics,Social
-com.walmart.android,Shopping
-com.make.gif.pro,Photography
-com.tubitv,Entertainment
-com.mcdonalds.app,Food & Drink
-com.emojimaker.emojistitch,Entertainment
-com.enflick.android.TextNow,Communication
-pdf.pdfreader.viewer.editor.free,Productivity
-com.indeed.android.jobsearch,Business
-com.tools.control.center.simplecontrol,Personalization
-com.paypal.android.p2pmobile,Finance
-com.wbd.stream,Entertainment
-com.spotify.music,Music & Audio
-us.zoom.videomeetings,Business
-com.life360.android.safetymapd,Lifestyle
-com.netflix.mediaclient,Entertainment
-easy.launcher,Personalization
-com.openai.chatgpt,Productivity
-com.gamma.scan,Tools
-com.dd.doordash,Food & Drink
-com.alibaba.aliexpresshd,Shopping
-com.discord,Communication
-com.microsoft.teams,Business
-com.reddit.frontpage,Social
-com.radio.pocketfm,Music & Audio
-com.adobe.spark.post,Art & Design
-com.pinterest,Lifestyle
-com.ubercab,Maps & Navigation
-com.onedebit.chime,Finance
-com.amazon.mShop.android.shopping,Shopping
-com.twitter.android,Social
-com.google.android.apps.translate,Tools
-com.facebook.lite,Social
-com.amazon.avod.thirdpartyclient,Entertainment
-com.microsoft.emmx,Communication
-me.lyft.android,Maps & Navigation
-com.venmo,Finance
-com.aigc.ushow.ichat,Social
-com.azure.authenticator,Business
-com.duolingo,Education
-com.zellepay.zelle,Finance
-com.xphotokit.app,Photography
-com.weaver.app.prod,Entertainment
-com.cbs.app,Entertainment
-com.sec.android.easyMover,Tools
-com.tacobell.ordering,Food & Drink
-com.disney.disneyplus,Entertainment
-com.pandora.android,Music & Audio
-com.hulu.plus,Entertainment
-tv.pluto.android,Entertainment
-com.alibaba.intl.android.apps.poseidon,Shopping
-com.bpfit.bloodpressure.health,Health & Fitness
-com.canva.editor,Art & Design
-com.roku.remote,Entertainment
-com.localaiapp.scoops,Entertainment
-com.newsclapper.video,Social
-cn.danatech.xingseus,Education
-com.instabridge.android,Productivity
-com.google.android.apps.youtube.unplugged,Entertainment
-com.codespaceapps.aichat,Productivity
-com.etsy.android,Shopping
-cashgiraffe.app,Lifestyle
-com.ticketmaster.mobile.android.na,Events
-com.mearsure.heartratepro.manage,Health & Fitness
-com.target.ui,Shopping
-com.konylabs.capitalone,Finance
-com.waze,Maps & Navigation
-sg.bigo.live,Social
-com.airbnb.android,Travel & Local
-com.mistplay.mistplay,Entertainment
-com.shopify.arrive,Shopping
-com.best.quick.browser,Tools
-com.storymatrix.drama,Entertainment
-com.google.android.apps.walletnfcrel,Finance
-com.dominospizza,Food & Drink
-com.google.android.apps.youtube.kids,Entertainment
-com.apple.movetoios,Tools
-com.ubercab.eats,Food & Drink
-com.chickfila.cfaflagship,Food & Drink
-com.crunchyroll.crunchyroid,Entertainment
-com.novanews.localnews.en,News & Magazines
-com.onefinance.one,Finance
-com.justplay.app,Entertainment
-com.fetchrewards.fetchrewards.hop,Shopping
-com.thehomedepot,Shopping
-com.rfi.sams.android,Shopping
-com.doordash.driverapp,Business
-com.whatsapp.w4b,Communication
-com.google.android.apps.authenticator2,Tools
-com.lowes.android,Shopping
-clean.master.antivirus.battery.ora,Tools
+com.wanderlog.android,Travel & Local
+com.tripit,Travel & Local
+com.roadtrippers,Travel & Local
+com.tripadvisor.tripadvisor,Travel & Local
+com.citymapper.app.release,Maps & Navigation
+app.getroadie.android,Travel & Local
+com.visitacity.visitacityapp,Travel & Local
+ai.iplan.app,Travel & Local
+cz.worldeecom.worldee,Travel & Local
+com.polarsteps,Travel & Local
+com.underwood.route_optimiser,Maps & Navigation
+com.travefy.tripplans,Travel & Local
+tr.com.ussal.smartrouteplanner,Maps & Navigation
+com.zeoauto.zeocircuit,Maps & Navigation
+com.rome2rio.www.rome2rio,Travel & Local
+com.roadwarrior.android,Maps & Navigation
+com.mapamai.maps.batchgeocode,Maps & Navigation
+io.lambus.app,Travel & Local
+com.kayak.android,Travel & Local
+com.tripomatic,Travel & Local
+com.mike.unikoom.lucy,Travel & Local
+com.stippl.stippl,Travel & Local
+com.viator.mobile.android,Travel & Local
 com.expedia.bookings,Travel & Local
-com.nfl.fanmobilepass,Sports
-com.linkedin.android,Business
-com.qianfan.aihomework,Education
-org.thoughtcrime.securesms,Communication
-com.creditkarma.mobile,Finance
-com.phonevalley.progressive,Finance
-epic.mychart.android,Medical
-com.google.android.apps.adm,Tools
-com.peacocktv.peacockandroid,Entertainment
-com.novanews.android.dailynews,News & Magazines
-com.ebay.mobile,Shopping
-com.photoroom.app,Photography
-bloodpressure.bloodpressureapp.bloodpressuretracker,Health & Fitness
-com.starbucks.mobilecard,Food & Drink
-com.pinger.textfree,Social
-com.offerup,Shopping
-com.boost.roku.remote,Tools
-com.plexapp.android,Entertainment
-com.ubercab.driver,Business
-com.appsky.android.bloodpressure,Health & Fitness
-proxy.browser.unblock.sites.proxybrowser.unblocksites,Tools
-com.nike.omega,Shopping
-com.scannerreader.qrcode.creatorfree,Tools
-com.clearchannel.iheartradio.controller,Music & Audio
-com.arbys.android.arbysapp,Food & Drink
-com.pdf.pro,Tools
-com.chase.sig.android,Finance
-com.flashalert2017.version1,Tools
-com.education.android.h.intelligence,Education
-com.adobe.reader,Productivity
-com.applock.launcher,Personalization
-com.soundcloud.android,Music & Audio
-com.nextdoor,Lifestyle
-com.coinidentifyer.ai,Tools
-com.wayfair.wayfair,Shopping
-com.espn.score_center,Sports
-com.wf.wellsfargomobile,Finance
-com.circlek.gmap.na,Shopping
-com.stickermobi.avatarmaker,Entertainment
-com.fast.free.unblock.secure.vpn,Tools
-com.adpmobile.android,Business
-er.notepad.notes.notebook.checklist.calendar,Tools
-com.wikibuy.prod.main,Shopping
-com.infonow.bofa,Finance
-com.brighthouse.mybhn,Tools
-com.vrbo.android,Travel & Local
-com.bumble.app,Dating
-com.instacart.client,Food & Drink
-com.mwm.sampler,Music & Audio
-com.nordvpn.android,Tools
-com.google.earth,Travel & Local
-de.empfohlen,Finance
-com.truebill,Finance
-com.zillow.android.zillowmap,House & Home
-com.weather.Weather,Weather
-com.goodrx,Medical
-com.audible.application,Books & Reference
-com.emn8.mobilem8.nativeapp.bk,Food & Drink
-com.callapp.contacts,Communication
-br.com.intermedium,Finance
-net.zedge.android,Personalization
-com.xfinity.digitalhome,Productivity
-com.camerasideas.instashot,Photography
-com.booking,Travel & Local
-com.google.android.apps.nbu.paisa.user,Finance
-musicplayer.playmusic.audioplayer,Music & Audio
-org.mozilla.firefox,Communication
-com.zhiliao.musically.livewallpaper,Tools
-com.opera.app.news.local,News & Magazines
-com.dollartree.consumer,Shopping
-com.poshmark.app,Shopping
-volumebooster.soundspeaker.louder,Music & Audio
-tv.twitch.android.app,Entertainment
-com.subway.mobile.subwayapp03,Food & Drink
-com.beint.zangi,Communication
-com.yahoo.mobile.client.android.mail,Communication
-com.littlecaesars,Food & Drink
-com.sharlocation.friend.family,Maps & Navigation
-com.amazon.mp3,Music & Audio
-com.uhaul.android.myuhaul,Travel & Local
-com.bandlab.bandlab,Music & Audio
-mobi.abcmouse.academy_goo,Education
-com.wendys.nutritiontool,Food & Drink
-com.google.android.apps.googlevoice,Communication
-pdf.reader.all.pdfviewer.pdfeditor,Productivity
-com.kfc.us.mobile,Food & Drink
-me.zepeto.main,Entertainment
-com.ringapp,Lifestyle
-com.affirm.central,Shopping
-com.upside.consumer.android,Travel & Local
-com.tinder,Dating
-videoplayer.videodownloader.downloader,Tools
-com.google.android.apps.docs.editors.docs,Productivity
-remote.control.tv.universal.forall.roku,Tools
-com.delta.mobile.android,Travel & Local
+com.YRH.PackPoint,Travel & Local
+com.tripmapper.tripmapper,Travel & Local
+tech.jonas.travelbudget,Travel & Local
+com.thetransitapp.droid,Maps & Navigation
+com.getyourguide.android,Travel & Local
+com.findpenguins.app,Travel & Local

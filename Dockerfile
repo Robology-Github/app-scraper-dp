@@ -36,6 +36,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Run TextBlob's download script
 RUN python -m textblob.download_corpora lite
+RUN pip3 install torch==1.9.0+cpu torchvision==0.10.0+cpu torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip3 install tensorflow-cpu-aws
 
 # Install any needed packages specified in package.json for Node.js
 RUN npm install

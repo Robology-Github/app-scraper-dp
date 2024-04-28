@@ -1,183 +1,378 @@
 appId,genres
-com.rileytestut.Delta,Entertainment
-com.einnovation.temu,Shopping
-com.google.GoogleMobile,Utilities
-com.google.GoogleMobile,Reference
-com.burbn.barcelona,Social Networking
-com.burbn.barcelona,Entertainment
-com.google.Maps,Navigation
-com.google.Maps,Food & Drink
-com.zhiliaoapp.musically,Entertainment
-com.zhiliaoapp.musically,Photo & Video
-com.lemon.lvoverseas,Photo & Video
-zzkko.com.ZZKKO,Shopping
-com.burbn.instagram,Photo & Video
-com.burbn.instagram,Social Networking
-com.google.ios.youtube,Photo & Video
-com.google.ios.youtube,Entertainment
-net.whatsapp.WhatsApp,Social Networking
-net.whatsapp.WhatsApp,Utilities
-doordash.DoorDashConsumer,Food & Drink
-doordash.DoorDashConsumer,Lifestyle
-com.facebook.Facebook,Social Networking
-com.wbd.stream,Entertainment
-com.wbd.stream,Lifestyle
-com.google.Gmail,Productivity
-com.google.Gmail,Social Networking
-com.squareup.cash,Finance
-com.squareup.cash,Business
-com.openai.chat,Productivity
-com.openai.chat,Utilities
-com.ubercab.UberClient,Travel
-com.ubercab.UberClient,Lifestyle
-ph.telegra.Telegraph,Social Networking
-ph.telegra.Telegraph,Productivity
-com.toyopagroup.picaboo,Photo & Video
-com.toyopagroup.picaboo,Social Networking
-com.spotify.client,Music
-com.spotify.client,Entertainment
-com.mcdonalds.gma,Food & Drink
-com.mcdonalds.gma,Shopping
-com.life360.safetymap,Social Networking
-com.life360.safetymap,Lifestyle
-com.amazon.Amazon,Shopping
-com.amazon.Amazon,Lifestyle
-com.netflix.Netflix,Entertainment
-com.netflix.Netflix,Lifestyle
-com.roku.ios.roku,Entertainment
-com.roku.ios.roku,Utilities
-com.amazon.aiv.AIVApp,Entertainment
-com.amazon.aiv.AIVApp,Lifestyle
-com.storymatrix.drama,Entertainment
-com.reddit.Reddit,News
-com.reddit.Reddit,Social Networking
-pinterest,Lifestyle
-pinterest,Photo & Video
-com.bd.nproject,Lifestyle
-com.facebook.Messenger,Social Networking
-com.facebook.Messenger,Productivity
-com.walmart.electronics,Shopping
-com.walmart.electronics,Lifestyle
-com.google.chrome.ios,Utilities
-com.google.chrome.ios,Productivity
-com.ubercab.UberEats,Food & Drink
-com.ubercab.UberEats,Lifestyle
-com.hammerandchisel.discord,Social Networking
-com.hammerandchisel.discord,Games
-com.zimride.instant,Travel
-com.zimride.instant,Navigation
-com.ticketmaster.ios.TicketmasterApp,Entertainment
-com.ticketmaster.ios.TicketmasterApp,Music
-com.dominos.iphone,Food & Drink
-com.dominos.iphone,Lifestyle
-com.duolingo.DuolingoMobile,Education
-com.duolingo.DuolingoMobile,Social Networking
-com.atebits.Tweetie2,News
-com.atebits.Tweetie2,Social Networking
-com.yourcompany.PPClient,Finance
-com.yourcompany.PPClient,Utilities
-net.kortina.labs.Venmo,Finance
-net.kortina.labs.Venmo,Utilities
-com.google.photos,Photo & Video
-com.indeed.JobSearch,Business
-com.indeed.JobSearch,Utilities
-com.google.Tachyon,Social Networking
-com.jadedlabs.arrive,Shopping
-com.jadedlabs.arrive,Utilities
-com.hulu.plus,Entertainment
-com.hulu.plus,Lifestyle
-com.engauge.Chick-fil-A,Food & Drink
-com.engauge.Chick-fil-A,Lifestyle
-com.zellepay.zelle,Finance
-com.disney.disneyplus,Entertainment
-com.alibaba.iAliexpress,Shopping
-com.alibaba.iAliexpress,Lifestyle
-com.target.Target,Shopping
-com.target.Target,Lifestyle
-com.espn.ScoreCenter,Sports
-com.espn.ScoreCenter,Entertainment
-com.google.Drive,Productivity
-com.airbnb.app,Travel
-com.airbnb.app,Lifestyle
-com.tacobell.ARgame,Food & Drink
-com.tacobell.ARgame,Lifestyle
-com.waze.iphone,Navigation
-com.waze.iphone,Travel
-com.shazam.Shazam,Music
-com.shazam.Shazam,Entertainment
-com.nike.omega,Shopping
-com.nike.omega,Sports
-com.canva.canvaeditor,Photo & Video
-com.canva.canvaeditor,Productivity
-com.cbsvideo.app,Entertainment
-com.particlenews.newsbreak,News
-com.particlenews.newsbreak,Weather
-com.linkedin.LinkedIn,Business
-com.google.ios.youtubemusic,Music
-com.google.ios.youtubemusic,Entertainment
-com.eventbrite.attendee,Entertainment
-com.eventbrite.attendee,Lifestyle
+com.wanderlog.ios,Travel
+com.wanderlog.ios,Navigation
+com.tripit.tripitmobile,Travel
+com.tripit.tripitmobile,Navigation
+com.roadtrippers.roadtrippersinc,Travel
+com.roadtrippers.roadtrippersinc,Navigation
+app.tripsy.ios,Travel
+app.tripsy.ios,Navigation
+com.tripadvisor.LocalPicks,Travel
+com.tripadvisor.LocalPicks,Lifestyle
+com.visitacity.visitacityapp,Travel
+com.jeremieleroy.packr,Travel
+com.jeremieleroy.packr,Utilities
+flamingo.com.uk.Flamingo,Travel
+flamingo.com.uk.Flamingo,Productivity
+co.tripscout.tripscout,Travel
+co.tripscout.tripscout,Magazines & Newspapers
+com.CarobApps.inRoute,Navigation
+com.CarobApps.inRoute,Travel
+com.rmitech.nowy,Travel
+com.rmitech.nowy,Social Networking
 com.expedia.booking,Travel
 com.expedia.booking,Lifestyle
-com.wikibuy.prod.main,Shopping
-com.wikibuy.prod.main,Lifestyle
-com.locket.Locket,Social Networking
-com.locket.Locket,Photo & Video
-com.samsclub.samsapp,Shopping
-com.samsclub.samsapp,Lifestyle
-com.capitalone.enterprisemobilebanking,Finance
-com.etsy.etsyforios,Shopping
-com.etsy.etsyforios,Lifestyle
-com.ebay.iphone,Shopping
-com.ebay.iphone,Lifestyle
-com.mobilaurus.wingstopongroup2,Food & Drink
-com.mobilaurus.wingstopongroup2,Lifestyle
-com.ring,Lifestyle
-com.adrise.tubitv,Entertainment
-com.adrise.tubitv,Lifestyle
-com.thehomedepot.homedepot,Shopping
-com.thehomedepot.homedepot,Lifestyle
-com.chipotle.Chipotle,Food & Drink
-com.chipotle.Chipotle,Lifestyle
-com.google.Translate,Reference
-com.google.Translate,Travel
-yuca.scanner,Health & Fitness
-yuca.scanner,Food & Drink
-com.doordash.dasher,Business
-com.FetchRewards.HopBeta,Shopping
-com.FetchRewards.HopBeta,Lifestyle
-com.vrbo.traveler,Travel
-com.vrbo.traveler,Lifestyle
-tv.twitch,Photo & Video
-tv.twitch,Social Networking
-com.tinginteractive.usms,Social Networking
-com.tinginteractive.usms,Utilities
-com.axs.AXSMobile,Entertainment
-com.axs.AXSMobile,Music
-com.costco.costco,Shopping
-com.costco.costco,Lifestyle
-com.cardify.tinder,Lifestyle
-com.cardify.tinder,Social Networking
-com.creditkarma.mobile,Finance
-com.creditkarma.mobile,Productivity
-evolly.app.rokuremote,Utilities
-evolly.app.rokuremote,Productivity
-com.yelp.yelpiphone,Food & Drink
-com.yelp.yelpiphone,Travel
-com.qianfan.aihomework,Education
-com.qianfan.aihomework,Utilities
-com.zillow.ZillowMap,Lifestyle
-com.zillow.ZillowMap,Reference
-com.peacocktv.peacock,Entertainment
-com.google.b612,Travel
-com.google.b612,Navigation
-com.gc.teammanager,Sports
-com.gc.teammanager,Health & Fitness
-com.mlb.AtTheBallpark,Sports
-com.mlb.AtTheBallpark,Entertainment
-com.starbucks.mystarbucks,Food & Drink
-com.starbucks.mystarbucks,Lifestyle
-com.microsoft.azureauthenticator,Productivity
-com.microsoft.azureauthenticator,Utilities
-us.parkmobile.ParkMobile,Navigation
-us.parkmobile.ParkMobile,Travel
+com.pluto.travel,Travel
+com.pluto.travel,Lifestyle
+digital.monos.tour,Travel
+digital.monos.tour,Navigation
+app.getroadie.ios,Travel
+app.getroadie.ios,Navigation
+com.viator,Travel
+com.viator,Shopping
+com.booking.BookingApp,Travel
+com.booking.BookingApp,Lifestyle
+com.airbnb.app,Travel
+com.airbnb.app,Lifestyle
+com.stippl.stippl,Travel
+com.stippl.stippl,Social Networking
+com.hopper.flights,Travel
+com.hopper.flights,Reference
+com.outofoffice.ooomobile,Travel
+com.outofoffice.ooomobile,Social Networking
+com.tripmapper.tripmapper,Travel
+com.tripmapper.tripmapper,Utilities
+com.modesittsoftware.RTP-Viewer,Travel
+com.modesittsoftware.RTP-Viewer,Navigation
+com.rome2rio.Rome2Rio,Travel
+com.rome2rio.Rome2Rio,Navigation
+com.getyourguide.mobile.GetYourGuide,Travel
+com.getyourguide.mobile.GetYourGuide,Lifestyle
+com.HighHeels.Travelist,Travel
+com.kayak.travel,Travel
+com.kayak.travel,Business
+com.pilotplans,Travel
+com.pilotplans,Productivity
+com.kartsev.tripgen,Travel
+com.kartsev.tripgen,Lifestyle
+com.caseygrp.Keyoobi,Productivity
+com.caseygrp.Keyoobi,Business
+com.marchukevich.tripplanner,Travel
+com.marchukevich.tripplanner,Navigation
+com.citycracker.app,Travel
+com.citycracker.app,Navigation
+com.routeplanners.apps,Navigation
+com.routeplanners.apps,Business
+com.yourcompany.CheckMyTrip,Travel
+com.yourcompany.CheckMyTrip,Productivity
+com.polarsteps.Polarsteps,Travel
+com.polarsteps.Polarsteps,Social Networking
+com.hadfield.roadtrip,Travel
+com.hadfield.roadtrip,Utilities
+de.hacon.hafas.eurail.navigator,Travel
+de.hacon.hafas.eurail.navigator,Navigation
+com.kaimallie.ibucket,Travel
+com.kaimallie.ibucket,Lifestyle
+com.proalab.routeoptimizer,Navigation
+com.proalab.routeoptimizer,Productivity
+com.willie.Funlidays,Travel
+com.willie.Funlidays,Utilities
+com.lyfshort.lyfshortapp,Travel
+com.lyfshort.lyfshortapp,Utilities
+com.SlapiOSapp,Travel
+ai.iplan.app,Travel
+ai.iplan.app,Lifestyle
+com.rccl.celebrity,Travel
+com.rccl.celebrity,Entertainment
+ideastudio.Weather-on-the-Way,Weather
+ideastudio.Weather-on-the-Way,Travel
+com.tripomatic.tripomatic,Travel
+com.tripomatic.tripomatic,Utilities
+com.citypass.my,Travel
+RestingCranes.PlaceMaker,Navigation
+RestingCranes.PlaceMaker,Travel
+com.ericrwolfe.Footpath,Navigation
+com.ericrwolfe.Footpath,Health & Fitness
+com.atlasobscura.ios,Navigation
+com.atlasobscura.ios,Travel
+com.fyfoh.iosapp,Travel
+com.fyfoh.iosapp,Productivity
+com.cheapflights.search,Travel
+com.bd.adeo,Travel
+MehmetCanAlaca.Pin-Travel,Travel
+MehmetCanAlaca.Pin-Travel,Lifestyle
+com.bytheways.tripapp,Travel
+com.bytheways.tripapp,Navigation
+io.lambus.app,Travel
+io.lambus.app,Productivity
+com.hotels.HotelsNearMe,Travel
+com.hotels.HotelsNearMe,Lifestyle
+com.walabokllc.superchargersfortesla,Travel
+com.walabokllc.superchargersfortesla,Navigation
+com.driveweather.2018,Weather
+com.driveweather.2018,Travel
+no.ruter.Reise,Travel
+no.ruter.Reise,Navigation
+com.ifreegroup.exping,Graphics & Design
+com.ifreegroup.exping,Utilities
+com.montgomery.rideon,Navigation
+com.g16.app.berbe,Travel
+com.hipcamp.pocketknife,Travel
+com.hipcamp.pocketknife,Lifestyle
+com.nosach.route-planner,Navigation
+com.nosach.route-planner,Business
+com.bub.iwanderlust,Travel
+com.bub.iwanderlust,Social Networking
+com.smartwidgetlabs.travelmapvisual,Travel
+com.smartwidgetlabs.travelmapvisual,Utilities
+crc.oneapp.co,Reference
+crc.oneapp.co,Travel
+com.underwoodapps.Circuit,Navigation
+com.underwoodapps.Circuit,Business
+com.momondo.search,Travel
+com.momondo.search,Lifestyle
+com.PackThis,Travel
+com.PackThis,Productivity
+com.busexpertapp.oceania.sydney,Travel
+com.busexpertapp.oceania.sydney,Navigation
+com.routeplanner.crew.app,Navigation
+com.routeplanner.crew.app,Business
+com.visitwidget.fishermanswharf,Travel
+com.visitwidget.fishermanswharf,Entertainment
+com.flutterflow.parisurbanist,Travel
+com.flutterflow.parisurbanist,Education
+com.bodunov.GalileoPro,Navigation
+com.bodunov.GalileoPro,Travel
+com.durbinware.WSFInfo,Travel
+com.durbinware.WSFInfo,Navigation
+com.zacharyblank.Driver,Navigation
+com.zacharyblank.Driver,Productivity
+com.tymonwiedemair.berlin2go,Travel
+com.tymonwiedemair.berlin2go,Navigation
+travel.fcm.usa.sam,Travel
+travel.fcm.usa.sam,Navigation
+kr.co.yjteam.dailytrip,Travel
+kr.co.yjteam.dailytrip,Productivity
+vc.bizet.Gigi,Travel
+vc.bizet.Gigi,Education
+com.mike.unikoom.lucy,Travel
+com.mike.unikoom.lucy,Lifestyle
+com.foxworldtravel.guides,Travel
+com.foxworldtravel.guides,Lifestyle
+com.tymonwiedemair.istanbul2go,Travel
+com.tymonwiedemair.istanbul2go,Navigation
+com.chicago.free,Navigation
+com.chicago.free,Travel
+net.trippin,Travel
+net.trippin,Lifestyle
+com.crescentrating.crescenttrips101,Lifestyle
+com.crescentrating.crescenttrips101,Travel
+com.yeah.isl,Travel
+com.yeah.isl,Navigation
+com.ratp.toscane,Navigation
+com.ratp.toscane,Travel
+jp.co.navitime.transit,Navigation
+jp.co.navitime.transit,Travel
+com.remedy.orbt,Travel
+com.remedy.orbt,Lifestyle
+com.proalab.weather,Weather
+com.proalab.weather,Navigation
+com.gotoapp.qatar,Travel
+com.gotoapp.qatar,Lifestyle
+com.tymonwiedemair.singapore2go,Travel
+com.tymonwiedemair.singapore2go,Navigation
+com.tymonwiedemair.prague2go,Travel
+com.tymonwiedemair.prague2go,Navigation
+com.tymonwiedemair.vienna2go,Travel
+com.tymonwiedemair.vienna2go,Navigation
+tech.kongri.travel,Travel
+tech.kongri.travel,Entertainment
+com.zipptrip.lumi,Travel
+de.geomeister.motocompano,Navigation
+de.geomeister.motocompano,Travel
+com.trueelephant.trexpense.free,Travel
+com.trueelephant.trexpense.free,Finance
+com.troupe.mobileapp,Travel
+com.troupe.mobileapp,Lifestyle
+net.skyscanner.iphone,Travel
+com.arriva.glimble,Travel
+com.arriva.glimble,Navigation
+com.chriswithers456.TripPlanner,Travel
+com.chriswithers456.TripPlanner,Productivity
+com.vaicai.VaicAI,Travel
+com.triplink.app,Travel
+com.triplink.app,Navigation
+com.circlegate.ezrideboston,Travel
+com.circlegate.ezrideboston,Navigation
+com.routeplanner.app,Navigation
+com.routeplanner.app,Business
+com.klook.klook,Travel
+com.klook.klook,Lifestyle
+com.escapekar.escapekar,Travel
+com.chimani.parks.free,Travel
+com.chimani.parks.free,Health & Fitness
+com.jc.planiti,Travel
+com.jc.planiti,Navigation
+com.RyanPeggs.iMaps-,Navigation
+com.RyanPeggs.iMaps-,Travel
+com.reverllc.rever,Navigation
+com.reverllc.rever,Travel
+travel.portico.app.ios,Travel
+travel.portico.app.ios,Productivity
+com.airpano.travelbook,Travel
+com.airpano.travelbook,Lifestyle
+com.calimoto.calimoto,Navigation
+com.calimoto.calimoto,Social Networking
+com.tymonwiedemair.maps2golite,Travel
+com.tymonwiedemair.maps2golite,Navigation
+com.pinguido.scenic,Navigation
+com.pinguido.scenic,Lifestyle
+com.holidaypirates.urlaubspiraten,Travel
+com.holidaypirates.urlaubspiraten,Lifestyle
+com.shakaguide.kauai,Travel
+com.shakaguide.kauai,Navigation
+com.visitwidget.nomansland,Travel
+com.visitwidget.nomansland,Entertainment
+com.zerodawn.skratch,Travel
+com.zerodawn.skratch,Lifestyle
+com.porsche.RoadsByPorsche,Navigation
+com.porsche.RoadsByPorsche,Travel
+com.halfpeeled.roadtrip,Travel
+com.halfpeeled.roadtrip,Family
+com.halfpeeled.roadtrip,Games
+com.halfpeeled.roadtrip,Trivia
+com.travelmath,Travel
+com.travelmath,Utilities
+com.theglobalkey.theglobalkey,Lifestyle
+com.tripoto.app,Travel
+com.tripoto.app,Social Networking
+com.shakaguide.oahu,Travel
+com.shakaguide.oahu,Navigation
+com.mytravelitinerary.googletrips,Travel
+com.voiaje,Travel
+com.voiaje,Productivity
+com.tymonwiedemair.paris2go,Travel
+com.tymonwiedemair.paris2go,Navigation
+com.tekshapers.easemytrip,Travel
+com.cvz.dailytracker.red,Finance
+com.cvz.dailytracker.red,Business
+com.cross-out,Productivity
+com.cross-out,Travel
+com.mobisharks.rv,Travel
+com.mobisharks.rv,Utilities
+com.tymonwiedemair.lisbon2go,Travel
+com.tymonwiedemair.lisbon2go,Navigation
+com.NandrezHoldingsLimited.pebblar,Travel
+com.NandrezHoldingsLimited.pebblar,Productivity
+cz.worldeecom.worldee,Travel
+cz.worldeecom.worldee,Social Networking
+com.ghosty.fotospot,Travel
+com.ghosty.fotospot,Navigation
+com.jerrycan.SydneyMetro,Travel
+com.jerrycan.SydneyMetro,Navigation
+org.ridemetro.houstontrip,Navigation
+org.ridemetro.houstontrip,Travel
+com.etips.tripguider,Travel
+com.etips.tripguider,Navigation
+com.tymonwiedemair.dubai2go,Travel
+com.tymonwiedemair.dubai2go,Navigation
+com.tymonwiedemair.madrid2go,Travel
+com.tymonwiedemair.madrid2go,Navigation
+bee.travelexpense.com,Travel
+bee.travelexpense.com,Utilities
+com.zimride.instant,Travel
+com.zimride.instant,Navigation
+com.allstays.camprv,Travel
+com.allstays.camprv,Navigation
+com.tourlandish.Tourlandish,Travel
+com.tourlandish.Tourlandish,Entertainment
+com.tripdesigner,Travel
+com.app.framey,Travel
+com.app.framey,Social Networking
+com.gow.app,Travel
+com.busexpertapp.uswest.denver,Navigation
+com.busexpertapp.uswest.denver,Travel
+com.londonandpartners.londonguide,Travel
+com.londonandpartners.londonguide,Lifestyle
+com.hoptale.ios,Travel
+com.hoptale.ios,Lifestyle
+com.passporterapp.passporter,Travel
+com.passporterapp.passporter,Entertainment
+llc.fabricate.remainders,Productivity
+llc.fabricate.remainders,Utilities
+com.intheflow.app,Lifestyle
+com.intheflow.app,Travel
+com.modesittsoftware.RoadTripPlanner,Travel
+com.modesittsoftware.RoadTripPlanner,Navigation
+com.tnx.packed,Travel
+com.tnx.packed,Lifestyle
+com.circlegate.transit,Travel
+com.circlegate.transit,Navigation
+com.myapp.app2sdfgsgd,Travel
+com.buzzhives.TripPlanner,Navigation
+com.buzzhives.TripPlanner,Travel
+com.travelerbuddy.app,Travel
+com.travelerbuddy.app,Productivity
+com.ngoc.travel,Travel
+com.ngoc.travel,Utilities
+mintwoobi.exnote-travel,Travel
+mintwoobi.exnote-travel,Finance
+com.maposcope.MaposcopeRoutePlanner,Navigation
+com.maposcope.MaposcopeRoutePlanner,Business
+com.travi.app,Travel
+com.travi.app,Lifestyle
+com.gypsyguide,Travel
+com.gypsyguide,Navigation
+com.travelboast.travelboast,Photo & Video
+com.travelboast.travelboast,Travel
+net.drinkpoint.Packpoint,Travel
+net.drinkpoint.Packpoint,Productivity
+com.offlinemaps.gps.map2023,Navigation
+com.offlinemaps.gps.map2023,Utilities
+com.atour.guide,Travel
+com.atour.guide,Entertainment
+org.bart.bartApp,Travel
+org.bart.bartApp,Navigation
+com.mombo.print,Travel
+com.mombo.print,Social Networking
+com.tripbffllc.Travely,Travel
+com.tripbffllc.Travely,Social Networking
+mcm.Distance-Tool,Utilities
+mcm.Distance-Tool,Navigation
+com.keinois.PrettyProgressApp,Utilities
+com.keinois.PrettyProgressApp,Productivity
+com.despegar.despegar,Travel
+com.despegar.despegar,Shopping
+com.collinorear.EV-Companion,Navigation
+com.collinorear.EV-Companion,Travel
+com.wander.com.app,Travel
+com.wander.com.app,Business
+com.rvparky.rvparky,Travel
+com.flighthub,Travel
+com.flighthub,Shopping
+ninja.rail.firebird,Travel
+com.bodunov.galileo,Navigation
+com.bodunov.galileo,Travel
+dev.omnivision.roamaround.ios,Travel
+dev.omnivision.roamaround.ios,Navigation
+com.Badger.badger,Business
+com.Badger.badger,Productivity
+com.exoticca.ios,Travel
+com.exoticca.ios,Lifestyle
+com.cvz.dailytracker.premium,Health & Fitness
+com.cvz.dailytracker.premium,Productivity
+com.alexia.amigoapp,Travel
+com.alexia.amigoapp,Social Networking
+net.chargeway.chargeway,Navigation
+com.prostachki.beenmap,Travel
+tech.calstephens.PhotoMap,Travel
+tech.calstephens.PhotoMap,Photo & Video
+info.mta.mymta,Travel
+info.mta.mymta,Navigation
+com.voyagegames.WeatherRoute,Weather
+com.voyagegames.WeatherRoute,Travel
+travel.firebird.app,Travel
+com.mdv.MVVCompanion,Travel
+com.mdv.MVVCompanion,Navigation
+kovacs.andras.Trip-Planner,Travel
+kovacs.andras.Trip-Planner,Navigation
