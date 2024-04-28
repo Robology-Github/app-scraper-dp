@@ -13,9 +13,25 @@ from transformers import pipeline
 from transformers import AutoTokenizer
 from langdetect import detect
 import os
-import warnings
 
 
+# Load the sentiment analysis pipeline with the multilingual BERT model
+sentiment_analyzer = pipeline(
+    "sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment"
+    )
+tokenizer = AutoTokenizer.from_pretrained(
+    "nlptown/bert-base-multilingual-uncased-sentiment"
+    )
+
+# Define function to ensure stopwords are available
+def ensure_stopwords():
+    default_path = os.path.join(nltk.data.path[0], 'corpora', 'stopwords')
+    if not os.path.exists(default_path):
+        print("Downloading NLTK stopwords...")
+        nltk.download('stopwords')
+    else:
+        print("Stopwords already installed.")
+ensure_stopwords()
 
 # Example transformation function
 def transform_AppStoreData(input_file, output_file):
@@ -31,24 +47,6 @@ def transform_AppStoreData(input_file, output_file):
     df['days_since_last_update'] = (datetime.now(timezone.utc) - df['updated']).dt.days
     df['app_age'] = (df['updated'] - df['released']).dt.days
     df['reviews'] = df['reviews'].astype(str)
-
-    # Load the sentiment analysis pipeline with the multilingual BERT model
-    sentiment_analyzer = pipeline("sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment")
-    tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
-
-
-    # Function to ensure stopwords are available
-    def ensure_stopwords():
-    # Define the default path (adjust as needed for your system)
-        default_path = os.path.join(nltk.data.path[0], 'corpora', 'stopwords')
-        if not os.path.exists(default_path):
-            print("Downloading NLTK stopwords...")
-            nltk.download('stopwords')
-        else:
-            print("Stopwords already installed.")
-
-    ensure_stopwords()
-
 
     # Mapping from language names to NLTK compatible language codes
     nltk_lang_map = {
@@ -109,7 +107,6 @@ def transform_AppStoreData(input_file, output_file):
             stop_words = set(stopwords.words('english'))  # Default to English if error occurs
 
         # Remove all non-alpha characters and extra spaces, convert to lower case
-        reviews = re.sub(r'[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
         reviews = re.sub('\\s+', ' ', reviews).strip().lower()
 
         # Remove stopwords
@@ -119,34 +116,29 @@ def transform_AppStoreData(input_file, output_file):
     # Apply the modified function to your DataFrame
     df['processed_reviews'] = df['reviews'].apply(preprocess_and_split_reviews)
 
+        # Function to get and flatten bigrams with their frequencies
     def get_and_flatten_bigrams(text):
         if len(text.split()) < 2:
             return []
         blob = TextBlob(text)
         bigrams = [' '.join(bigram) for bigram in blob.ngrams(2)]
-        # Count bigrams
-        bigram_counts = Counter(bigrams)
-        # Return bigrams with their frequencies
-        return list(bigram_counts.items())
+        return list(Counter(bigrams).items())
 
-    # Apply the function
-    df['bigram_freq'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
-    bigram_freq_rows = df.explode('bigram_freq')
+    # Assuming 'processed_reviews' column is already in the dataframe 'df'
+    df['bigrams'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
 
-    # Create a new DataFrame that splits the bigram and frequency into separate columns
-    bigram_freq_df = pd.DataFrame({
-        'appId': bigram_freq_rows['appId'],
-        'bigram': bigram_freq_rows['bigram_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
-        'frequency': bigram_freq_rows['bigram_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
+    # Explode the bigrams into separate rows, including their frequencies
+    bigrams_rows = df.explode('bigrams')
+    bigrams_df = pd.DataFrame({
+        'appId': bigrams_rows['appId'],
+        'bigrams': bigrams_rows['bigrams'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'frequency': bigrams_rows['bigrams'].apply(lambda x: x[1] if pd.notna(x) else 0)
     }).dropna()
 
     def flatten_word_frequencies(text):
-        words = text.split()
-        freqs = Counter(words)
-        # Get all word frequencies, without limiting to top 20
+        freqs = Counter(text.split())
         return list(freqs.items())
 
-    # Apply the  function
     df['word_freq'] = df['processed_reviews'].apply(flatten_word_frequencies)
     word_freq_rows = df.explode('word_freq')
     word_freq_df = pd.DataFrame({
@@ -368,6 +360,9 @@ def transform_AppStoreData(input_file, output_file):
             return 'Very Mature'
         
 
+
+
+
     # Define categories based on percentiles
     def price_category(price):
         if price == 0:
@@ -461,16 +456,12 @@ def transform_AppStoreData(input_file, output_file):
         'supports_Mac': 'Mac'
     })
 
-    # Preview the device support data
-    print(device_support_counts)
-
-
 
 
     # Final DataFrame Cleanup and Saving the Cleaned Data
     columns_to_remove = [
         'id', '', 'description', 'icon', 'genreIds', 'primaryGenreId',
-        'requiredOsVersion', 'releaseNotes', 'version', 'developerid', 'developerUrl',
+        'requiredOsVersion', 'version', 'developerid', 'developerUrl',
         'screenshots', 'ipadScreenshots', 'appletvScreenshots',
         'languages', 'genres', 'supportedDevices', 'currency', 'developerId', 'reviews', 
     ]
@@ -482,7 +473,7 @@ def transform_AppStoreData(input_file, output_file):
     genres_exploded.to_csv('AppStore_Genres.csv', index=False)
 
     # Save the results to separate CSV files
-    bigram_freq_df.to_csv('AppStore_Bigrams.csv', index=False)
+    bigrams_df.to_csv('AppStore_Bigrams.csv', index=False)
     word_freq_df.to_csv('AppStore_Word_Frequencies.csv', index=False)
     print("Bigrams and word frequencies have been saved to CSV files.")
 
@@ -511,25 +502,7 @@ def transform_GooglePlayData(input_file, output_file):
     if "IAPRange" in df.columns and df["IAPRange"].dtype != object:
         df["IAPRange"] = df["IAPRange"].astype(str)
 
-    # Load the sentiment analysis pipeline with the multilingual BERT model
-    sentiment_analyzer = pipeline(
-        "sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment"
-    )
-    tokenizer = AutoTokenizer.from_pretrained(
-        "nlptown/bert-base-multilingual-uncased-sentiment"
-    )
-
-    # Function to ensure stopwords are available
-    def ensure_stopwords():
-        # Define the default path (adjust as needed for your system)
-        default_path = os.path.join(nltk.data.path[0], "corpora", "stopwords")
-        if not os.path.exists(default_path):
-            print("Downloading NLTK stopwords...")
-            nltk.download("stopwords")
-        else:
-            print("Stopwords already installed.")
-
-    ensure_stopwords()
+    
 
     # Mapping from language names to NLTK compatible language codes
     nltk_lang_map = {
@@ -591,8 +564,6 @@ def transform_GooglePlayData(input_file, output_file):
                 stopwords.words("english")
             )  # Default to English if error occurs
 
-        # Remove all non-alpha characters and extra spaces, convert to lower case
-        reviews = re.sub(r'[^\\wáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]', ' ', reviews, flags=re.UNICODE)
         reviews = re.sub('\\s+', ' ', reviews).strip().lower()
 
         # Remove stopwords
@@ -605,42 +576,43 @@ def transform_GooglePlayData(input_file, output_file):
     df["processed_reviews"] = df["reviews"].apply(preprocess_and_split_reviews)
 
 
+            # Function to get and flatten bigrams with their frequencies
     def get_and_flatten_bigrams(text):
         if len(text.split()) < 2:
             return []
         blob = TextBlob(text)
         bigrams = [' '.join(bigram) for bigram in blob.ngrams(2)]
-        # Count bigrams
-        bigram_counts = Counter(bigrams)
-        # Return bigrams with their frequencies
-        return list(bigram_counts.items())
+        return list(Counter(bigrams).items())
 
-    # Apply the function
-    df['bigram_freq'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
-    bigram_freq_rows = df.explode('bigram_freq')
+    # Assuming 'processed_reviews' column is already in the dataframe 'df'
+    df['bigrams'] = df['processed_reviews'].apply(get_and_flatten_bigrams)
 
-    # Create a new DataFrame that splits the bigram and frequency into separate columns
-    bigram_freq_df = pd.DataFrame({
-        'appId': bigram_freq_rows['appId'],
-        'bigrams': bigram_freq_rows['bigram_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
-        'frequency': bigram_freq_rows['bigram_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
+    # Explode the bigrams into separate rows, including their frequencies
+    bigrams_rows = df.explode('bigrams')
+    bigrams_df = pd.DataFrame({
+        'appId': bigrams_rows['appId'],
+        'bigrams': bigrams_rows['bigrams'].apply(lambda x: x[0] if pd.notna(x) else ''),
+        'frequency': bigrams_rows['bigrams'].apply(lambda x: x[1] if pd.notna(x) else 0)
     }).dropna()
+
 
     def flatten_word_frequencies(text):
-        words = text.split()
-        freqs = Counter(words)
-        # Get all word frequencies, without limiting to top 20
+        freqs = Counter(text.split())
         return list(freqs.items())
 
-    # Apply the  function
-    df['word_freq'] = df['processed_reviews'].apply(flatten_word_frequencies)
-    word_freq_rows = df.explode('word_freq')
-    word_freq_df = pd.DataFrame({
-        'appId': word_freq_rows['appId'],
-        'word': word_freq_rows['word_freq'].apply(lambda x: x[0] if pd.notna(x) else ''),
-        'frequency': word_freq_rows['word_freq'].apply(lambda x: x[1] if pd.notna(x) else 0)
-    }).dropna()
-
+    df["word_freq"] = df["processed_reviews"].apply(flatten_word_frequencies)
+    word_freq_rows = df.explode("word_freq")
+    word_freq_df = pd.DataFrame(
+        {
+            "appId": word_freq_rows["appId"],
+            "word": word_freq_rows["word_freq"].apply(
+                lambda x: x[0] if pd.notna(x) else ""
+            ),
+            "frequency": word_freq_rows["word_freq"].apply(
+                lambda x: x[1] if pd.notna(x) else 0
+            ),
+        }
+    ).dropna()
 
     ## Install to rating ratio categorization
     def categorize_install_to_rating_ratio(ratio):
@@ -675,7 +647,7 @@ def transform_GooglePlayData(input_file, output_file):
             print(f"Error processing text: {e}")
             return "Missing"  # Default to 'Missing' in case of an error
 
-    df["sentiment_category"] = df["reviews"].apply(compute_sentiment_category_mbert)
+    df["sentiment_category"] = df['processed_reviews'].apply(compute_sentiment_category_mbert)
 
     ## Rating ratio categorization
     def categorize_rating_ratio(ratio):
@@ -861,7 +833,6 @@ def transform_GooglePlayData(input_file, output_file):
         "videoImage",
         "contentRatingDescription",
         "version",
-        "recentChanges",
         "comments",
         "originalPrice",
         "discountEndDate",
@@ -881,7 +852,7 @@ def transform_GooglePlayData(input_file, output_file):
     df["released"] = df["released"].dt.strftime("%Y-%m-%d")
     df.to_csv("GooglePlayOutput_cleaned.csv", index=False, sep=",", encoding="utf-8")
     categories_exploded.to_csv("GooglePlay_Categories.csv", index=False)
-    bigram_freq_df.to_csv("GooglePlay_Bigrams.csv", index=False)
+    bigrams_df.to_csv("GooglePlay_Bigrams.csv", index=False)
     word_freq_df.to_csv("GooglePlay_Word_Frequencies.csv", index=False)
 
     print(df.head())  # This will print the first 5 rows of the DataFrame after cleanup

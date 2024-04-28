@@ -56,13 +56,6 @@ com.tripit.tripitmobile,ES,Costa Rica,Spanish
 com.tripit.tripitmobile,ES,Puerto Rico,Spanish
 com.tripit.tripitmobile,ES,Panama,Spanish
 com.tripit.tripitmobile,ES,Uruguay,Spanish
-com.roadtrippers.roadtrippersinc,EN,United States,English
-com.roadtrippers.roadtrippersinc,EN,United Kingdom,English
-com.roadtrippers.roadtrippersinc,EN,Canada,English
-com.roadtrippers.roadtrippersinc,EN,Australia,English
-com.roadtrippers.roadtrippersinc,EN,Ireland,English
-com.roadtrippers.roadtrippersinc,EN,New Zealand,English
-com.roadtrippers.roadtrippersinc,EN,South Africa,English
 app.tripsy.ios,AR,Saudi Arabia,Arabic
 app.tripsy.ios,AR,Iraq,Arabic
 app.tripsy.ios,AR,Egypt,Arabic
@@ -151,6 +144,27 @@ app.tripsy.ios,ES,Costa Rica,Spanish
 app.tripsy.ios,ES,Puerto Rico,Spanish
 app.tripsy.ios,ES,Panama,Spanish
 app.tripsy.ios,ES,Uruguay,Spanish
+com.roadtrippers.roadtrippersinc,EN,United States,English
+com.roadtrippers.roadtrippersinc,EN,United Kingdom,English
+com.roadtrippers.roadtrippersinc,EN,Canada,English
+com.roadtrippers.roadtrippersinc,EN,Australia,English
+com.roadtrippers.roadtrippersinc,EN,Ireland,English
+com.roadtrippers.roadtrippersinc,EN,New Zealand,English
+com.roadtrippers.roadtrippersinc,EN,South Africa,English
+co.tripscout.tripscout,EN,United States,English
+co.tripscout.tripscout,EN,United Kingdom,English
+co.tripscout.tripscout,EN,Canada,English
+co.tripscout.tripscout,EN,Australia,English
+co.tripscout.tripscout,EN,Ireland,English
+co.tripscout.tripscout,EN,New Zealand,English
+co.tripscout.tripscout,EN,South Africa,English
+com.visitacity.visitacityapp,EN,United States,English
+com.visitacity.visitacityapp,EN,United Kingdom,English
+com.visitacity.visitacityapp,EN,Canada,English
+com.visitacity.visitacityapp,EN,Australia,English
+com.visitacity.visitacityapp,EN,Ireland,English
+com.visitacity.visitacityapp,EN,New Zealand,English
+com.visitacity.visitacityapp,EN,South Africa,English
 com.tripadvisor.LocalPicks,AR,Saudi Arabia,Arabic
 com.tripadvisor.LocalPicks,AR,Iraq,Arabic
 com.tripadvisor.LocalPicks,AR,Egypt,Arabic
@@ -170,6 +184,7 @@ com.tripadvisor.LocalPicks,AR,Qatar,Arabic
 com.tripadvisor.LocalPicks,AR,Bahrain,Arabic
 com.tripadvisor.LocalPicks,AR,United Arab Emirates,Arabic
 com.tripadvisor.LocalPicks,CS,Czech Republic,Czech
+com.tripadvisor.LocalPicks,CS,Slovakia,Czech
 com.tripadvisor.LocalPicks,DA,Denmark,Danish
 com.tripadvisor.LocalPicks,DA,Greenland,Danish
 com.tripadvisor.LocalPicks,DA,Faroe Islands,Danish
@@ -271,13 +286,97 @@ com.tripadvisor.LocalPicks,ZH,Malaysia,Chinese
 com.tripadvisor.LocalPicks,TR,Turkey,Turkish
 com.tripadvisor.LocalPicks,TR,Cyprus,Turkish
 com.tripadvisor.LocalPicks,VI,Vietnam,Vietnamese
-com.visitacity.visitacityapp,EN,United States,English
-com.visitacity.visitacityapp,EN,United Kingdom,English
-com.visitacity.visitacityapp,EN,Canada,English
-com.visitacity.visitacityapp,EN,Australia,English
-com.visitacity.visitacityapp,EN,Ireland,English
-com.visitacity.visitacityapp,EN,New Zealand,English
-com.visitacity.visitacityapp,EN,South Africa,English
+com.travefy.travelplannersapp.tripplans,EN,United States,English
+com.travefy.travelplannersapp.tripplans,EN,United Kingdom,English
+com.travefy.travelplannersapp.tripplans,EN,Canada,English
+com.travefy.travelplannersapp.tripplans,EN,Australia,English
+com.travefy.travelplannersapp.tripplans,EN,Ireland,English
+com.travefy.travelplannersapp.tripplans,EN,New Zealand,English
+com.travefy.travelplannersapp.tripplans,EN,South Africa,English
+com.viator,DA,Denmark,Danish
+com.viator,DA,Greenland,Danish
+com.viator,DA,Faroe Islands,Danish
+com.viator,NL,Netherlands,Dutch
+com.viator,NL,Belgium,Dutch
+com.viator,NL,Suriname,Dutch
+com.viator,EN,United States,English
+com.viator,EN,United Kingdom,English
+com.viator,EN,Canada,English
+com.viator,EN,Australia,English
+com.viator,EN,Ireland,English
+com.viator,EN,New Zealand,English
+com.viator,EN,South Africa,English
+com.viator,FR,France,French
+com.viator,FR,Canada,French
+com.viator,FR,Belgium,French
+com.viator,FR,Switzerland,French
+com.viator,FR,Luxembourg,French
+com.viator,FR,Monaco,French
+com.viator,FR,Congo,French
+com.viator,FR,Ivory Coast,French
+com.viator,FR,Madagascar,French
+com.viator,FR,Cameroon,French
+com.viator,FR,Burkina Faso,French
+com.viator,FR,Niger,French
+com.viator,FR,Senegal,French
+com.viator,FR,Mali,French
+com.viator,FR,Rwanda,French
+com.viator,FR,Belgium,French
+com.viator,FR,Guinea,French
+com.viator,DE,Germany,German
+com.viator,DE,Austria,German
+com.viator,DE,Switzerland,German
+com.viator,DE,Luxembourg,German
+com.viator,DE,Liechtenstein,German
+com.viator,IT,Italy,Italian
+com.viator,IT,Switzerland,Italian
+com.viator,IT,San Marino,Italian
+com.viator,IT,Vatican City,Italian
+com.viator,JA,Japan,Japanese
+com.viator,NB,Norway,Norwegian Bokmål
+com.viator,PT,Portugal,Portuguese
+com.viator,PT,Brazil,Portuguese
+com.viator,PT,Angola,Portuguese
+com.viator,PT,Mozambique,Portuguese
+com.viator,PT,Cape Verde,Portuguese
+com.viator,PT,Guinea-Bissau,Portuguese
+com.viator,PT,São Tomé and Príncipe,Portuguese
+com.viator,PT,East Timor,Portuguese
+com.viator,ES,Spain,Spanish
+com.viator,ES,Mexico,Spanish
+com.viator,ES,Colombia,Spanish
+com.viator,ES,Argentina,Spanish
+com.viator,ES,Peru,Spanish
+com.viator,ES,Venezuela,Spanish
+com.viator,ES,Chile,Spanish
+com.viator,ES,Ecuador,Spanish
+com.viator,ES,Guatemala,Spanish
+com.viator,ES,Cuba,Spanish
+com.viator,ES,Bolivia,Spanish
+com.viator,ES,Dominican Republic,Spanish
+com.viator,ES,Honduras,Spanish
+com.viator,ES,Paraguay,Spanish
+com.viator,ES,El Salvador,Spanish
+com.viator,ES,Nicaragua,Spanish
+com.viator,ES,Costa Rica,Spanish
+com.viator,ES,Puerto Rico,Spanish
+com.viator,ES,Panama,Spanish
+com.viator,ES,Uruguay,Spanish
+com.viator,SV,Sweden,Swedish
+com.rmitech.nowy,EN,United States,English
+com.rmitech.nowy,EN,United Kingdom,English
+com.rmitech.nowy,EN,Canada,English
+com.rmitech.nowy,EN,Australia,English
+com.rmitech.nowy,EN,Ireland,English
+com.rmitech.nowy,EN,New Zealand,English
+com.rmitech.nowy,EN,South Africa,English
+flamingo.com.uk.Flamingo,EN,United States,English
+flamingo.com.uk.Flamingo,EN,United Kingdom,English
+flamingo.com.uk.Flamingo,EN,Canada,English
+flamingo.com.uk.Flamingo,EN,Australia,English
+flamingo.com.uk.Flamingo,EN,Ireland,English
+flamingo.com.uk.Flamingo,EN,New Zealand,English
+flamingo.com.uk.Flamingo,EN,South Africa,English
 com.jeremieleroy.packr,AR,Saudi Arabia,Arabic
 com.jeremieleroy.packr,AR,Iraq,Arabic
 com.jeremieleroy.packr,AR,Egypt,Arabic
@@ -299,6 +398,7 @@ com.jeremieleroy.packr,AR,United Arab Emirates,Arabic
 com.jeremieleroy.packr,CA,Spain,Catalan
 com.jeremieleroy.packr,CA,Andorra,Catalan
 com.jeremieleroy.packr,CS,Czech Republic,Czech
+com.jeremieleroy.packr,CS,Slovakia,Czech
 com.jeremieleroy.packr,DA,Denmark,Danish
 com.jeremieleroy.packr,DA,Greenland,Danish
 com.jeremieleroy.packr,DA,Faroe Islands,Danish
@@ -405,76 +505,6 @@ com.jeremieleroy.packr,TR,Turkey,Turkish
 com.jeremieleroy.packr,TR,Cyprus,Turkish
 com.jeremieleroy.packr,UK,Ukraine,Ukrainian
 com.jeremieleroy.packr,VI,Vietnam,Vietnamese
-flamingo.com.uk.Flamingo,EN,United States,English
-flamingo.com.uk.Flamingo,EN,United Kingdom,English
-flamingo.com.uk.Flamingo,EN,Canada,English
-flamingo.com.uk.Flamingo,EN,Australia,English
-flamingo.com.uk.Flamingo,EN,Ireland,English
-flamingo.com.uk.Flamingo,EN,New Zealand,English
-flamingo.com.uk.Flamingo,EN,South Africa,English
-co.tripscout.tripscout,EN,United States,English
-co.tripscout.tripscout,EN,United Kingdom,English
-co.tripscout.tripscout,EN,Canada,English
-co.tripscout.tripscout,EN,Australia,English
-co.tripscout.tripscout,EN,Ireland,English
-co.tripscout.tripscout,EN,New Zealand,English
-co.tripscout.tripscout,EN,South Africa,English
-com.CarobApps.inRoute,EN,United States,English
-com.CarobApps.inRoute,EN,United Kingdom,English
-com.CarobApps.inRoute,EN,Canada,English
-com.CarobApps.inRoute,EN,Australia,English
-com.CarobApps.inRoute,EN,Ireland,English
-com.CarobApps.inRoute,EN,New Zealand,English
-com.CarobApps.inRoute,EN,South Africa,English
-com.CarobApps.inRoute,FR,France,French
-com.CarobApps.inRoute,FR,Canada,French
-com.CarobApps.inRoute,FR,Belgium,French
-com.CarobApps.inRoute,FR,Switzerland,French
-com.CarobApps.inRoute,FR,Luxembourg,French
-com.CarobApps.inRoute,FR,Monaco,French
-com.CarobApps.inRoute,FR,Congo,French
-com.CarobApps.inRoute,FR,Ivory Coast,French
-com.CarobApps.inRoute,FR,Madagascar,French
-com.CarobApps.inRoute,FR,Cameroon,French
-com.CarobApps.inRoute,FR,Burkina Faso,French
-com.CarobApps.inRoute,FR,Niger,French
-com.CarobApps.inRoute,FR,Senegal,French
-com.CarobApps.inRoute,FR,Mali,French
-com.CarobApps.inRoute,FR,Rwanda,French
-com.CarobApps.inRoute,FR,Belgium,French
-com.CarobApps.inRoute,FR,Guinea,French
-com.CarobApps.inRoute,DE,Germany,German
-com.CarobApps.inRoute,DE,Austria,German
-com.CarobApps.inRoute,DE,Switzerland,German
-com.CarobApps.inRoute,DE,Luxembourg,German
-com.CarobApps.inRoute,DE,Liechtenstein,German
-com.CarobApps.inRoute,ES,Spain,Spanish
-com.CarobApps.inRoute,ES,Mexico,Spanish
-com.CarobApps.inRoute,ES,Colombia,Spanish
-com.CarobApps.inRoute,ES,Argentina,Spanish
-com.CarobApps.inRoute,ES,Peru,Spanish
-com.CarobApps.inRoute,ES,Venezuela,Spanish
-com.CarobApps.inRoute,ES,Chile,Spanish
-com.CarobApps.inRoute,ES,Ecuador,Spanish
-com.CarobApps.inRoute,ES,Guatemala,Spanish
-com.CarobApps.inRoute,ES,Cuba,Spanish
-com.CarobApps.inRoute,ES,Bolivia,Spanish
-com.CarobApps.inRoute,ES,Dominican Republic,Spanish
-com.CarobApps.inRoute,ES,Honduras,Spanish
-com.CarobApps.inRoute,ES,Paraguay,Spanish
-com.CarobApps.inRoute,ES,El Salvador,Spanish
-com.CarobApps.inRoute,ES,Nicaragua,Spanish
-com.CarobApps.inRoute,ES,Costa Rica,Spanish
-com.CarobApps.inRoute,ES,Puerto Rico,Spanish
-com.CarobApps.inRoute,ES,Panama,Spanish
-com.CarobApps.inRoute,ES,Uruguay,Spanish
-com.rmitech.nowy,EN,United States,English
-com.rmitech.nowy,EN,United Kingdom,English
-com.rmitech.nowy,EN,Canada,English
-com.rmitech.nowy,EN,Australia,English
-com.rmitech.nowy,EN,Ireland,English
-com.rmitech.nowy,EN,New Zealand,English
-com.rmitech.nowy,EN,South Africa,English
 com.pluto.travel,EN,United States,English
 com.pluto.travel,EN,United Kingdom,English
 com.pluto.travel,EN,Canada,English
@@ -482,110 +512,6 @@ com.pluto.travel,EN,Australia,English
 com.pluto.travel,EN,Ireland,English
 com.pluto.travel,EN,New Zealand,English
 com.pluto.travel,EN,South Africa,English
-com.expedia.booking,DA,Denmark,Danish
-com.expedia.booking,DA,Greenland,Danish
-com.expedia.booking,DA,Faroe Islands,Danish
-com.expedia.booking,NL,Netherlands,Dutch
-com.expedia.booking,NL,Belgium,Dutch
-com.expedia.booking,NL,Suriname,Dutch
-com.expedia.booking,EN,United States,English
-com.expedia.booking,EN,United Kingdom,English
-com.expedia.booking,EN,Canada,English
-com.expedia.booking,EN,Australia,English
-com.expedia.booking,EN,Ireland,English
-com.expedia.booking,EN,New Zealand,English
-com.expedia.booking,EN,South Africa,English
-com.expedia.booking,FI,Finland,Finnish
-com.expedia.booking,FI,Sweden,Finnish
-com.expedia.booking,FR,France,French
-com.expedia.booking,FR,Canada,French
-com.expedia.booking,FR,Belgium,French
-com.expedia.booking,FR,Switzerland,French
-com.expedia.booking,FR,Luxembourg,French
-com.expedia.booking,FR,Monaco,French
-com.expedia.booking,FR,Congo,French
-com.expedia.booking,FR,Ivory Coast,French
-com.expedia.booking,FR,Madagascar,French
-com.expedia.booking,FR,Cameroon,French
-com.expedia.booking,FR,Burkina Faso,French
-com.expedia.booking,FR,Niger,French
-com.expedia.booking,FR,Senegal,French
-com.expedia.booking,FR,Mali,French
-com.expedia.booking,FR,Rwanda,French
-com.expedia.booking,FR,Belgium,French
-com.expedia.booking,FR,Guinea,French
-com.expedia.booking,DE,Germany,German
-com.expedia.booking,DE,Austria,German
-com.expedia.booking,DE,Switzerland,German
-com.expedia.booking,DE,Luxembourg,German
-com.expedia.booking,DE,Liechtenstein,German
-com.expedia.booking,ID,Indonesia,Indonesian
-com.expedia.booking,IT,Italy,Italian
-com.expedia.booking,IT,Switzerland,Italian
-com.expedia.booking,IT,San Marino,Italian
-com.expedia.booking,IT,Vatican City,Italian
-com.expedia.booking,JA,Japan,Japanese
-com.expedia.booking,KO,South Korea,Korean
-com.expedia.booking,KO,North Korea,Korean
-com.expedia.booking,NB,Norway,Norwegian Bokmål
-com.expedia.booking,PT,Portugal,Portuguese
-com.expedia.booking,PT,Brazil,Portuguese
-com.expedia.booking,PT,Angola,Portuguese
-com.expedia.booking,PT,Mozambique,Portuguese
-com.expedia.booking,PT,Cape Verde,Portuguese
-com.expedia.booking,PT,Guinea-Bissau,Portuguese
-com.expedia.booking,PT,São Tomé and Príncipe,Portuguese
-com.expedia.booking,PT,East Timor,Portuguese
-com.expedia.booking,ZH,China,Chinese
-com.expedia.booking,ZH,Taiwan,Chinese
-com.expedia.booking,ZH,Singapore,Chinese
-com.expedia.booking,ZH,Malaysia,Chinese
-com.expedia.booking,ES,Spain,Spanish
-com.expedia.booking,ES,Mexico,Spanish
-com.expedia.booking,ES,Colombia,Spanish
-com.expedia.booking,ES,Argentina,Spanish
-com.expedia.booking,ES,Peru,Spanish
-com.expedia.booking,ES,Venezuela,Spanish
-com.expedia.booking,ES,Chile,Spanish
-com.expedia.booking,ES,Ecuador,Spanish
-com.expedia.booking,ES,Guatemala,Spanish
-com.expedia.booking,ES,Cuba,Spanish
-com.expedia.booking,ES,Bolivia,Spanish
-com.expedia.booking,ES,Dominican Republic,Spanish
-com.expedia.booking,ES,Honduras,Spanish
-com.expedia.booking,ES,Paraguay,Spanish
-com.expedia.booking,ES,El Salvador,Spanish
-com.expedia.booking,ES,Nicaragua,Spanish
-com.expedia.booking,ES,Costa Rica,Spanish
-com.expedia.booking,ES,Puerto Rico,Spanish
-com.expedia.booking,ES,Panama,Spanish
-com.expedia.booking,ES,Uruguay,Spanish
-com.expedia.booking,SV,Sweden,Swedish
-com.expedia.booking,TH,Thailand,Thai
-com.expedia.booking,ZH,China,Chinese
-com.expedia.booking,ZH,Taiwan,Chinese
-com.expedia.booking,ZH,Singapore,Chinese
-com.expedia.booking,ZH,Malaysia,Chinese
-com.expedia.booking,VI,Vietnam,Vietnamese
-digital.monos.tour,EN,United States,English
-digital.monos.tour,EN,United Kingdom,English
-digital.monos.tour,EN,Canada,English
-digital.monos.tour,EN,Australia,English
-digital.monos.tour,EN,Ireland,English
-digital.monos.tour,EN,New Zealand,English
-digital.monos.tour,EN,South Africa,English
-app.getroadie.ios,EN,United States,English
-app.getroadie.ios,EN,United Kingdom,English
-app.getroadie.ios,EN,Canada,English
-app.getroadie.ios,EN,Australia,English
-app.getroadie.ios,EN,Ireland,English
-app.getroadie.ios,EN,New Zealand,English
-app.getroadie.ios,EN,South Africa,English
-app.getroadie.ios,DE,Germany,German
-app.getroadie.ios,DE,Austria,German
-app.getroadie.ios,DE,Switzerland,German
-app.getroadie.ios,DE,Luxembourg,German
-app.getroadie.ios,DE,Liechtenstein,German
 com.hopper.flights,NL,Netherlands,Dutch
 com.hopper.flights,NL,Belgium,Dutch
 com.hopper.flights,NL,Suriname,Dutch
@@ -655,6 +581,372 @@ com.hopper.flights,ES,Puerto Rico,Spanish
 com.hopper.flights,ES,Panama,Spanish
 com.hopper.flights,ES,Uruguay,Spanish
 com.hopper.flights,TH,Thailand,Thai
+net.skyscanner.iphone,AR,Saudi Arabia,Arabic
+net.skyscanner.iphone,AR,Iraq,Arabic
+net.skyscanner.iphone,AR,Egypt,Arabic
+net.skyscanner.iphone,AR,Algeria,Arabic
+net.skyscanner.iphone,AR,Morocco,Arabic
+net.skyscanner.iphone,AR,Sudan,Arabic
+net.skyscanner.iphone,AR,Yemen,Arabic
+net.skyscanner.iphone,AR,Syria,Arabic
+net.skyscanner.iphone,AR,Tunisia,Arabic
+net.skyscanner.iphone,AR,Jordan,Arabic
+net.skyscanner.iphone,AR,Libya,Arabic
+net.skyscanner.iphone,AR,Lebanon,Arabic
+net.skyscanner.iphone,AR,Oman,Arabic
+net.skyscanner.iphone,AR,Kuwait,Arabic
+net.skyscanner.iphone,AR,Mauritania,Arabic
+net.skyscanner.iphone,AR,Qatar,Arabic
+net.skyscanner.iphone,AR,Bahrain,Arabic
+net.skyscanner.iphone,AR,United Arab Emirates,Arabic
+net.skyscanner.iphone,BG,Bulgaria,Bulgarian
+net.skyscanner.iphone,CA,Spain,Catalan
+net.skyscanner.iphone,CA,Andorra,Catalan
+net.skyscanner.iphone,HR,Croatia,Croatian
+net.skyscanner.iphone,HR,Bosnia and Herzegovina,Croatian
+net.skyscanner.iphone,CS,Czech Republic,Czech
+net.skyscanner.iphone,CS,Slovakia,Czech
+net.skyscanner.iphone,DA,Denmark,Danish
+net.skyscanner.iphone,DA,Greenland,Danish
+net.skyscanner.iphone,DA,Faroe Islands,Danish
+net.skyscanner.iphone,NL,Netherlands,Dutch
+net.skyscanner.iphone,NL,Belgium,Dutch
+net.skyscanner.iphone,NL,Suriname,Dutch
+net.skyscanner.iphone,EN,United States,English
+net.skyscanner.iphone,EN,United Kingdom,English
+net.skyscanner.iphone,EN,Canada,English
+net.skyscanner.iphone,EN,Australia,English
+net.skyscanner.iphone,EN,Ireland,English
+net.skyscanner.iphone,EN,New Zealand,English
+net.skyscanner.iphone,EN,South Africa,English
+net.skyscanner.iphone,FI,Finland,Finnish
+net.skyscanner.iphone,FI,Sweden,Finnish
+net.skyscanner.iphone,FR,France,French
+net.skyscanner.iphone,FR,Canada,French
+net.skyscanner.iphone,FR,Belgium,French
+net.skyscanner.iphone,FR,Switzerland,French
+net.skyscanner.iphone,FR,Luxembourg,French
+net.skyscanner.iphone,FR,Monaco,French
+net.skyscanner.iphone,FR,Congo,French
+net.skyscanner.iphone,FR,Ivory Coast,French
+net.skyscanner.iphone,FR,Madagascar,French
+net.skyscanner.iphone,FR,Cameroon,French
+net.skyscanner.iphone,FR,Burkina Faso,French
+net.skyscanner.iphone,FR,Niger,French
+net.skyscanner.iphone,FR,Senegal,French
+net.skyscanner.iphone,FR,Mali,French
+net.skyscanner.iphone,FR,Rwanda,French
+net.skyscanner.iphone,FR,Belgium,French
+net.skyscanner.iphone,FR,Guinea,French
+net.skyscanner.iphone,DE,Germany,German
+net.skyscanner.iphone,DE,Austria,German
+net.skyscanner.iphone,DE,Switzerland,German
+net.skyscanner.iphone,DE,Luxembourg,German
+net.skyscanner.iphone,DE,Liechtenstein,German
+net.skyscanner.iphone,EL,Greece,Modern Greek (1453-)
+net.skyscanner.iphone,EL,Cyprus,Modern Greek (1453-)
+net.skyscanner.iphone,HE,Israel,Hebrew
+net.skyscanner.iphone,HI,India,Hindi
+net.skyscanner.iphone,HU,Hungary,Hungarian
+net.skyscanner.iphone,ID,Indonesia,Indonesian
+net.skyscanner.iphone,IT,Italy,Italian
+net.skyscanner.iphone,IT,Switzerland,Italian
+net.skyscanner.iphone,IT,San Marino,Italian
+net.skyscanner.iphone,IT,Vatican City,Italian
+net.skyscanner.iphone,JA,Japan,Japanese
+net.skyscanner.iphone,KO,South Korea,Korean
+net.skyscanner.iphone,KO,North Korea,Korean
+net.skyscanner.iphone,MS,Malaysia,Malay (macrolanguage)
+net.skyscanner.iphone,MS,Brunei,Malay (macrolanguage)
+net.skyscanner.iphone,MS,Singapore,Malay (macrolanguage)
+net.skyscanner.iphone,NB,Norway,Norwegian Bokmål
+net.skyscanner.iphone,PL,Poland,Polish
+net.skyscanner.iphone,PT,Portugal,Portuguese
+net.skyscanner.iphone,PT,Brazil,Portuguese
+net.skyscanner.iphone,PT,Angola,Portuguese
+net.skyscanner.iphone,PT,Mozambique,Portuguese
+net.skyscanner.iphone,PT,Cape Verde,Portuguese
+net.skyscanner.iphone,PT,Guinea-Bissau,Portuguese
+net.skyscanner.iphone,PT,São Tomé and Príncipe,Portuguese
+net.skyscanner.iphone,PT,East Timor,Portuguese
+net.skyscanner.iphone,RO,Romania,Romanian
+net.skyscanner.iphone,RO,Moldova,Romanian
+net.skyscanner.iphone,RU,Russia,Russian
+net.skyscanner.iphone,RU,Belarus,Russian
+net.skyscanner.iphone,RU,Kazakhstan,Russian
+net.skyscanner.iphone,RU,Kyrgyzstan,Russian
+net.skyscanner.iphone,ZH,China,Chinese
+net.skyscanner.iphone,ZH,Taiwan,Chinese
+net.skyscanner.iphone,ZH,Singapore,Chinese
+net.skyscanner.iphone,ZH,Malaysia,Chinese
+net.skyscanner.iphone,SK,Slovakia,Slovak
+net.skyscanner.iphone,ES,Spain,Spanish
+net.skyscanner.iphone,ES,Mexico,Spanish
+net.skyscanner.iphone,ES,Colombia,Spanish
+net.skyscanner.iphone,ES,Argentina,Spanish
+net.skyscanner.iphone,ES,Peru,Spanish
+net.skyscanner.iphone,ES,Venezuela,Spanish
+net.skyscanner.iphone,ES,Chile,Spanish
+net.skyscanner.iphone,ES,Ecuador,Spanish
+net.skyscanner.iphone,ES,Guatemala,Spanish
+net.skyscanner.iphone,ES,Cuba,Spanish
+net.skyscanner.iphone,ES,Bolivia,Spanish
+net.skyscanner.iphone,ES,Dominican Republic,Spanish
+net.skyscanner.iphone,ES,Honduras,Spanish
+net.skyscanner.iphone,ES,Paraguay,Spanish
+net.skyscanner.iphone,ES,El Salvador,Spanish
+net.skyscanner.iphone,ES,Nicaragua,Spanish
+net.skyscanner.iphone,ES,Costa Rica,Spanish
+net.skyscanner.iphone,ES,Puerto Rico,Spanish
+net.skyscanner.iphone,ES,Panama,Spanish
+net.skyscanner.iphone,ES,Uruguay,Spanish
+net.skyscanner.iphone,SV,Sweden,Swedish
+net.skyscanner.iphone,TL,Timor-Leste,Tagalog
+net.skyscanner.iphone,TH,Thailand,Thai
+net.skyscanner.iphone,ZH,China,Chinese
+net.skyscanner.iphone,ZH,Taiwan,Chinese
+net.skyscanner.iphone,ZH,Singapore,Chinese
+net.skyscanner.iphone,ZH,Malaysia,Chinese
+net.skyscanner.iphone,TR,Turkey,Turkish
+net.skyscanner.iphone,TR,Cyprus,Turkish
+net.skyscanner.iphone,UK,Ukraine,Ukrainian
+net.skyscanner.iphone,VI,Vietnam,Vietnamese
+com.HighHeels.Travelist,CA,Spain,Catalan
+com.HighHeels.Travelist,CA,Andorra,Catalan
+com.HighHeels.Travelist,HR,Croatia,Croatian
+com.HighHeels.Travelist,HR,Bosnia and Herzegovina,Croatian
+com.HighHeels.Travelist,CS,Czech Republic,Czech
+com.HighHeels.Travelist,CS,Slovakia,Czech
+com.HighHeels.Travelist,DA,Denmark,Danish
+com.HighHeels.Travelist,DA,Greenland,Danish
+com.HighHeels.Travelist,DA,Faroe Islands,Danish
+com.HighHeels.Travelist,NL,Netherlands,Dutch
+com.HighHeels.Travelist,NL,Belgium,Dutch
+com.HighHeels.Travelist,NL,Suriname,Dutch
+com.HighHeels.Travelist,EN,United States,English
+com.HighHeels.Travelist,EN,United Kingdom,English
+com.HighHeels.Travelist,EN,Canada,English
+com.HighHeels.Travelist,EN,Australia,English
+com.HighHeels.Travelist,EN,Ireland,English
+com.HighHeels.Travelist,EN,New Zealand,English
+com.HighHeels.Travelist,EN,South Africa,English
+com.HighHeels.Travelist,FI,Finland,Finnish
+com.HighHeels.Travelist,FI,Sweden,Finnish
+com.HighHeels.Travelist,FR,France,French
+com.HighHeels.Travelist,FR,Canada,French
+com.HighHeels.Travelist,FR,Belgium,French
+com.HighHeels.Travelist,FR,Switzerland,French
+com.HighHeels.Travelist,FR,Luxembourg,French
+com.HighHeels.Travelist,FR,Monaco,French
+com.HighHeels.Travelist,FR,Congo,French
+com.HighHeels.Travelist,FR,Ivory Coast,French
+com.HighHeels.Travelist,FR,Madagascar,French
+com.HighHeels.Travelist,FR,Cameroon,French
+com.HighHeels.Travelist,FR,Burkina Faso,French
+com.HighHeels.Travelist,FR,Niger,French
+com.HighHeels.Travelist,FR,Senegal,French
+com.HighHeels.Travelist,FR,Mali,French
+com.HighHeels.Travelist,FR,Rwanda,French
+com.HighHeels.Travelist,FR,Belgium,French
+com.HighHeels.Travelist,FR,Guinea,French
+com.HighHeels.Travelist,DE,Germany,German
+com.HighHeels.Travelist,DE,Austria,German
+com.HighHeels.Travelist,DE,Switzerland,German
+com.HighHeels.Travelist,DE,Luxembourg,German
+com.HighHeels.Travelist,DE,Liechtenstein,German
+com.HighHeels.Travelist,EL,Greece,Modern Greek (1453-)
+com.HighHeels.Travelist,EL,Cyprus,Modern Greek (1453-)
+com.HighHeels.Travelist,HU,Hungary,Hungarian
+com.HighHeels.Travelist,ID,Indonesia,Indonesian
+com.HighHeels.Travelist,IT,Italy,Italian
+com.HighHeels.Travelist,IT,Switzerland,Italian
+com.HighHeels.Travelist,IT,San Marino,Italian
+com.HighHeels.Travelist,IT,Vatican City,Italian
+com.HighHeels.Travelist,JA,Japan,Japanese
+com.HighHeels.Travelist,KO,South Korea,Korean
+com.HighHeels.Travelist,KO,North Korea,Korean
+com.HighHeels.Travelist,MS,Malaysia,Malay (macrolanguage)
+com.HighHeels.Travelist,MS,Brunei,Malay (macrolanguage)
+com.HighHeels.Travelist,MS,Singapore,Malay (macrolanguage)
+com.HighHeels.Travelist,NB,Norway,Norwegian Bokmål
+com.HighHeels.Travelist,PL,Poland,Polish
+com.HighHeels.Travelist,PT,Portugal,Portuguese
+com.HighHeels.Travelist,PT,Brazil,Portuguese
+com.HighHeels.Travelist,PT,Angola,Portuguese
+com.HighHeels.Travelist,PT,Mozambique,Portuguese
+com.HighHeels.Travelist,PT,Cape Verde,Portuguese
+com.HighHeels.Travelist,PT,Guinea-Bissau,Portuguese
+com.HighHeels.Travelist,PT,São Tomé and Príncipe,Portuguese
+com.HighHeels.Travelist,PT,East Timor,Portuguese
+com.HighHeels.Travelist,RO,Romania,Romanian
+com.HighHeels.Travelist,RO,Moldova,Romanian
+com.HighHeels.Travelist,RU,Russia,Russian
+com.HighHeels.Travelist,RU,Belarus,Russian
+com.HighHeels.Travelist,RU,Kazakhstan,Russian
+com.HighHeels.Travelist,RU,Kyrgyzstan,Russian
+com.HighHeels.Travelist,SR,Serbia,Serbian
+com.HighHeels.Travelist,SR,Bosnia and Herzegovina,Serbian
+com.HighHeels.Travelist,SR,Montenegro,Serbian
+com.HighHeels.Travelist,SR,Kosovo,Serbian
+com.HighHeels.Travelist,ZH,China,Chinese
+com.HighHeels.Travelist,ZH,Taiwan,Chinese
+com.HighHeels.Travelist,ZH,Singapore,Chinese
+com.HighHeels.Travelist,ZH,Malaysia,Chinese
+com.HighHeels.Travelist,SK,Slovakia,Slovak
+com.HighHeels.Travelist,ES,Spain,Spanish
+com.HighHeels.Travelist,ES,Mexico,Spanish
+com.HighHeels.Travelist,ES,Colombia,Spanish
+com.HighHeels.Travelist,ES,Argentina,Spanish
+com.HighHeels.Travelist,ES,Peru,Spanish
+com.HighHeels.Travelist,ES,Venezuela,Spanish
+com.HighHeels.Travelist,ES,Chile,Spanish
+com.HighHeels.Travelist,ES,Ecuador,Spanish
+com.HighHeels.Travelist,ES,Guatemala,Spanish
+com.HighHeels.Travelist,ES,Cuba,Spanish
+com.HighHeels.Travelist,ES,Bolivia,Spanish
+com.HighHeels.Travelist,ES,Dominican Republic,Spanish
+com.HighHeels.Travelist,ES,Honduras,Spanish
+com.HighHeels.Travelist,ES,Paraguay,Spanish
+com.HighHeels.Travelist,ES,El Salvador,Spanish
+com.HighHeels.Travelist,ES,Nicaragua,Spanish
+com.HighHeels.Travelist,ES,Costa Rica,Spanish
+com.HighHeels.Travelist,ES,Puerto Rico,Spanish
+com.HighHeels.Travelist,ES,Panama,Spanish
+com.HighHeels.Travelist,ES,Uruguay,Spanish
+com.HighHeels.Travelist,SV,Sweden,Swedish
+com.HighHeels.Travelist,TH,Thailand,Thai
+com.HighHeels.Travelist,ZH,China,Chinese
+com.HighHeels.Travelist,ZH,Taiwan,Chinese
+com.HighHeels.Travelist,ZH,Singapore,Chinese
+com.HighHeels.Travelist,ZH,Malaysia,Chinese
+com.HighHeels.Travelist,TR,Turkey,Turkish
+com.HighHeels.Travelist,TR,Cyprus,Turkish
+com.HighHeels.Travelist,UK,Ukraine,Ukrainian
+com.HighHeels.Travelist,VI,Vietnam,Vietnamese
+com.kayak.travel,AR,Saudi Arabia,Arabic
+com.kayak.travel,AR,Iraq,Arabic
+com.kayak.travel,AR,Egypt,Arabic
+com.kayak.travel,AR,Algeria,Arabic
+com.kayak.travel,AR,Morocco,Arabic
+com.kayak.travel,AR,Sudan,Arabic
+com.kayak.travel,AR,Yemen,Arabic
+com.kayak.travel,AR,Syria,Arabic
+com.kayak.travel,AR,Tunisia,Arabic
+com.kayak.travel,AR,Jordan,Arabic
+com.kayak.travel,AR,Libya,Arabic
+com.kayak.travel,AR,Lebanon,Arabic
+com.kayak.travel,AR,Oman,Arabic
+com.kayak.travel,AR,Kuwait,Arabic
+com.kayak.travel,AR,Mauritania,Arabic
+com.kayak.travel,AR,Qatar,Arabic
+com.kayak.travel,AR,Bahrain,Arabic
+com.kayak.travel,AR,United Arab Emirates,Arabic
+com.kayak.travel,CA,Spain,Catalan
+com.kayak.travel,CA,Andorra,Catalan
+com.kayak.travel,CS,Czech Republic,Czech
+com.kayak.travel,CS,Slovakia,Czech
+com.kayak.travel,DA,Denmark,Danish
+com.kayak.travel,DA,Greenland,Danish
+com.kayak.travel,DA,Faroe Islands,Danish
+com.kayak.travel,NL,Netherlands,Dutch
+com.kayak.travel,NL,Belgium,Dutch
+com.kayak.travel,NL,Suriname,Dutch
+com.kayak.travel,EN,United States,English
+com.kayak.travel,EN,United Kingdom,English
+com.kayak.travel,EN,Canada,English
+com.kayak.travel,EN,Australia,English
+com.kayak.travel,EN,Ireland,English
+com.kayak.travel,EN,New Zealand,English
+com.kayak.travel,EN,South Africa,English
+com.kayak.travel,ET,Estonia,Estonian
+com.kayak.travel,FI,Finland,Finnish
+com.kayak.travel,FI,Sweden,Finnish
+com.kayak.travel,FR,France,French
+com.kayak.travel,FR,Canada,French
+com.kayak.travel,FR,Belgium,French
+com.kayak.travel,FR,Switzerland,French
+com.kayak.travel,FR,Luxembourg,French
+com.kayak.travel,FR,Monaco,French
+com.kayak.travel,FR,Congo,French
+com.kayak.travel,FR,Ivory Coast,French
+com.kayak.travel,FR,Madagascar,French
+com.kayak.travel,FR,Cameroon,French
+com.kayak.travel,FR,Burkina Faso,French
+com.kayak.travel,FR,Niger,French
+com.kayak.travel,FR,Senegal,French
+com.kayak.travel,FR,Mali,French
+com.kayak.travel,FR,Rwanda,French
+com.kayak.travel,FR,Belgium,French
+com.kayak.travel,FR,Guinea,French
+com.kayak.travel,DE,Germany,German
+com.kayak.travel,DE,Austria,German
+com.kayak.travel,DE,Switzerland,German
+com.kayak.travel,DE,Luxembourg,German
+com.kayak.travel,DE,Liechtenstein,German
+com.kayak.travel,EL,Greece,Modern Greek (1453-)
+com.kayak.travel,EL,Cyprus,Modern Greek (1453-)
+com.kayak.travel,HE,Israel,Hebrew
+com.kayak.travel,ID,Indonesia,Indonesian
+com.kayak.travel,IT,Italy,Italian
+com.kayak.travel,IT,Switzerland,Italian
+com.kayak.travel,IT,San Marino,Italian
+com.kayak.travel,IT,Vatican City,Italian
+com.kayak.travel,JA,Japan,Japanese
+com.kayak.travel,KO,South Korea,Korean
+com.kayak.travel,KO,North Korea,Korean
+com.kayak.travel,MS,Malaysia,Malay (macrolanguage)
+com.kayak.travel,MS,Brunei,Malay (macrolanguage)
+com.kayak.travel,MS,Singapore,Malay (macrolanguage)
+com.kayak.travel,NB,Norway,Norwegian Bokmål
+com.kayak.travel,PL,Poland,Polish
+com.kayak.travel,PT,Portugal,Portuguese
+com.kayak.travel,PT,Brazil,Portuguese
+com.kayak.travel,PT,Angola,Portuguese
+com.kayak.travel,PT,Mozambique,Portuguese
+com.kayak.travel,PT,Cape Verde,Portuguese
+com.kayak.travel,PT,Guinea-Bissau,Portuguese
+com.kayak.travel,PT,São Tomé and Príncipe,Portuguese
+com.kayak.travel,PT,East Timor,Portuguese
+com.kayak.travel,RO,Romania,Romanian
+com.kayak.travel,RO,Moldova,Romanian
+com.kayak.travel,RU,Russia,Russian
+com.kayak.travel,RU,Belarus,Russian
+com.kayak.travel,RU,Kazakhstan,Russian
+com.kayak.travel,RU,Kyrgyzstan,Russian
+com.kayak.travel,ZH,China,Chinese
+com.kayak.travel,ZH,Taiwan,Chinese
+com.kayak.travel,ZH,Singapore,Chinese
+com.kayak.travel,ZH,Malaysia,Chinese
+com.kayak.travel,ES,Spain,Spanish
+com.kayak.travel,ES,Mexico,Spanish
+com.kayak.travel,ES,Colombia,Spanish
+com.kayak.travel,ES,Argentina,Spanish
+com.kayak.travel,ES,Peru,Spanish
+com.kayak.travel,ES,Venezuela,Spanish
+com.kayak.travel,ES,Chile,Spanish
+com.kayak.travel,ES,Ecuador,Spanish
+com.kayak.travel,ES,Guatemala,Spanish
+com.kayak.travel,ES,Cuba,Spanish
+com.kayak.travel,ES,Bolivia,Spanish
+com.kayak.travel,ES,Dominican Republic,Spanish
+com.kayak.travel,ES,Honduras,Spanish
+com.kayak.travel,ES,Paraguay,Spanish
+com.kayak.travel,ES,El Salvador,Spanish
+com.kayak.travel,ES,Nicaragua,Spanish
+com.kayak.travel,ES,Costa Rica,Spanish
+com.kayak.travel,ES,Puerto Rico,Spanish
+com.kayak.travel,ES,Panama,Spanish
+com.kayak.travel,ES,Uruguay,Spanish
+com.kayak.travel,SV,Sweden,Swedish
+com.kayak.travel,TH,Thailand,Thai
+com.kayak.travel,ZH,China,Chinese
+com.kayak.travel,ZH,Taiwan,Chinese
+com.kayak.travel,ZH,Singapore,Chinese
+com.kayak.travel,ZH,Malaysia,Chinese
+com.kayak.travel,TR,Turkey,Turkish
+com.kayak.travel,TR,Cyprus,Turkish
+com.kayak.travel,UK,Ukraine,Ukrainian
+com.kayak.travel,VI,Vietnam,Vietnamese
 com.booking.BookingApp,AR,Saudi Arabia,Arabic
 com.booking.BookingApp,AR,Iraq,Arabic
 com.booking.BookingApp,AR,Egypt,Arabic
@@ -679,6 +971,7 @@ com.booking.BookingApp,CA,Andorra,Catalan
 com.booking.BookingApp,HR,Croatia,Croatian
 com.booking.BookingApp,HR,Bosnia and Herzegovina,Croatian
 com.booking.BookingApp,CS,Czech Republic,Czech
+com.booking.BookingApp,CS,Slovakia,Czech
 com.booking.BookingApp,DA,Denmark,Danish
 com.booking.BookingApp,DA,Greenland,Danish
 com.booking.BookingApp,DA,Faroe Islands,Danish
@@ -792,233 +1085,95 @@ com.booking.BookingApp,TR,Turkey,Turkish
 com.booking.BookingApp,TR,Cyprus,Turkish
 com.booking.BookingApp,UK,Ukraine,Ukrainian
 com.booking.BookingApp,VI,Vietnam,Vietnamese
-com.airbnb.app,SQ,Albania,Albanian
-com.airbnb.app,SQ,Kosovo,Albanian
-com.airbnb.app,AR,Saudi Arabia,Arabic
-com.airbnb.app,AR,Iraq,Arabic
-com.airbnb.app,AR,Egypt,Arabic
-com.airbnb.app,AR,Algeria,Arabic
-com.airbnb.app,AR,Morocco,Arabic
-com.airbnb.app,AR,Sudan,Arabic
-com.airbnb.app,AR,Yemen,Arabic
-com.airbnb.app,AR,Syria,Arabic
-com.airbnb.app,AR,Tunisia,Arabic
-com.airbnb.app,AR,Jordan,Arabic
-com.airbnb.app,AR,Libya,Arabic
-com.airbnb.app,AR,Lebanon,Arabic
-com.airbnb.app,AR,Oman,Arabic
-com.airbnb.app,AR,Kuwait,Arabic
-com.airbnb.app,AR,Mauritania,Arabic
-com.airbnb.app,AR,Qatar,Arabic
-com.airbnb.app,AR,Bahrain,Arabic
-com.airbnb.app,AR,United Arab Emirates,Arabic
-com.airbnb.app,HY,Armenia,Armenian
-com.airbnb.app,HY,Nagorno-Karabakh Republic,Armenian
-com.airbnb.app,AZ,Azerbaijan,Azerbaijani
-com.airbnb.app,BS,Bosnia and Herzegovina,Bosnian
-com.airbnb.app,BG,Bulgaria,Bulgarian
-com.airbnb.app,CA,Spain,Catalan
-com.airbnb.app,CA,Andorra,Catalan
-com.airbnb.app,HR,Croatia,Croatian
-com.airbnb.app,HR,Bosnia and Herzegovina,Croatian
-com.airbnb.app,CS,Czech Republic,Czech
-com.airbnb.app,DA,Denmark,Danish
-com.airbnb.app,DA,Greenland,Danish
-com.airbnb.app,DA,Faroe Islands,Danish
-com.airbnb.app,NL,Netherlands,Dutch
-com.airbnb.app,NL,Belgium,Dutch
-com.airbnb.app,NL,Suriname,Dutch
-com.airbnb.app,EN,United States,English
-com.airbnb.app,EN,United Kingdom,English
-com.airbnb.app,EN,Canada,English
-com.airbnb.app,EN,Australia,English
-com.airbnb.app,EN,Ireland,English
-com.airbnb.app,EN,New Zealand,English
-com.airbnb.app,EN,South Africa,English
-com.airbnb.app,ET,Estonia,Estonian
-com.airbnb.app,FI,Finland,Finnish
-com.airbnb.app,FI,Sweden,Finnish
-com.airbnb.app,FR,France,French
-com.airbnb.app,FR,Canada,French
-com.airbnb.app,FR,Belgium,French
-com.airbnb.app,FR,Switzerland,French
-com.airbnb.app,FR,Luxembourg,French
-com.airbnb.app,FR,Monaco,French
-com.airbnb.app,FR,Congo,French
-com.airbnb.app,FR,Ivory Coast,French
-com.airbnb.app,FR,Madagascar,French
-com.airbnb.app,FR,Cameroon,French
-com.airbnb.app,FR,Burkina Faso,French
-com.airbnb.app,FR,Niger,French
-com.airbnb.app,FR,Senegal,French
-com.airbnb.app,FR,Mali,French
-com.airbnb.app,FR,Rwanda,French
-com.airbnb.app,FR,Belgium,French
-com.airbnb.app,FR,Guinea,French
-com.airbnb.app,KA,Georgia,Georgian
-com.airbnb.app,DE,Germany,German
-com.airbnb.app,DE,Austria,German
-com.airbnb.app,DE,Switzerland,German
-com.airbnb.app,DE,Luxembourg,German
-com.airbnb.app,DE,Liechtenstein,German
-com.airbnb.app,EL,Greece,Modern Greek (1453-)
-com.airbnb.app,EL,Cyprus,Modern Greek (1453-)
-com.airbnb.app,HE,Israel,Hebrew
-com.airbnb.app,HI,India,Hindi
-com.airbnb.app,HU,Hungary,Hungarian
-com.airbnb.app,IS,Iceland,Icelandic
-com.airbnb.app,ID,Indonesia,Indonesian
-com.airbnb.app,GA,Ireland,Irish
-com.airbnb.app,IT,Italy,Italian
-com.airbnb.app,IT,Switzerland,Italian
-com.airbnb.app,IT,San Marino,Italian
-com.airbnb.app,IT,Vatican City,Italian
-com.airbnb.app,JA,Japan,Japanese
-com.airbnb.app,KO,South Korea,Korean
-com.airbnb.app,KO,North Korea,Korean
-com.airbnb.app,LV,Latvia,Latvian
-com.airbnb.app,LT,Lithuania,Lithuanian
-com.airbnb.app,MK,North Macedonia,Macedonian
-com.airbnb.app,MS,Malaysia,Malay (macrolanguage)
-com.airbnb.app,MS,Brunei,Malay (macrolanguage)
-com.airbnb.app,MS,Singapore,Malay (macrolanguage)
-com.airbnb.app,MT,Malta,Maltese
-com.airbnb.app,NB,Norway,Norwegian Bokmål
-com.airbnb.app,PL,Poland,Polish
-com.airbnb.app,PT,Portugal,Portuguese
-com.airbnb.app,PT,Brazil,Portuguese
-com.airbnb.app,PT,Angola,Portuguese
-com.airbnb.app,PT,Mozambique,Portuguese
-com.airbnb.app,PT,Cape Verde,Portuguese
-com.airbnb.app,PT,Guinea-Bissau,Portuguese
-com.airbnb.app,PT,São Tomé and Príncipe,Portuguese
-com.airbnb.app,PT,East Timor,Portuguese
-com.airbnb.app,RO,Romania,Romanian
-com.airbnb.app,RO,Moldova,Romanian
-com.airbnb.app,RU,Russia,Russian
-com.airbnb.app,RU,Belarus,Russian
-com.airbnb.app,RU,Kazakhstan,Russian
-com.airbnb.app,RU,Kyrgyzstan,Russian
-com.airbnb.app,SR,Serbia,Serbian
-com.airbnb.app,SR,Bosnia and Herzegovina,Serbian
-com.airbnb.app,SR,Montenegro,Serbian
-com.airbnb.app,SR,Kosovo,Serbian
-com.airbnb.app,ZH,China,Chinese
-com.airbnb.app,ZH,Taiwan,Chinese
-com.airbnb.app,ZH,Singapore,Chinese
-com.airbnb.app,ZH,Malaysia,Chinese
-com.airbnb.app,SK,Slovakia,Slovak
-com.airbnb.app,SL,Slovenia,Slovenian
-com.airbnb.app,ES,Spain,Spanish
-com.airbnb.app,ES,Mexico,Spanish
-com.airbnb.app,ES,Colombia,Spanish
-com.airbnb.app,ES,Argentina,Spanish
-com.airbnb.app,ES,Peru,Spanish
-com.airbnb.app,ES,Venezuela,Spanish
-com.airbnb.app,ES,Chile,Spanish
-com.airbnb.app,ES,Ecuador,Spanish
-com.airbnb.app,ES,Guatemala,Spanish
-com.airbnb.app,ES,Cuba,Spanish
-com.airbnb.app,ES,Bolivia,Spanish
-com.airbnb.app,ES,Dominican Republic,Spanish
-com.airbnb.app,ES,Honduras,Spanish
-com.airbnb.app,ES,Paraguay,Spanish
-com.airbnb.app,ES,El Salvador,Spanish
-com.airbnb.app,ES,Nicaragua,Spanish
-com.airbnb.app,ES,Costa Rica,Spanish
-com.airbnb.app,ES,Puerto Rico,Spanish
-com.airbnb.app,ES,Panama,Spanish
-com.airbnb.app,ES,Uruguay,Spanish
-com.airbnb.app,SW,Tanzania,Swahili (macrolanguage)
-com.airbnb.app,SW,Kenya,Swahili (macrolanguage)
-com.airbnb.app,SW,Uganda,Swahili (macrolanguage)
-com.airbnb.app,SV,Sweden,Swedish
-com.airbnb.app,TL,Timor-Leste,Tagalog
-com.airbnb.app,TH,Thailand,Thai
-com.airbnb.app,ZH,China,Chinese
-com.airbnb.app,ZH,Taiwan,Chinese
-com.airbnb.app,ZH,Singapore,Chinese
-com.airbnb.app,ZH,Malaysia,Chinese
-com.airbnb.app,TR,Turkey,Turkish
-com.airbnb.app,TR,Cyprus,Turkish
-com.airbnb.app,UK,Ukraine,Ukrainian
-com.airbnb.app,VI,Vietnam,Vietnamese
-com.airbnb.app,XH,South Africa,Xhosa
-com.airbnb.app,ZU,South Africa,Zulu
-com.viator,DA,Denmark,Danish
-com.viator,DA,Greenland,Danish
-com.viator,DA,Faroe Islands,Danish
-com.viator,NL,Netherlands,Dutch
-com.viator,NL,Belgium,Dutch
-com.viator,NL,Suriname,Dutch
-com.viator,EN,United States,English
-com.viator,EN,United Kingdom,English
-com.viator,EN,Canada,English
-com.viator,EN,Australia,English
-com.viator,EN,Ireland,English
-com.viator,EN,New Zealand,English
-com.viator,EN,South Africa,English
-com.viator,FR,France,French
-com.viator,FR,Canada,French
-com.viator,FR,Belgium,French
-com.viator,FR,Switzerland,French
-com.viator,FR,Luxembourg,French
-com.viator,FR,Monaco,French
-com.viator,FR,Congo,French
-com.viator,FR,Ivory Coast,French
-com.viator,FR,Madagascar,French
-com.viator,FR,Cameroon,French
-com.viator,FR,Burkina Faso,French
-com.viator,FR,Niger,French
-com.viator,FR,Senegal,French
-com.viator,FR,Mali,French
-com.viator,FR,Rwanda,French
-com.viator,FR,Belgium,French
-com.viator,FR,Guinea,French
-com.viator,DE,Germany,German
-com.viator,DE,Austria,German
-com.viator,DE,Switzerland,German
-com.viator,DE,Luxembourg,German
-com.viator,DE,Liechtenstein,German
-com.viator,IT,Italy,Italian
-com.viator,IT,Switzerland,Italian
-com.viator,IT,San Marino,Italian
-com.viator,IT,Vatican City,Italian
-com.viator,JA,Japan,Japanese
-com.viator,NB,Norway,Norwegian Bokmål
-com.viator,PT,Portugal,Portuguese
-com.viator,PT,Brazil,Portuguese
-com.viator,PT,Angola,Portuguese
-com.viator,PT,Mozambique,Portuguese
-com.viator,PT,Cape Verde,Portuguese
-com.viator,PT,Guinea-Bissau,Portuguese
-com.viator,PT,São Tomé and Príncipe,Portuguese
-com.viator,PT,East Timor,Portuguese
-com.viator,ES,Spain,Spanish
-com.viator,ES,Mexico,Spanish
-com.viator,ES,Colombia,Spanish
-com.viator,ES,Argentina,Spanish
-com.viator,ES,Peru,Spanish
-com.viator,ES,Venezuela,Spanish
-com.viator,ES,Chile,Spanish
-com.viator,ES,Ecuador,Spanish
-com.viator,ES,Guatemala,Spanish
-com.viator,ES,Cuba,Spanish
-com.viator,ES,Bolivia,Spanish
-com.viator,ES,Dominican Republic,Spanish
-com.viator,ES,Honduras,Spanish
-com.viator,ES,Paraguay,Spanish
-com.viator,ES,El Salvador,Spanish
-com.viator,ES,Nicaragua,Spanish
-com.viator,ES,Costa Rica,Spanish
-com.viator,ES,Puerto Rico,Spanish
-com.viator,ES,Panama,Spanish
-com.viator,ES,Uruguay,Spanish
-com.viator,SV,Sweden,Swedish
-com.stippl.stippl,EN,United States,English
-com.stippl.stippl,EN,United Kingdom,English
-com.stippl.stippl,EN,Canada,English
-com.stippl.stippl,EN,Australia,English
-com.stippl.stippl,EN,Ireland,English
-com.stippl.stippl,EN,New Zealand,English
-com.stippl.stippl,EN,South Africa,English
+com.expedia.booking,DA,Denmark,Danish
+com.expedia.booking,DA,Greenland,Danish
+com.expedia.booking,DA,Faroe Islands,Danish
+com.expedia.booking,NL,Netherlands,Dutch
+com.expedia.booking,NL,Belgium,Dutch
+com.expedia.booking,NL,Suriname,Dutch
+com.expedia.booking,EN,United States,English
+com.expedia.booking,EN,United Kingdom,English
+com.expedia.booking,EN,Canada,English
+com.expedia.booking,EN,Australia,English
+com.expedia.booking,EN,Ireland,English
+com.expedia.booking,EN,New Zealand,English
+com.expedia.booking,EN,South Africa,English
+com.expedia.booking,FI,Finland,Finnish
+com.expedia.booking,FI,Sweden,Finnish
+com.expedia.booking,FR,France,French
+com.expedia.booking,FR,Canada,French
+com.expedia.booking,FR,Belgium,French
+com.expedia.booking,FR,Switzerland,French
+com.expedia.booking,FR,Luxembourg,French
+com.expedia.booking,FR,Monaco,French
+com.expedia.booking,FR,Congo,French
+com.expedia.booking,FR,Ivory Coast,French
+com.expedia.booking,FR,Madagascar,French
+com.expedia.booking,FR,Cameroon,French
+com.expedia.booking,FR,Burkina Faso,French
+com.expedia.booking,FR,Niger,French
+com.expedia.booking,FR,Senegal,French
+com.expedia.booking,FR,Mali,French
+com.expedia.booking,FR,Rwanda,French
+com.expedia.booking,FR,Belgium,French
+com.expedia.booking,FR,Guinea,French
+com.expedia.booking,DE,Germany,German
+com.expedia.booking,DE,Austria,German
+com.expedia.booking,DE,Switzerland,German
+com.expedia.booking,DE,Luxembourg,German
+com.expedia.booking,DE,Liechtenstein,German
+com.expedia.booking,ID,Indonesia,Indonesian
+com.expedia.booking,IT,Italy,Italian
+com.expedia.booking,IT,Switzerland,Italian
+com.expedia.booking,IT,San Marino,Italian
+com.expedia.booking,IT,Vatican City,Italian
+com.expedia.booking,JA,Japan,Japanese
+com.expedia.booking,KO,South Korea,Korean
+com.expedia.booking,KO,North Korea,Korean
+com.expedia.booking,NB,Norway,Norwegian Bokmål
+com.expedia.booking,PT,Portugal,Portuguese
+com.expedia.booking,PT,Brazil,Portuguese
+com.expedia.booking,PT,Angola,Portuguese
+com.expedia.booking,PT,Mozambique,Portuguese
+com.expedia.booking,PT,Cape Verde,Portuguese
+com.expedia.booking,PT,Guinea-Bissau,Portuguese
+com.expedia.booking,PT,São Tomé and Príncipe,Portuguese
+com.expedia.booking,PT,East Timor,Portuguese
+com.expedia.booking,ZH,China,Chinese
+com.expedia.booking,ZH,Taiwan,Chinese
+com.expedia.booking,ZH,Singapore,Chinese
+com.expedia.booking,ZH,Malaysia,Chinese
+com.expedia.booking,ES,Spain,Spanish
+com.expedia.booking,ES,Mexico,Spanish
+com.expedia.booking,ES,Colombia,Spanish
+com.expedia.booking,ES,Argentina,Spanish
+com.expedia.booking,ES,Peru,Spanish
+com.expedia.booking,ES,Venezuela,Spanish
+com.expedia.booking,ES,Chile,Spanish
+com.expedia.booking,ES,Ecuador,Spanish
+com.expedia.booking,ES,Guatemala,Spanish
+com.expedia.booking,ES,Cuba,Spanish
+com.expedia.booking,ES,Bolivia,Spanish
+com.expedia.booking,ES,Dominican Republic,Spanish
+com.expedia.booking,ES,Honduras,Spanish
+com.expedia.booking,ES,Paraguay,Spanish
+com.expedia.booking,ES,El Salvador,Spanish
+com.expedia.booking,ES,Nicaragua,Spanish
+com.expedia.booking,ES,Costa Rica,Spanish
+com.expedia.booking,ES,Puerto Rico,Spanish
+com.expedia.booking,ES,Panama,Spanish
+com.expedia.booking,ES,Uruguay,Spanish
+com.expedia.booking,SV,Sweden,Swedish
+com.expedia.booking,TH,Thailand,Thai
+com.expedia.booking,ZH,China,Chinese
+com.expedia.booking,ZH,Taiwan,Chinese
+com.expedia.booking,ZH,Singapore,Chinese
+com.expedia.booking,ZH,Malaysia,Chinese
+com.expedia.booking,VI,Vietnam,Vietnamese
+com.outofoffice.ooomobile,EN,United States,English
+com.outofoffice.ooomobile,EN,United Kingdom,English
+com.outofoffice.ooomobile,EN,Canada,English
+com.outofoffice.ooomobile,EN,Australia,English
+com.outofoffice.ooomobile,EN,Ireland,English
+com.outofoffice.ooomobile,EN,New Zealand,English
+com.outofoffice.ooomobile,EN,South Africa,English
