@@ -37,7 +37,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Download necessary NLTK data
 RUN python3 -m nltk.downloader punkt stopwords
 # Run TextBlob's download script
-RUN python3 -m textblob.download_corpora lite
+RUN python3 -m textblob.download_corpora
 
 # Install any needed packages specified in package.json for Node.js
 RUN npm install
