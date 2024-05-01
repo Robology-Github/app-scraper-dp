@@ -655,7 +655,7 @@ async function similarFetchAppDetails(appName, country) {
 }
 
 // Function to fetch Google Play app reviews
-async function fetchGooglePlayReviews(appId, countryList, numOfReviews = 100) {
+async function fetchGooglePlayReviews(appId, countryList, numOfReviews = 200) {
   const reviews = await googlePlay.reviews({
     appId: appId,
     num: numOfReviews,
@@ -666,7 +666,7 @@ async function fetchGooglePlayReviews(appId, countryList, numOfReviews = 100) {
 }
 
 // Function to fetch App Store reviews
-async function fetchAppStoreReviews(appId, countryList, numOfReviews = 100) {
+async function fetchAppStoreReviews(appId, countryList, numOfReviews = 200) {
   const reviews = await appStore.reviews({
     appId: appId,
     num: numOfReviews,

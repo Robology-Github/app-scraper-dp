@@ -2,7 +2,4 @@ pandas
 textblob
 iso-639
 langdetect
-transformers
 nltk
-tf-keras
-flax
