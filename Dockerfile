@@ -36,7 +36,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Run TextBlob's download script
 RUN python -m textblob.download_corpora lite
-RUN pip3 install transformers[torch]
 
 # Install any needed packages specified in package.json for Node.js
 RUN npm install

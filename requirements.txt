@@ -3,3 +3,4 @@ textblob
 iso-639
 langdetect
 nltk
+transformers[torch]
