@@ -34,8 +34,10 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /openssl-3.2.1.tar.gz /openssl-
 COPY requirements.txt /app/
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+# Download necessary NLTK data
+RUN python3 -m nltk.downloader punkt stopwords
 # Run TextBlob's download script
-RUN python -m textblob.download_corpora lite
+RUN python3 -m textblob.download_corpora lite
 
 # Install any needed packages specified in package.json for Node.js
 RUN npm install
